@@ -9,99 +9,47 @@ export default class MultipleImageUploadComponent extends Component {
         previewImages: [],
         progressInfos: [],
         message: [],
-  
+          imagesName:[],
         imageInfos: [],
       }
       this.selectFiles = this.selectFiles.bind(this);
-      this.uploadImages = this.uploadImages.bind(this);
+  
     }
 
     selectFiles(event) {
         let images = [];
-    
+        let imagesName = [];
+        //  let {selectedFiles}= this.state
         for (let i = 0; i < event.target.files.length; i++) {
-          images.push(URL.createObjectURL(event.target.files[i]))
+          images.push(event.target.files[i])
+          let tempGetimg = event.target.files[i];
+          imagesName.push({...imagesName,tempGetimg})
         }
-    
+        
+        this.props.getImagedata(images)
         this.setState({
           progressInfos: [],
           message: [],
           selectedFiles: event.target.files,
           previewImages: images
-        })
-      }
+        },() => {
 
-
-uploadImages() {
-    const selectedFiles = this.state.selectedFiles;
-
-    let _progressInfos = [];
-
-    for (let i = 0; i < selectedFiles.length; i++) {
-      _progressInfos.push({ percentage: 0, fileName: selectedFiles[i].name });
-    }
-
-    this.setState(
-      {
-        progressInfos: _progressInfos,
-        message: [],
-      },
-      () => {
-        for (let i = 0; i < selectedFiles.length; i++) {
-          this.upload(i, selectedFiles[i]);
+          //  selectedFiles.map((files)=>{
+          //       console.log("wa",files)
+          // })
+         
         }
+        )
+        
+        console.log("wa",event.target.files)
+        console.log("wa",imagesName)
       }
-    );
-  }
 
 
-upload(idx, file) {4
-console.log("file info",file)
 
-    /* 
-    let _progressInfos = [...this.state.progressInfos];
 
-    UploadService.upload(file, (event) => {
-      _progressInfos[idx].percentage = Math.round((100 * event.loaded) / event.total);
-      this.setState({
-        progressInfos: _progressInfos,
-      });
-    })
-      .then(() => {
-        this.setState((prev) => {
-          let nextMessage = [...prev.message, "Uploaded the image successfully: " + file.name];
-          return {
-            message: nextMessage
-          };
-        });
 
-        return UploadService.getFiles();
-      })
-      .then((files) => {
-        this.setState({
-          imageInfos: files.data,
-        });
-      })
-      .catch(() => {
-        _progressInfos[idx].percentage = 0;
-        this.setState((prev) => {
-          let nextMessage = [...prev.message, "Could not upload the image: " + file.name];
-          return {
-            progressInfos: _progressInfos,
-            message: nextMessage
-          };
-        });
-      });*/
-     
-  }
 
-//   componentDidMount() {
-//     UploadService.getFiles().then((response) => {
-//       this.setState({
-//         imageInfos: response.data,
-//       });
-//     });
-//   }
 
 
     render() {
@@ -181,3 +129,4 @@ console.log("file info",file)
   
     }
 }
+
