@@ -19,7 +19,7 @@ db();
 // // for parsing application/xwww-
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json({}));
 
 app.get("/", (req, res) => {

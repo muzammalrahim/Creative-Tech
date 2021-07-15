@@ -34,7 +34,7 @@ const getUserBYId = async (req, res) => {
 
     return res.json({
       data: user,
-      
+
       success: true,
     });
   } catch (error) {
@@ -45,6 +45,7 @@ const getUserBYId = async (req, res) => {
   }
 };
 const getUsers = async (req, res) => {
+  console.log("users");
   try {
     const users = await UserModel.find();
 
@@ -81,7 +82,7 @@ const deleteUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { title, description,ref1,ref2,ref3 } = req.body;
+    const { title, description, ref1, ref2, ref3 } = req.body;
     const { id } = req.params;
 
     const updatedUser = await UserModel.findByIdAndUpdate(
@@ -91,7 +92,7 @@ const updateUser = async (req, res) => {
         description,
         ref1,
         ref2,
-        ref3
+        ref3,
       },
       {
         new: true,
