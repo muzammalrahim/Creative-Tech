@@ -1,12 +1,19 @@
 const UserModel = require("../models/User");
 
+// let productPictures = [];
+// if (req.files.length > 0) {
+//   productPictures = req.files.map((file) => {
+//     return { image: file.filename };
+//   });
+// }
+
 const saveUser = async (req, res) => {
   try {
-    const { title, description, ref1, ref2, ref3, images } = req.body;
+    const { title, description, ref1, ref2, ref3, image } = req.body;
 
     await new UserModel({
       title,
-      images,
+      image,
       description,
       ref1,
       ref2,
@@ -45,7 +52,7 @@ const getUserBYId = async (req, res) => {
   }
 };
 const getUsers = async (req, res) => {
-  console.log("users");
+  // console.log("users");
   try {
     const users = await UserModel.find();
 

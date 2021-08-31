@@ -9,20 +9,23 @@ const Projects = () => {
   const [portfolios, setPortfolios] = useState([]);
 
   useEffect(() => {
+    // console.log("projects component rendered");
     loadPortfolio();
   }, []);
 
   const deletePortfolio = (id) => {
-    del(`user/remove-user/${id}`);
-    setPortfolios([]);
-    loadPortfolio([]);
+    // console.log("delete id", id);
+    del(`user/remove-user/${id}`).then(() => {
+      loadPortfolio();
+    });
+    // setPortfolios([]);
   };
 
-  const loadPortfolio = async () => {
-    await get("user/users")
+  const loadPortfolio = () => {
+    get("user/users")
       .then((res) => {
         var data = res.data?.data;
-        console.log("oops", data);
+        // console.log("oops", data);
         setPortfolios(data);
       })
       .catch(() => {});
@@ -31,8 +34,8 @@ const Projects = () => {
   return (
     <div>
       <Navbar />
-      <div classNameName="container">
-        <div classNameName="py-4">
+      <div className="container">
+        <div className="py-4">
           <h1>Portfolio Page</h1>
           {/* <table classNameName="table border shadow"> */}
           <div className="projects">
@@ -47,6 +50,13 @@ const Projects = () => {
               return (
                 <div key={portfolio.id}>
                   <div className="projects__card">
+                    <img
+                      src={portfolio.images}
+                      alt=""
+                      className="projects__image"
+                      width="100px"
+                      height="100px"
+                    />
                     <h3 className="projects__title">{portfolio.title}</h3>
                     <p className="projects__description">
                       {portfolio.description}

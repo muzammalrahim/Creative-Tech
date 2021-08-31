@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { post } from "../../helper/api";
 import UploadImages from "./UploadImages";
 // import axios from "../../config/axiosConfig";
+// import image from '../../assets/img/portfolio-images/'
 
 export default function AddProject() {
   let history = useHistory();
@@ -13,6 +14,7 @@ export default function AddProject() {
     ref1: "",
     ref2: "",
     ref3: "",
+    image: "",
   });
 
   const { title, description, ref1, ref2, ref3 } = user;
@@ -24,11 +26,12 @@ export default function AddProject() {
     setImagess(imgdta);
   };
   const getImages = (images) => {
-    console.log("images passed:", images);
+    // console.log("images passed:", images);
     const imageddata = [...imagess];
-    images.map((data) =>
-      imageddata.push({ url: URL.createObjectURL(data), name: data.name })
-    );
+    images.map((data) => {
+      imageddata.push({ url: URL.createObjectURL(data), name: data.name });
+      // console.log(data);
+    });
     setImagess(imageddata);
   };
   // useEffect(() => {
