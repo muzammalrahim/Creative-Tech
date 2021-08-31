@@ -5,39 +5,38 @@ import { Link } from 'react-router-dom';
 import OwlCarousel from "react-owl-carousel3";
 import ScrollAnimation from 'react-animate-on-scroll';
 import axios from 'axios'
-import { api_url } from "../helper/Api";
+import {api_url} from '../helper/Api'
 
 class Team extends Component {
    
     constructor(props) {
         super(props);
         this.state = {
-            team: []
+            teams: []
         }
     }
 
     componentDidMount() {
         axios.get(api_url+"team/teams").then(res => {
-           this.setState({team:res.data.data})
+            this.setState({teams:res.data.data})
         }).catch(err => {
             console.log(err)
         })
     }
 
-    render() {
-      console.log(this.state.team)
+  render() {
     //Team loop start
-    const teamdata = this.state.team.map((team, index) => (
+    const teamdata = this.props.teamsData.map((team, index) => (
         <div className="team-box" key={index}>
-            <img src={team?.Image ? team.Image : ''} alt="Description" />
+            <img src={team.Image} alt="Description" />
             <div className="box-content">
                 <div className="box-inner-content">
-                    <h3 className="title">{team?.name}</h3>
-                    <span className="post">{team?.designation}</span>
+                    <h3 className="title">{team.Name}</h3>
+                    <span className="post">{team.Profession}</span>
                     <ul className="icon">
-                        {/* <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li> */}
-                        <li><Link to={team?.linkedin}><Icofont icon="icofont-linkedin" /></Link></li>
-                        {/* <li><Link to={team.twitterLink}><Icofont icon="icofont-twitter" /></Link></li> */}
+                        <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li>
+                        <li><Link to={team.linkedinLink}><Icofont icon="icofont-linkedin" /></Link></li>
+                        <li><Link to={team.twitterLink}><Icofont icon="icofont-twitter" /></Link></li>
                     </ul>
                 </div>
             </div>
@@ -52,9 +51,9 @@ class Team extends Component {
                     <div className="col-lg-8 offset-lg-2 text-center">
                         <ScrollAnimation animateIn="fadeInUp">
                             <div className="section-title">
-                                {/* <h2>{this.props.sectionTitle}</h2>
+                                <h2>{this.props.sectionTitle}</h2>
                                 <p>{this.props.sectionDescription}</p>
-                                <span className="section-title-bg">{this.props.SectionbgTitle}</span> */}
+                                <span className="section-title-bg">{this.props.SectionbgTitle}</span>
                             </div>
                         </ScrollAnimation>
                     </div>
