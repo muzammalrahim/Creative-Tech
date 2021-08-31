@@ -4,20 +4,18 @@ import {post} from "../../helper/api"
 import UploadImages from './UploadImages'
 
 
-export default function AddProject () {
+export default function AddService () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
-  const [user, setUser] = useState({
+  const [service, setService] = useState({
     title: "",
     description: "",
-    ref1: "",  
-    ref2: "",
-    ref3: ""
+    
   });
 
-  const { title, description, ref1, ref2, ref3 } = user;
+  const { title, description } = service;
   const onInputChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setService({ ...service, [e.target.name]: e.target.value });
   };
     const deleteimage =(name)=>{
 
@@ -35,18 +33,18 @@ setImagess(imgdta)
     e.preventDefault();
     // const imagenames=imagess.map((data)=>"/images/"+data.name)
     // console.log({imagenames})
-    post("user/save-user",user)
+    post("service/save-service",service)
     .then((res) => {
       var data = res.data.data
       setUser(data);
     })
     .catch(() => {});
-    history.replace("/projects");
+    history.replace("/services");
   };
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Project</h2>
+        <h2 className="text-center mb-4">Add A Service</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
@@ -68,36 +66,8 @@ setImagess(imgdta)
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your ref1"
-              name="ref1"
-              value={ref1}
-              onChange={e => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your ref2"
-              name="ref2"
-              value={ref2}
-              onChange={e => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Website ref3"
-              name="ref3"
-              value={ref3}
-              onChange={e => onInputChange(e)}
-            />
-          </div>
+          
+          
           <div>
               <div className="card-header">
                 Multiple Image Upload Preview
@@ -109,7 +79,7 @@ setImagess(imgdta)
           ))}
               </div>
             </div>
-          <button type='submit' className="btn btn-primary btn-block">Add Project</button>
+          <button type='submit' className="btn btn-primary btn-block">Add Service</button>
         </form>
    
 

@@ -26,7 +26,13 @@ import RTL from "layouts/RTL.js";
 import ViewProject from "./views/Projects/ViewProject";
 import EditProject from "./views/Projects/EditProject";
 import AddProject from "./views/Projects/AddProject";
+
  import Projects from "./views/Projects/Projects";
+//  add by basit
+ import Services from "./views/Services/Services" 
+import ViewService from "./views/Services/ViewService";
+import EditService from "./views/Services/EditService";
+import AddService from "./views/Services/AddService";
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
@@ -39,6 +45,10 @@ ReactDOM.render(
           <Route exact path="/add-project" component={AddProject} />
           <Route exact path="/edit-project/:id" component={EditProject} />
           <Route exact path="/view-project/:id" component={ViewProject} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/add-service" component={AddService} />
+          <Route exact path="/edit-service/:id" component={EditService} />
+          <Route exact path="/view-service/:id" component={ViewService} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </BrowserRouter>,
