@@ -39,6 +39,7 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
 import Services from "views/Services/Services";
+import Testimonials from "views/Testimonials/Testimonials";
 
 const dashboardRoutes = [
   {
@@ -63,6 +64,14 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Services,
+    layout: "",
+  },
+  {
+    path: "/testimonials",
+    name: "Testimonials",
+    rtlName: "لوحة القيادة",
+    icon: ChromeReaderModeIcon,
+    component: Testimonials,
     layout: "",
   },
   {

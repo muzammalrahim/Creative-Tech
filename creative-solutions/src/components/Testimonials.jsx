@@ -2,22 +2,37 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import OwlCarousel from "react-owl-carousel3";
 import PropTypes from "prop-types";
+import { api_url } from '../helper/Api';
+import axios from 'axios'
 
 class Testimonials extends Component {
+    state={
+        testimonials:[]
+    }
+    componentDidMount(){
+        axios.get(api_url+"testimonial/testimonials").then((res)=>{
+            this.setState({
+                    testimonials:res.data.data
+            })
+        }).catch((err)=>{
+            console.log("error:",err)
+        })
+
+    }
   render() {
     //Testimonials loop start
-    const testimonialsitem = this.props.testimonialsData.map((testimonials, index) => (
+    const testimonialsitem = this.state.testimonials.map((testimonials, index) => (
         <div className="single-testimonial-item text-center" key={index}>
             <Icofont icon="icofont-quote-left" />
-            <p>{testimonials.Content}</p>
+            <p>{testimonials?.description}</p>
 
             <div className="client-profile">
                 <img src={testimonials.clientImage} alt="client-one" />
             </div>
             
             <div className="client-info">
-                <h3>{testimonials.Name}</h3>
-                <span>{testimonials.Profession}</span>
+                <h3>{testimonials?.name}</h3>
+                <span>{testimonials?.designition}</span>
             </div>
         </div>
     ));

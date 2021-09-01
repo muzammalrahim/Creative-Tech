@@ -4,18 +4,19 @@ import {post} from "../../helper/api"
 import UploadImages from './UploadImages'
 
 
-export default function AddService () {
+export default function AddTestimonial () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
-  const [service, setService] = useState({
-    title: "",
-    description: "",
+  const [testimonial, setTestimonial] = useState({
+   description: "",
+   name:"",
+   designition:""
     
   });
 
-  const { title, description } = service;
+  const {  description , name , designition } = testimonial;
   const onInputChange = e => {
-    setService({ ...service, [e.target.name]: e.target.value });
+    setTestimonial({ ...testimonial, [e.target.name]: e.target.value });
   };
     const deleteimage =(name)=>{
 
@@ -33,26 +34,26 @@ setImagess(imgdta)
     e.preventDefault();
     // const imagenames=imagess.map((data)=>"/images/"+data.name)
     // console.log({imagenames})
-    post("service/save-service",service)
+    post("testimonial/save-testimonial",testimonial)
     .then((res) => {
       var data = res.data.data
-      setService(data);
+      setTestimonial(data);
     })
     .catch(() => {});
-    history.replace("/services");
+    history.replace("/testimonials");
   };
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Service</h2>
+        <h2 className="text-center mb-4">Add A testimonial</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your project title"
-              name="title"
-              value={title}
+              placeholder="Enter Description"
+              name="description"
+              value={description}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -60,9 +61,19 @@ setImagess(imgdta)
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your  project description"
-              name="description"
-              value={description}
+              placeholder="Enter Name"
+              name="name"
+              value={name}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control form-control-lg"
+              placeholder="Enter Designition"
+              name="designition"
+              value={designition}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -79,7 +90,7 @@ setImagess(imgdta)
           ))}
               </div>
             </div>
-          <button type='submit' className="btn btn-primary btn-block">Add Service</button>
+          <button type='submit' className="btn btn-primary btn-block">Add Testimonial</button>
         </form>
    
 
