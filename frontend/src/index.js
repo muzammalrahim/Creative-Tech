@@ -22,13 +22,13 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // core components
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
-// add by taimoor
+
 import ViewProject from "./views/Projects/ViewProject";
 import EditProject from "./views/Projects/EditProject";
 import AddProject from "./views/Projects/AddProject";
 
  import Projects from "./views/Projects/Projects";
-//  add by basit
+
  import Services from "./views/Services/Services" 
 import ViewService from "./views/Services/ViewService";
 import EditService from "./views/Services/EditService";
@@ -38,6 +38,11 @@ import Testimonials from "./views/Testimonials/Testimonials"
 import ViewTestimonial from "./views/Testimonials/ViewTestimonial";
 import EditTestimonial from "./views/Testimonials/EditTestimonial";
 import AddTestimonial from "./views/Testimonials/AddTestimonial";
+
+import Team from "./views/Team/Team" 
+import ViewTeam from "./views/Team/ViewTeam";
+import EditTeam from "./views/Team/EditTeam";
+import AddTeam from "./views/Team/AddTeam";
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
@@ -60,6 +65,11 @@ ReactDOM.render(
           <Route exact path="/add-testimonial" component={AddTestimonial} />
           <Route exact path="/edit-testimonial/:id" component={EditTestimonial} />
           <Route exact path="/view-testimonial/:id" component={ViewTestimonial} />
+
+          <Route exact path="/team" component={Team} />
+          <Route exact path="/add-team" component={AddTeam} />
+          <Route exact path="/updatemember/:id" component={EditTeam} />
+          <Route exact path="/detailmember/:id" component={ViewTeam} />
 
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>

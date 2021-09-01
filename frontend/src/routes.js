@@ -41,6 +41,8 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 import Services from "views/Services/Services";
 import Testimonials from "views/Testimonials/Testimonials";
 
+import Team from "views/Team/Team";
+
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -72,6 +74,14 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Testimonials,
+    layout: "",
+  },
+  {
+    path: "/team",
+    name: "Team",
+    rtlName: "لوحة القيادة",
+    icon: ChromeReaderModeIcon,
+    component: Team,
     layout: "",
   },
   {

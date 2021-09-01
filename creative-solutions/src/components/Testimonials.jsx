@@ -7,7 +7,7 @@ import axios from 'axios'
 
 class Testimonials extends Component {
     state={
-        testimonials:[]
+        testimonials:[""]
     }
     componentDidMount(){
         axios.get(api_url+"testimonial/testimonials").then((res)=>{
@@ -21,18 +21,18 @@ class Testimonials extends Component {
     }
   render() {
     //Testimonials loop start
-    const testimonialsitem = this.state.testimonials.map((testimonials, index) => (
+    const testimonialsitem = this.state.testimonials.map((testimonial, index) => (
         <div className="single-testimonial-item text-center" key={index}>
             <Icofont icon="icofont-quote-left" />
-            <p>{testimonials?.description}</p>
+            <p>{testimonial?.description}</p>
 
             <div className="client-profile">
-                <img src={testimonials.clientImage} alt="client-one" />
+                <img src={testimonial.clientImage} alt="client-one" />
             </div>
             
             <div className="client-info">
-                <h3>{testimonials?.name}</h3>
-                <span>{testimonials?.designition}</span>
+                <h3>{testimonial?.name}</h3>
+                <span>{testimonial?.designition}</span>
             </div>
         </div>
     ));
