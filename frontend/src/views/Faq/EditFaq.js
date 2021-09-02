@@ -3,7 +3,7 @@ import {  useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
-const EditProject = () => {
+const EditFaq = () => {
   let history = useHistory();
   const { id } = useParams();
   const [portfolio, setPortfolio] = useState({
@@ -23,14 +23,14 @@ const [loading,isLoading]=useState(false)
 
   const onSubmit = async e => {
     e.preventDefault();
-    put(`service/update-service/${id}`, portfolio);
+    put(`faq/update-faq/${id}`, portfolio);
     loadPortfolio()
-    history.push("/services");
+    history.push("/faq");
   };
 
   const loadPortfolio =  () => {
   isLoading(true)
-    get(`service/getService/${id}`)
+    get(`faq/getFaq/${id}`)
     .then((res) => {
       var data = res.data.data
       console.log("oops",data)
@@ -45,13 +45,13 @@ const [loading,isLoading]=useState(false)
    
     loading ?"loading...": <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Edit A Service</h2>
+        <h2 className="text-center mb-4">Edit A Faq</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Name"
+              placeholder="Enter Question"
               name="title"
               value={title}
               onChange={e => onInputChange(e)}
@@ -61,17 +61,17 @@ const [loading,isLoading]=useState(false)
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Username"
+              placeholder="Enter Answer"
               name="description"
               value={description}
               onChange={e => onInputChange(e)}
             />
           </div>
-                    <button className="btn btn-warning btn-block">Update Service</button>
+                    <button className="btn btn-warning btn-block">Update Faq</button>
         </form>
       </div>
     </div> 
   );
 };
 
-export default EditProject;
+export default EditFaq;

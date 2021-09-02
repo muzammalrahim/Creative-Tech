@@ -11,8 +11,10 @@ const cors = require("cors");
 const PORT = 3001;
 const db = require("./config/db");
 const userRouter = require("./routes/user");
-const serviceRouter = require("./routes/service")
-const teamRouter = require("./routes/team.rout")
+const serviceRouter = require("./routes/service");
+const testimonialRouter = require("./routes/testimonial");
+const teamRouter = require("./routes/team.rout");
+const faqRouter = require("./routes/faq");
 db();
 // app.use(cors())
 
@@ -31,8 +33,12 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRouter);
-app.use("/service" , serviceRouter)
-app.use("/team" , teamRouter)
+app.use("/service" , serviceRouter);
+
+app.use("/testimonial" , testimonialRouter);
+app.use("/team" , teamRouter);
+
+app.use("/faq" , faqRouter);
 
 // step no 2
 // take two args . one is port and sec is call back function
@@ -63,4 +69,4 @@ app.listen(PORT, () => {
 // model
 
 // controller
-// view --- API khar nakaow
+

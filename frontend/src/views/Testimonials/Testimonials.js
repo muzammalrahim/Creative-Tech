@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar"
 import get,{del} from "../../helper/api"
 
-const Services = () => {
+const Testimonials = () => {
   const [portfolios, setPortfolios] = useState([]);
 
   useEffect(() => {
@@ -11,14 +11,14 @@ const Services = () => {
   }, []);
 
   const deletePortfolio =(id) => {
-    del(`service/remove-service/${id}`);
+    del(`testimonial/remove-testimonial/${id}`);
     setPortfolios([])
       loadPortfolio([]);
   };
 
 
   const loadPortfolio =() => {
-     get("service/services")
+     get("testimonial/testimonials")
     .then((res) => {
       var data = res.data?.data
       console.log("oops",data)
@@ -34,13 +34,16 @@ const Services = () => {
       <Navbar/>
     <div classNameName="container">
       <div classNameName="py-4">
-        <h1>Service Page</h1>
+        <h1>Testimonial Page</h1>
         <table classNameName="table border shadow">
           <thead classNameName="thead-dark">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Title</th>
               <th scope="col">Desciption</th>
+              
+              <th scope="col">Name</th>
+              
+              <th scope="col">Designition</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -49,13 +52,15 @@ const Services = () => {
             {portfolios?.map((portfolio, index) => (
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
-                <td>{portfolio.title}</td>
                 <td>{portfolio.description}</td>
+                
+                <td>{portfolio.name}</td>
+                <td>{portfolio.designition}</td>
                 <td>
-                  <Link className="btn btn-primary mr-2" to={`/view-service/${portfolio._id}`}>
+                  <Link className="btn btn-primary mr-2" to={`/view-testimonial/${portfolio._id}`}>
                     View
                   </Link>
-                  <Link className="btn btn-primary mr-2" to={`/edit-service/${portfolio._id}`}>
+                  <Link className="btn btn-primary mr-2" to={`/edit-testimonial/${portfolio._id}`}>
                   Edit
                   </Link>
                 {console.log("id:",portfolio._id)}
@@ -76,4 +81,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Testimonials;

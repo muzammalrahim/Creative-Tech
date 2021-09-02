@@ -3,12 +3,14 @@ import {  useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
-const EditProject = () => {
+const EditTestimonial = () => {
   let history = useHistory();
   const { id } = useParams();
   const [portfolio, setPortfolio] = useState({
-    title: "",
-    description: ""
+   
+    description: "",
+    name:"",
+    designition:""
    
   });
 const [loading,isLoading]=useState(false)
@@ -23,14 +25,14 @@ const [loading,isLoading]=useState(false)
 
   const onSubmit = async e => {
     e.preventDefault();
-    put(`service/update-service/${id}`, portfolio);
+    put(`testimonial/update-testimonial/${id}`, portfolio);
     loadPortfolio()
-    history.push("/services");
+    history.push("/testimonials");
   };
 
   const loadPortfolio =  () => {
   isLoading(true)
-    get(`service/getService/${id}`)
+    get(`testimonial/getTestimonial/${id}`)
     .then((res) => {
       var data = res.data.data
       console.log("oops",data)
@@ -40,20 +42,20 @@ const [loading,isLoading]=useState(false)
     })
     .catch(() => {});
   };
-  const { title, description} = portfolio;
+  const { description , name , designition} = portfolio;
   return (
    
     loading ?"loading...": <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Edit A Service</h2>
+        <h2 className="text-center mb-4">Edit A Testimonial</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Name"
-              name="title"
-              value={title}
+              placeholder="Enter  Description"
+              name="description"
+              value={description}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -61,17 +63,27 @@ const [loading,isLoading]=useState(false)
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Username"
-              name="description"
-              value={description}
+              placeholder="Enter name"
+              name="name"
+              value={name}
               onChange={e => onInputChange(e)}
             />
           </div>
-                    <button className="btn btn-warning btn-block">Update Service</button>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control form-control-lg"
+              placeholder="Enter designition"
+              name="designition"
+              value={designition}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+                    <button className="btn btn-warning btn-block">Update Testimonial</button>
         </form>
       </div>
     </div> 
   );
 };
 
-export default EditProject;
+export default EditTestimonial;

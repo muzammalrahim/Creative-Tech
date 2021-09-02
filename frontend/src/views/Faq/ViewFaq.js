@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import get from "../../helper/api"
 
-const ViewService = () => {
-  const [service, setService] = useState({
+const ViewFaq = () => {
+  const [faq, setFaq] = useState({
     title: "",
     description: "",
  
   });
   const { id } = useParams();
   useEffect(() => {
-    loadService();
+    loadFaq();
   }, []);
-  const loadService = async () => {
+  const loadFaq = async () => {
  
-    get(`service/getService/${id}`)
+    get(`faq/getFaq/${id}`)
     .then((res) => {
       var data = res.data.data
       // alert(res.data.data)
-      setService(data);
+      setFaq(data);
     })
     .catch(() => {});
 
@@ -28,15 +28,15 @@ const ViewService = () => {
       <Link className="btn btn-primary" to="/">
         back to Home
       </Link>
-      <h1 className="display-4">Service Id: {id}</h1>
+      <h1 className="display-4">Faq Id: {id}</h1>
       <hr />
-      {console.log("sda",service)}
+     
       <ul className="list-group w-50">
-        <li className="list-group-item">Title: {service.title}</li>
-        <li className="list-group-item">Description: {service.description}</li>
+        <li className="list-group-item">Question: {faq.title}</li>
+        <li className="list-group-item">Answer: {faq.description}</li>
               </ul>
     </div>
   );
 };
 
-export default ViewService;
+export default ViewFaq;

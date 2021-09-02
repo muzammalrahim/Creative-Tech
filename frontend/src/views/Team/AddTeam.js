@@ -4,23 +4,25 @@ import {post} from "../../helper/api"
 import UploadImages from './UploadImages'
 
 
-export default function AddService () {
+ function AddTeam () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
-  const [service, setService] = useState({
-    title: "",
-    description: "",
+  const [team, setTeam] = useState({
+
+   name:"",
+   designition:"",
+   linkedin:""
     
   });
 
-  const { title, description } = service;
+  const {   name , designition , linkedin } = team;
   const onInputChange = e => {
-    setService({ ...service, [e.target.name]: e.target.value });
+    setTeam({ ...team, [e.target.name]: e.target.value });
   };
     const deleteimage =(name)=>{
 
-  const imgdta= imagess.filter((data)=>data.name!==name)
-        setImagess(imgdta)
+       const imgdta= imagess.filter((data)=>data.name!==name)
+setImagess(imgdta)
     }
   const getImages = (images) => {
     console.log("images passed:",images)
@@ -33,26 +35,37 @@ export default function AddService () {
     e.preventDefault();
     // const imagenames=imagess.map((data)=>"/images/"+data.name)
     // console.log({imagenames})
-    post("service/save-service",{title:service.title,description:service.description, image:imagess[0].name})
+    post("team/addteam",team)
     .then((res) => {
       var data = res.data.data
-      setService(data);
+      setTeam(data);
     })
     .catch(() => {});
-    history.replace("/services");
+    history.replace("/team");
   };
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Service</h2>
+        <h2 className="text-center mb-4">Add A team</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your project title"
-              name="title"
-              value={title}
+              placeholder="Enter name"
+              name="name"
+              value={name}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control form-control-lg"
+              placeholder="Enter Designition"
+              name="designition"
+              value={designition}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -60,9 +73,9 @@ export default function AddService () {
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your  project description"
-              name="description"
-              value={description}
+              placeholder="Enter LinkedIn"
+              name="linkedin"
+              value={linkedin}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -79,20 +92,11 @@ export default function AddService () {
           ))}
               </div>
             </div>
-          <button type='submit' className="btn btn-primary btn-block">Add Service</button>
+          <button type='submit' className="btn btn-primary btn-block">Add Team</button>
         </form>
-   
-
-         
-      
-         
-       
-   
-
-
-     
       </div>
     </div>
   );
 }
 
+export default AddTeam;

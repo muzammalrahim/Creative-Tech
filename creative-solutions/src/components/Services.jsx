@@ -16,6 +16,7 @@ class Services extends Component {
     componentDidMount() {
         axios.get(api_url + 'service/services').then(res => {
             this.setState({services:res.data.data})
+            console.log("data" , res.data)
         }).catch(err => {
             console.log("error occured", err)
         })
