@@ -1,12 +1,14 @@
 const ServiceModel = require("../models/Services");
 
 const saveService = async (req, res) => {
+  console.log("service image checking", req.body)
   try {
-    const { title, description} = req.body;
+    const { title, description, image} = req.body;
 
     await new ServiceModel({
       title,
       description,
+      image
     }).save();
 
     return res.json({

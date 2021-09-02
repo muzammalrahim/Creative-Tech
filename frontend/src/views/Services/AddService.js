@@ -19,8 +19,8 @@ export default function AddService () {
   };
     const deleteimage =(name)=>{
 
-       const imgdta= imagess.filter((data)=>data.name!==name)
-setImagess(imgdta)
+  const imgdta= imagess.filter((data)=>data.name!==name)
+        setImagess(imgdta)
     }
   const getImages = (images) => {
     console.log("images passed:",images)
@@ -33,7 +33,7 @@ setImagess(imgdta)
     e.preventDefault();
     // const imagenames=imagess.map((data)=>"/images/"+data.name)
     // console.log({imagenames})
-    post("service/save-service",service)
+    post("service/save-service",{title:service.title,description:service.description, image:imagess[0].name})
     .then((res) => {
       var data = res.data.data
       setUser(data);
