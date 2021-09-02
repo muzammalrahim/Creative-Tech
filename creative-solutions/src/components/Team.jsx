@@ -26,9 +26,10 @@ class Team extends Component {
 
   render() {
     //Team loop start
+    console.log("team state data", this.state.teams)
     const teamdata = this.state.teams.map((team, index) => (
         <div className="team-box" key={index}>
-            <img src={team.Image} alt="Description" />
+            {/* <img src="../assets/img/team-one.jpg" alt="Description" /> */}
             <div className="box-content">
                 <div className="box-inner-content">
                     <h3 className="title">{team?.name}</h3>

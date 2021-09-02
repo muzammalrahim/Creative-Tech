@@ -14,6 +14,7 @@ const userRouter = require("./routes/user");
 const serviceRouter = require("./routes/service");
 const testimonialRouter = require("./routes/testimonial");
 const teamRouter = require("./routes/team.rout");
+const faqRouter = require("./routes/faq");
 db();
 // app.use(cors())
 
@@ -36,6 +37,8 @@ app.use("/service" , serviceRouter);
 
 app.use("/testimonial" , testimonialRouter);
 app.use("/team" , teamRouter);
+
+app.use("/faq" , faqRouter);
 
 // step no 2
 // take two args . one is port and sec is call back function

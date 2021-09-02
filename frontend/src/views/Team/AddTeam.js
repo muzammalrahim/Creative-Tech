@@ -4,17 +4,18 @@ import {post} from "../../helper/api"
 import UploadImages from './UploadImages'
 
 
-export default function AddTeam () {
+ function AddTeam () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
   const [team, setTeam] = useState({
-    name: "",
-    designation: "",
-    linkedin:""
+
+   name:"",
+   designition:"",
+   linkedin:""
     
   });
 
-  const { name, designation , linkedin } = team;
+  const {   name , designition , linkedin } = team;
   const onInputChange = e => {
     setTeam({ ...team, [e.target.name]: e.target.value });
   };
@@ -45,7 +46,7 @@ setImagess(imgdta)
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Team</h2>
+        <h2 className="text-center mb-4">Add A team</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
@@ -57,13 +58,14 @@ setImagess(imgdta)
               onChange={e => onInputChange(e)}
             />
           </div>
+          
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Designation"
-              name="designation"
-              value={designation}
+              placeholder="Enter Designition"
+              name="designition"
+              value={designition}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -97,3 +99,4 @@ setImagess(imgdta)
   );
 }
 
+export default AddTeam;

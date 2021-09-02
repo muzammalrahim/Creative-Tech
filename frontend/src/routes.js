@@ -40,6 +40,7 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 import RTLPage from "views/RTLPage/RTLPage.js";
 import Services from "views/Services/Services";
 import Testimonials from "views/Testimonials/Testimonials";
+import Faq from 'views/Faq/Faq'
 
 import Team from "views/Team/Team";
 
@@ -66,6 +67,14 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Services,
+    layout: "",
+  },
+  {
+    path: "/faq",
+    name: "Faq",
+    rtlName: "لوحة القيادة",
+    icon: ChromeReaderModeIcon,
+    component: Faq,
     layout: "",
   },
   {

@@ -4,8 +4,21 @@ import PropTypes from "prop-types";
 import { Accordion, AccordionItem } from "react-sanfona";
 import { Link } from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { api_url } from '../helper/Api';
+import axios from 'axios'
 
 class FAQ extends Component {
+    state={
+        faq:[],
+    }
+    componentDidMount() {
+        axios.get(api_url + 'faq/faq').then(res => {
+            this.setState({services:res.data.data})
+            console.log("data" , res.data.data[0].title)
+        }).catch(err => {
+            console.log("error occured", err)
+        })
+    }
     render() {
         return (
             <React.Fragment>
@@ -43,11 +56,12 @@ class FAQ extends Component {
                                         rootTag="div"
                                         className="panel-group"
                                     >
-                                        {this.props.faqData.map(item => {
+                                        {this.state.faq.map((item,index) => {
+                                           
                                             return (
                                                 <AccordionItem
-                                                    key={item}
-                                                    title={item.title}
+                                                    key={item?.id}
+                                                    title={item?.title}
                                                     expanded={true}
                                                     expandedClassName=""
                                                     className="panel-title panel panel-default"
@@ -56,7 +70,7 @@ class FAQ extends Component {
                                                 >
                                                     <div>
                                                         <div className="panel-body">
-                                                            <p>{item.description}</p>
+                                                            <p>{item?.description}</p>
                                                         </div>
                                                     </div>
                                                 </AccordionItem>

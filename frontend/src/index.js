@@ -44,6 +44,11 @@ import ViewTeam from "./views/Team/ViewTeam";
 import EditTeam from "./views/Team/EditTeam";
 import AddTeam from "./views/Team/AddTeam";
 
+import Faq from "./views/Faq/Faq" 
+import ViewFaq from "./views/Faq/ViewFaq";
+import EditFaq from "./views/Faq/EditFaq";
+import AddFaq from "./views/Faq/AddFaq";
+
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
 ReactDOM.render(
@@ -70,6 +75,11 @@ ReactDOM.render(
           <Route exact path="/add-team" component={AddTeam} />
           <Route exact path="/updatemember/:id" component={EditTeam} />
           <Route exact path="/detailmember/:id" component={ViewTeam} />
+
+          <Route exact path="/faq" component={Faq} />
+          <Route exact path="/add-faq" component={AddFaq} />
+          <Route exact path="/edit-faq/:id" component={EditFaq} />
+          <Route exact path="/view-faq/:id" component={ViewFaq} />
 
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
