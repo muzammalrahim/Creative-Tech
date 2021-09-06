@@ -111,28 +111,28 @@ BannerOne.defaultProps = {
     banneronesData: [
         {
             BgClass: "single-slider-item slide-bg-1",
-            TopTitle: "Clean & Creative",
-            Title: "Fully Responsive Design",
+            // TopTitle: "Clean & Creative",
+            Title: "Beautiful Designs",
             Content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+                "We strive to embrace and drive change in our industry which allows us to keep our clients relevant.",
             BtnLink:  "/#0",
             BtnName: "get started"
         },
         {
             BgClass: "single-slider-item slide-bg-2",
-            TopTitle: "Clean & Creative",
-            Title: "Fully Responsive Design",
+            // TopTitle: "Clean & Creative",
+            Title: "Unique Features",
             Content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+                "We strive to embrace and drive change in our industry which allows us to keep our clients relevant.",
             BtnLink:  "/#0",
             BtnName: "get started"
         },
         {
             BgClass: "single-slider-item slide-bg-3",
-            TopTitle: "Clean & Creative",
-            Title: "Fully Responsive Design",
+            // TopTitle: "Clean & Creative",
+            Title: "Reliable Support",
             Content:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+                "We strive to embrace and drive change in our industry which allows us to keep our clients relevant.",
             BtnLink:  "/#0",
             BtnName: "get started"
         }

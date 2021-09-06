@@ -8,13 +8,15 @@ import { api_url } from '../helper/Api';
 import axios from 'axios'
 
 class FAQ extends Component {
-    state={
-        faq:[],
-    }
+ 
+      state={
+            faq:[],
+        }
+    
     componentDidMount() {
         axios.get(api_url + 'faq/faq').then(res => {
-            this.setState({services:res.data.data})
-            console.log("data" , res.data.data[0].title)
+            this.setState({faq:res.data.data})
+            console.log("data" , res.data.data)
         }).catch(err => {
             console.log("error occured", err)
         })
@@ -38,7 +40,7 @@ class FAQ extends Component {
                         <div className="faq-content">
                             <div className="row">
                                 <div className="col-lg-4">
-                                    <Link to={this.props.ContentLink}>
+                                    
                                         <div className="content-box color-effect-1">
                                             <h3>{this.props.ContentTitle}</h3>
 
@@ -48,7 +50,7 @@ class FAQ extends Component {
 
                                             <p>{this.props.ContentDescription}</p>
                                         </div>
-                                    </Link>
+                                    
                                 </div>
 
                                 <div className="col-lg-8">
@@ -56,10 +58,11 @@ class FAQ extends Component {
                                         rootTag="div"
                                         className="panel-group"
                                     >
-                                        {this.state.faq.map((item,index) => {
+                                        {this.state.faq.map((item) => {
+                                            console.log("abc")
                                            
                                             return (
-                                                <AccordionItem
+                                                      <AccordionItem
                                                     key={item?.id}
                                                     title={item?.title}
                                                     expanded={true}

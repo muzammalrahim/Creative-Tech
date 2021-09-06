@@ -1,14 +1,19 @@
 const ServiceModel = require("../models/Services");
+const fs = require('fs')
+const path = require('path')
 
 const saveService = async (req, res) => {
   console.log("service image checking", req.body)
   try {
-    const { title, description, image} = req.body;
+    const { title, description, image } = req.body;
 
     await new ServiceModel({
       title,
       description,
-      image
+      image:{
+        data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+        contentType: 'image/png'
+    }
     }).save();
 
     return res.json({

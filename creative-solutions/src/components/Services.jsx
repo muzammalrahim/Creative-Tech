@@ -24,11 +24,14 @@ class Services extends Component {
 
   render() {
       //Service loop start
+      
       const servicedata = this.state.services.map((service, index) => (
+      
         <div className="col-md-6 col-lg-4 text-center" key={index}>
             <div className="service-item">
                 <div className="glyph">
-                    <Icofont icon={service?.icon} />
+                    {/* <Icofont icon={service?.image} /> */}
+                    <img src={service?.image} alt="" />
                 </div>
                 <h3>{service?.title}</h3>
                 <p>{service?.description}</p>
