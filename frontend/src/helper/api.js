@@ -1,17 +1,18 @@
 import axios from "../config/axiosConfig";
 
 const API_URL = process.env.REACT_APP_API_URL;
-{/*const Authorization =
+{
+  /*const Authorization =
   JSON.parse(localStorage.getItem("persist:v705-demo1-auth")) &&
   JSON.parse(localStorage.getItem("persist:v705-demo1-auth")).authToken;
 export const headers = {
   "Content-Type": "application/json",
   Authorization: `Token ${Authorization && Authorization.replaceAll('"', "")}`,
-};  */}
-
+};  */
+}
 
 // export const get2 = async (endpoint, params = {}) => {
- 
+
 //   const result = await axios.get(API_URL + endpoint).then((response) => {
 //     // return axios.get(API_URL+endpoint) .then(response => {
 
@@ -30,13 +31,10 @@ export const headers = {
 
 // };
 
-
-
-export default function get(endpoint,) {
+export default async function get(endpoint) {
   // export default function list(endpoint) {
-   
 
-  return axios.get(API_URL + endpoint).then((response) => {
+  return await axios.get(API_URL + endpoint).then((response) => {
     // return axios.get(API_URL+endpoint) .then(response => {
 
     if (response.data.results !== undefined) {
@@ -51,30 +49,31 @@ export default function get(endpoint,) {
   });
 }
 
-export function del(endpoint, data = {}) {
+export async function del(endpoint, data = {}) {
   let config = {
     // headers: headers,
     data: data,
   };
-  return axios.delete(API_URL + endpoint, config);
+  return await axios.delete(API_URL + endpoint, config);
 }
 
-export function post(endpoint, data) {
+export async function post(endpoint, data) {
   let config = {
     // headers: headers,
   };
-  return axios.post(API_URL + endpoint, data, config);
+  return await axios.post(API_URL + endpoint, data);
 }
-export function put(endpoint, data) {
+export async function put(endpoint, data) {
   let config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  return axios.put(API_URL + endpoint, data, config);
+  return await axios.put(API_URL + endpoint, data, config);
 }
 
-{/*
+{
+  /*
 export function put(endpoint, data) {
   let config = {
     headers: {
@@ -104,4 +103,5 @@ export function del(endpoint, data = {}) {
   };
   return axios.delete(API_URL + endpoint, config);
 }
-*/}
+*/
+}
