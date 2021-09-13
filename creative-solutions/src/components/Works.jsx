@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import ScrollAnimation from "react-animate-on-scroll";
 import { MDBContainer, MDBRow } from "mdbreact";
 import Lightbox from "react-image-lightbox";
+import { api_url } from '../helper/Api';
+import axios from 'axios'
 
 import { Link } from 'react-router-dom';
 
@@ -32,12 +34,39 @@ class Works extends Component {
     
         this.state = {
           photoIndex: 0,
-          isOpen: false
+          isOpen: false,
+          work:['']
         };
       }
 
+      componentDidMount() {
+        axios.get(api_url + 'user/users').then(res => {
+            this.setState({work:res.data.data})
+            console.log("data" , res.data)
+        }).catch(err => {
+            console.log("error occured", err)
+        })
+    }
+
     render() {
         const { photoIndex, isOpen } = this.state;
+
+            const workData = this.state.work.map((w,i)=>(
+                <div className="col-md-6 col-lg-4" key={i}>
+                <div className="team-box" >
+                <img src={w.image} alt="Description" />
+                <div className="box-content">
+                <div className="box-inner-content">
+                <h3 className="title"> {w.title}</h3>
+                 <span className="post"> {w.description} </span>
+                  <a href={w.link}>LINK</a>
+            </div>
+        </div>
+    </div>
+ </div>
+            ))
+
+
         return (
             <React.Fragment>
                 <section id="works" className="our-works ptb-100">
@@ -60,143 +89,13 @@ class Works extends Component {
                     <MDBContainer>
                         <div className="mdb-lightbox no-margin">
                             <MDBRow>
-                                <div className="col-md-6 col-lg-4">
-                                    <div className="work-details">
-                                        <figure>
-                                            <img
-                                            src={smallImages[0]}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            />
-                                            <div className="box-content">
-                                                 
-                                                <ul className="icon">
-                                                    <li>
-                                                        <span 
-                                                            href= "ll"
-                                                            onClick={() => this.setState({ photoIndex: 0, isOpen: true })}
-                                                            className="popup-btn">
-                                                            <Icofont icon="icofont-search-2"/>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </figure>
-                                    </div>
+
+                                <div className="container">
+                                <div className="row">
+                                    {workData}
+                                </div>
                                 </div>
 
-                                <div className="col-md-6 col-lg-4">
-                                <div className="team-box" >
-            <img src={smallImages[1]} alt="Description" />
-            <div className="box-content">
-                <div className="box-inner-content">
-                    <h3 className="title"> Title:Project Title</h3>
-                    <span className="post"> Description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere unde laudantium, magnam esse ex quo exercitationem vel eaque, incidunt nesciunt aliquam, accusantium ratione porro! Sapiente similique cupiditate laudantium minus atque. </span>
-                   <span>LINK:</span> <a href="https://www.google.com/">website link</a>
-                </div>
-            </div>
-        </div>
-                                </div>
-
-                                <div className="col-md-6 col-lg-4">
-                                    <div className="work-details">
-                                        <figure>
-                                            <img
-                                            src={smallImages[2]}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            />
-                                            <div className="box-content">
-                                                 
-                                                <ul className="icon">
-                                                    <li>
-                                                        <span 
-                                                            href= "ll"
-                                                            onClick={() => this.setState({ photoIndex: 2, isOpen: true })}
-                                                            className="popup-btn">
-                                                            <Icofont icon="icofont-search-2"/>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </figure>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-6 col-lg-4">
-                                    <div className="work-details">
-                                        <figure>
-                                            <img
-                                            src={smallImages[3]}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            />
-                                            <div className="box-content">
-                                                 
-                                                <ul className="icon">
-                                                    <li>
-                                                        <span 
-                                                            href= "ll"
-                                                            onClick={() => this.setState({ photoIndex: 3, isOpen: true })}
-                                                            className="popup-btn">
-                                                            <Icofont icon="icofont-search-2"/>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </figure>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-6 col-lg-4">
-                                    <div className="work-details">
-                                        <figure>
-                                            <img
-                                            src={smallImages[4]}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            />
-                                            <div className="box-content">
-                                                 
-                                                <ul className="icon">
-                                                    <li>
-                                                        <span 
-                                                            href= "ll"
-                                                            onClick={() => this.setState({ photoIndex: 4, isOpen: true })}
-                                                            className="popup-btn">
-                                                            <Icofont icon="icofont-search-2"/>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </figure>
-                                    </div>
-                                </div>
-
-                                <div className="col-md-6 col-lg-4">
-                                    <div className="work-details">
-                                        <figure>
-                                            <img
-                                            src={smallImages[5]}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            />
-                                            <div className="box-content">
-                                                 
-                                                <ul className="icon">
-                                                    <li>
-                                                        <span 
-                                                            href= "ll"
-                                                            onClick={() => this.setState({ photoIndex: 5, isOpen: true })}
-                                                            className="popup-btn">
-                                                            <Icofont icon="icofont-search-2"/>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </figure>
-                                    </div>
-                                </div>
                             </MDBRow>
                         </div>
                         {isOpen && (
