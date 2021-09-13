@@ -1,6 +1,6 @@
 import React from "react";
 
-function SingleProject({ title, description, email, phone, website }) {
+function SingleProject({ title, description,link }) {
   return (
     <div className="Project row">
       <div className="col-md-4">
@@ -9,9 +9,8 @@ function SingleProject({ title, description, email, phone, website }) {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
-            <p className="card-text">{email}</p>
-            <p className="card-text">{phone}</p>
-            <p className="card-text">{website}</p>
+            <p className="card-text">{link}</p>
+          
           </div>
         </div>
       </div>

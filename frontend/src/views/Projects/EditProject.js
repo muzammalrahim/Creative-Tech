@@ -9,9 +9,7 @@ const EditProject = () => {
   const [portfolio, setPortfolio] = useState({
     title: "",
     description: "",
-    ref1: "",
-    ref2: "",
-    ref3: "",
+    link,
   });
   const [loading, isLoading] = useState(false);
 
@@ -42,7 +40,7 @@ const EditProject = () => {
       })
       .catch(() => {});
   };
-  const { title, description, ref1, ref2, ref3 } = portfolio;
+  const { title, description, link } = portfolio;
   return loading ? (
     "loading..."
   ) : (
@@ -70,33 +68,14 @@ const EditProject = () => {
               onChange={(e) => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your E-mail Address"
-              name="ref1"
-              value={ref1}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Phone Number"
-              name="ref2"
-              value={ref2}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
+          
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter Your Website Name"
-              name="ref3"
-              value={ref3}
+              name="link"
+              value={link}
               onChange={(e) => onInputChange(e)}
             />
           </div>

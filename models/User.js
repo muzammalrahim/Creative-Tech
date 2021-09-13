@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   title: String,
-  images: Array,
-  ref1: String,
-  ref2: String,
-  ref3: String,
+  
   description: String,
+  link:String,
+  image: String,
+ 
 });
 
 module.exports = mongoose.model("user", UserSchema);

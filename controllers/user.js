@@ -9,15 +9,14 @@ const UserModel = require("../models/User");
 
 const saveUser = async (req, res) => {
   try {
-    const { title, description, ref1, ref2, ref3, image } = req.body;
+    const { title, description,link, image } = req.body;
 
     await new UserModel({
       title,
-      image,
+      
       description,
-      ref1,
-      ref2,
-      ref3,
+      link,
+      image,
     }).save();
 
     return res.json({
@@ -89,7 +88,7 @@ const deleteUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { title, description, ref1, ref2, ref3 } = req.body;
+    const { title, description, link } = req.body;
     const { id } = req.params;
 
     const updatedUser = await UserModel.findByIdAndUpdate(
@@ -97,9 +96,7 @@ const updateUser = async (req, res) => {
       {
         title,
         description,
-        ref1,
-        ref2,
-        ref3,
+       link
       },
       {
         new: true,

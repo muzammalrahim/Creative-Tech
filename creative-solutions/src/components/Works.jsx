@@ -5,6 +5,8 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { MDBContainer, MDBRow } from "mdbreact";
 import Lightbox from "react-image-lightbox";
 
+import { Link } from 'react-router-dom';
+
 
 const images = [
     require("../assets/img/work-1.jpg"),
@@ -84,28 +86,16 @@ class Works extends Component {
                                 </div>
 
                                 <div className="col-md-6 col-lg-4">
-                                    <div className="work-details">
-                                        <figure>
-                                            <img
-                                            src={smallImages[1]}
-                                            alt="Gallery"
-                                            className="img-fluid"
-                                            />
-                                            <div className="box-content">
-                                                 
-                                                <ul className="icon">
-                                                    <li>
-                                                        <span 
-                                                            href= "ll"
-                                                            onClick={() => this.setState({ photoIndex: 1, isOpen: true })}
-                                                            className="popup-btn">
-                                                            <Icofont icon="icofont-search-2"/>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </figure>
-                                    </div>
+                                <div className="team-box" >
+            <img src={smallImages[1]} alt="Description" />
+            <div className="box-content">
+                <div className="box-inner-content">
+                    <h3 className="title"> Title:Project Title</h3>
+                    <span className="post"> Description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere unde laudantium, magnam esse ex quo exercitationem vel eaque, incidunt nesciunt aliquam, accusantium ratione porro! Sapiente similique cupiditate laudantium minus atque. </span>
+                   <span>LINK:</span> <a href="https://www.google.com/">website link</a>
+                </div>
+            </div>
+        </div>
                                 </div>
 
                                 <div className="col-md-6 col-lg-4">

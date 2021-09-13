@@ -11,42 +11,24 @@ export default function AddProject() {
   const [user, setUser] = useState({
     title: "",
     description: "",
-    ref1: "",
-    ref2: "",
-    ref3: "",
-    image: "",
+    link:""
   });
 
-  const { title, description, ref1, ref2, ref3 } = user;
+  const { title, description, link } = user;
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-  const deleteimage = (name) => {
-    const imgdta = imagess.filter((data) => data.name !== name);
-    setImagess(imgdta);
-  };
-  const getImages = (images) => {
-    // console.log("images passed:", images);
-    const imageddata = [...imagess];
-    images.map((data) => {
-      imageddata.push({ url: URL.createObjectURL(data), name: data.name });
-      // console.log(data);
-    });
-    setImagess(imageddata);
-  };
-  // useEffect(() => {
-  //   posting();
-  // }, []);
-
-  const posting = () => {
-    post("user/save-user", user)
-      .then((res) => {
-        var data = res.data.data;
-        setUser(data);
-      })
-      .catch(() => {});
-    history.push("/projects");
-  };
+ 
+ 
+  // const posting = () => {
+  //   post("user/save-user", user)
+  //     .then((res) => {
+  //       var data = res.data.data;
+  //       setUser(data);
+  //     })
+  //     .catch(() => {});
+  //   history.push("/projects");
+  // };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +43,7 @@ export default function AddProject() {
     history.replace("/projects");
     // const imagenames = imagess.map((data) => "/images/" + data.name);
     // console.log({ imagenames });
-    posting();
+    // posting();
   };
 
   return (
@@ -89,33 +71,15 @@ export default function AddProject() {
               onChange={(e) => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your ref1"
-              name="ref1"
-              value={ref1}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your ref2"
-              name="ref2"
-              value={ref2}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
+        
+        
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter Your Website ref3"
-              name="ref3"
-              value={ref3}
+              name="link"
+              value={link}
               onChange={(e) => onInputChange(e)}
             />
           </div>

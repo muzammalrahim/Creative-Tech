@@ -6,9 +6,7 @@ const ViewProject = () => {
   const [user, setUser] = useState({
     title: "",
     description: "",
-    ref1: "",
-    ref2: "",
-    ref3: ""
+    link
   });
   const { id } = useParams();
   useEffect(() => {
@@ -36,9 +34,7 @@ const ViewProject = () => {
       <ul className="list-group w-50">
         <li className="list-group-item">name: {user.title}</li>
         <li className="list-group-item">user name: {user.description}</li>
-        <li className="list-group-item">email: {user.ref1}</li>
-        <li className="list-group-item">phone: {user.ref2}</li>
-        <li className="list-group-item">website: {user.ref3}</li>
+        <li className="list-group-item">Website: {user.link}</li>
       </ul>
     </div>
   );
