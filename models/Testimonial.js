@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const TestimonialSchema = new mongoose.Schema({
  description: String,
  name:String,
- designition:String
+ designition:String,
+ image:String,
 });
 
 module.exports = mongoose.model("testimonial", TestimonialSchema);

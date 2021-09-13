@@ -35,16 +35,16 @@ const Services = () => {
     <div classNameName="container">
       <div classNameName="py-4">
         <h1>Service Page</h1>
-        <table classNameName="table border shadow">
-          <thead classNameName="thead-dark">
+        {/* <table classNameName="table border shadow"> */}
+          {/* <thead classNameName="thead-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Title</th>
               <th scope="col">Desciption</th>
               <th>Action</th>
             </tr>
-          </thead>
-          <tbody>
+          </thead> */}
+  
             
             {portfolios?.map((portfolio, index) => (
               <tr key={index}>
@@ -68,11 +68,14 @@ const Services = () => {
                 </td>
               </tr>
             ))}
-          </tbody>
-        </table>
+       
+        {/* </table> */}
       </div>
     </div>
     </div>
+
+
+
   );
 };
 

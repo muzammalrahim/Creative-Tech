@@ -11,6 +11,7 @@ class Testimonials extends Component {
     }
     componentDidMount(){
         axios.get(api_url+"testimonial/testimonials").then((res)=>{
+            console.log("response data", res.data)
             this.setState({
                     testimonials:res.data.data
             })
@@ -27,7 +28,7 @@ class Testimonials extends Component {
             <p>{testimonial?.description}</p>
 
             <div className="client-profile">
-                <img src={testimonial.clientImage} alt="client-one" />
+                <img src={testimonial.image} alt="client-one" />
             </div>
             
             <div className="client-info">

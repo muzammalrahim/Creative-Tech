@@ -9,7 +9,7 @@ export default class MultipleImageUploadComponent extends Component {
         previewImages: [],
         progressInfos: [],
         message: [],
-          imagesName:[],
+        imagesName:[],
         imageInfos: [],
       }
       this.selectFiles = this.selectFiles.bind(this);
@@ -125,8 +125,6 @@ export default class MultipleImageUploadComponent extends Component {
                   </div>
                 </div>
               );
-          
-  
     }
 }
 

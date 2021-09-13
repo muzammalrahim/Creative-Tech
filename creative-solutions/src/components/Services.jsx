@@ -8,7 +8,7 @@ class Services extends Component {
     constructor(props) {
         super(props);
         this.state={
-            services:[],
+            services:[""],
         }
     }
 
@@ -31,7 +31,8 @@ class Services extends Component {
             <div className="service-item">
                 <div className="glyph">
                     {/* <Icofont icon={service?.image} /> */}
-                    <img src={service?.image} alt="" />
+                    
+                    <img src={service?.image} alt="" width="100" height="100" />
                 </div>
                 <h3>{service?.title}</h3>
                 <p>{service?.description}</p>

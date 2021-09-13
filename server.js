@@ -17,7 +17,6 @@ const teamRouter = require("./routes/team.rout");
 const faqRouter = require("./routes/faq");
 db();
 // app.use(cors())
-
 // // for parsing application/json
 // app.use(bodyParser.json({ extended: true }));
 // // for parsing application/xwww-

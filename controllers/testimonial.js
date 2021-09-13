@@ -2,13 +2,13 @@ const TestimonialModel = require("../models/Testimonial");
 
 const saveTestimonial = async (req, res) => {
   try {
-    const {  description , name , designition} = req.body;
+    const {  description , name , designition, image} = req.body;
 
     await new TestimonialModel({
-      
       description,
       name,
-      designition
+      designition,
+      image
     }).save();
 
     return res.json({

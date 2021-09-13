@@ -1,19 +1,15 @@
 const ServiceModel = require("../models/Services");
-const fs = require('fs')
-const path = require('path')
+
+
 
 const saveService = async (req, res) => {
-  console.log("service image checking", req.body)
   try {
-    const { title, description, image } = req.body;
 
-    await new ServiceModel({
-      title,
-      description,
-      image:{
-        data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-        contentType: 'image/png'
-    }
+    
+    const {  title , description, image} = req.body;
+
+    await new ServiceModel({         
+      title,description,image
     }).save();
 
     return res.json({
@@ -84,7 +80,7 @@ const deleteService = async (req, res) => {
 
 const updateService = async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description  } = req.body;
     const { id } = req.params;
 
     const updatedService = await ServiceModel.findByIdAndUpdate(

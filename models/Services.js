@@ -2,11 +2,8 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   title: String,
-  image:{
-    data:Buffer,
-    contentType:String
-  },
   description: String,
+  image:String
 });
 
 module.exports = mongoose.model("service", UserSchema);
