@@ -32,11 +32,11 @@ const Testimonials = () => {
   return (
     <div>
       <Navbar/>
-    <div classNameName="container">
-      <div classNameName="py-4">
+    <div className="container">
+      <div className="py-4">
         <h1>Testimonial Page</h1>
-        <table classNameName="table border shadow">
-          <thead classNameName="thead-dark">
+        <table className="table border shadow">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Desciption</th>

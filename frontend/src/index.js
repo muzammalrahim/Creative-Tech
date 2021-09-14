@@ -57,7 +57,7 @@ ReactDOM.render(
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
       <Route exact path="/projects" component={Projects} />
-          <Route exact path="/add-project" component={AddProject} />
+          <Route exact path="/admin/add-project" component={AddProject} />
           <Route exact path="/edit-project/:id" component={EditProject} />
           <Route exact path="/view-project/:id" component={ViewProject} />
 

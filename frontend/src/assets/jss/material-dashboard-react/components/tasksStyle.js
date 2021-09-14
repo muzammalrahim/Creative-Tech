@@ -2,6 +2,7 @@ import {
   defaultFont,
   primaryColor,
   dangerColor,
+  infoColor,
   grayColor,
 } from "assets/jss/material-dashboard-react.js";
 import tooltipStyle from "assets/jss/material-dashboard-react/tooltipStyle.js";
@@ -46,6 +47,11 @@ const tasksStyle = {
   edit: {
     backgroundColor: "transparent",
     color: primaryColor[0],
+    boxShadow: "none",
+  },
+  view: {
+    backgroundColor: "transparent",
+    color: infoColor[0],
     boxShadow: "none",
   },
   close: {

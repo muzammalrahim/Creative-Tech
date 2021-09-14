@@ -32,11 +32,20 @@ const Services = () => {
   return (
     <div>
       <Navbar/>
-    <div classNameName="container">
-      <div classNameName="py-4">
+    <div className="container">
+      <div className="py-4">
         <h1>Service Page</h1>
        
-  
+        <table className="table border shadow">
+          <thead className="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Designation</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
             
             {portfolios?.map((portfolio, index) => (
               <tr key={index}>
@@ -60,8 +69,8 @@ const Services = () => {
                 </td>
               </tr>
             ))}
-       
-        {/* </table> */}
+         </tbody>
+        </table>
       </div>
     </div>
     </div>

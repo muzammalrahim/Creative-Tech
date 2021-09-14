@@ -59,7 +59,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Projects,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/services",
@@ -67,7 +67,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Services,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/faq",
@@ -75,7 +75,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Faq,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/testimonials",
@@ -83,7 +83,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Testimonials,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/team",
@@ -91,7 +91,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Team,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/user",
@@ -125,14 +125,14 @@ const dashboardRoutes = [
   //   component: Icons,
   //   layout: "/admin",
   // },
-//   {
-//     path: "/maps",
-//     name: "Maps",
-//     rtlName: "خرائط",
-//     icon: LocationOn,
-//     component: Maps,
-//     layout: "/admin",
-// }, 
+  //   {
+  //     path: "/maps",
+  //     name: "Maps",
+  //     rtlName: "خرائط",
+  //     icon: LocationOn,
+  //     component: Maps,
+  //     layout: "/admin",
+  // },
   // {
   //   path: "/notifications",
   //   name: "Notifications",
