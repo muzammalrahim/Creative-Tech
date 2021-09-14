@@ -677,6 +677,7 @@ Services Area CSS
     margin-top: 30px;
     transition: .5s;
     -webkit-transition: .5s;
+   height: 470px;
 }
 .service-item:hover {
 	background-color: #fff;
