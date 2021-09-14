@@ -8,7 +8,7 @@ const app = express();
 const cors = require("cors");
 
 // var bodyParser = require("body-parser");
-const PORT = 3001;
+const PORT = 6501;
 const db = require("./config/db");
 const userRouter = require("./routes/user");
 const serviceRouter = require("./routes/service");

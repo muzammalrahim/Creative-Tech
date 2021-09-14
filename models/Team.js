@@ -4,7 +4,7 @@ const TeamSchema = new mongoose.Schema({
     name: String,
     designation: String,
     linkedin: String,
-    imag: String
+    image: String
 })
 
 module.exports = mongoose.model("team", TeamSchema)

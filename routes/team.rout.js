@@ -1,7 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const multer = require('multer')
-const upload = multer({dest: 'uploads/'})
 
 const {AddTeam,
     getTeamMemberById,
@@ -11,7 +9,7 @@ const {AddTeam,
 
 router.get("/teams", getTeam)
 router.get("/detailmember/:id", getTeamMemberById)
-router.post("/addteam", upload.single('teamImage'), AddTeam)
+router.post("/addteam",AddTeam)
 router.delete("/deletemember/:id", deleteTeamMember)
 router.put("/updatemember/:id", updateTeamMember)
 

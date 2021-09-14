@@ -12,32 +12,36 @@ class Team extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            teams: []
+            teams: [""]
         }
     }
 
     componentDidMount() {
-        axios.get(api_url+"team/teams").then(res => {
+        axios.get(api_url + 'team/teams').then(res => {
             this.setState({teams:res.data.data})
+            console.log("data" , res.data.data)
         }).catch(err => {
-            console.log(err)
+            console.log("error occured", err)
         })
     }
 
+
   render() {
+
     //Team loop start
     console.log("team state data", this.state.teams)
-    const teamdata = this.props.teamsData.map((team, index) => (
+    const teamdata =this.state.teams.map((team, index) => (
         <div className="team-box" key={index}>
-            <img src={team.Image} alt="Description" />
+            <img src={team.image} alt="Description" />
             <div className="box-content">
                 <div className="box-inner-content">
-                    <h3 className="title">{team?.Name}</h3>
-                    <span className="post">{team?.Profession}</span>
+                    <h3 className="title">{team?.name}</h3>
+                    <span className="post">{team?.designation}</span>
                     <ul className="icon">
-                        <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li>
-                        <li><Link to={team?.linkedinLink}><Icofont icon="icofont-linkedin" /></Link></li>
-                        <li><Link to={team.twitterLink}><Icofont icon="icofont-twitter" /></Link></li>
+                        {/* <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li> */}
+                        <li><a to={team?.linkedin}><Icofont icon="icofont-linkedin" /></a></li>
+
+                        {/* <li><Link to={team.twitterLink}><Icofont icon="icofont-twitter" /></Link></li> */}
                     </ul>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const Team = () => {
 
 
   const loadPortfolio =() => {
-     get("team/team")
+     get("team/teams")
     .then((res) => {
       var data = res.data?.data
       console.log("oops",data)
