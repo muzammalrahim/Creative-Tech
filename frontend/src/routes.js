@@ -59,7 +59,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Projects,
-    layout: "/admin",
+    layout: "",
   },
   {
     path: "/services",
