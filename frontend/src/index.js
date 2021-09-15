@@ -59,12 +59,12 @@ ReactDOM.render(
       <Route exact path="/projects" component={Projects} />
           <Route exact path="/add-project" component={AddProject} />
           <Route exact path="/edit-project/:id" component={EditProject} />
-          <Route exact path="/view-project/:id" component={ViewProject} />
+          <Route exact path="/admin/view-project/:id" component={ViewProject} />
 
           <Route exact path="/services" component={Services} />
           <Route exact path="/add-service" component={AddService} />
           <Route exact path="/edit-service/:id" component={EditService} />
-          <Route exact path="/view-service/:id" component={ViewService} />
+          <Route exact path="/admin/view-service/:id" component={ViewService} />
 
           <Route exact path="/testimonials" component={Testimonials} />
           <Route exact path="/add-testimonial" component={AddTestimonial} />
@@ -76,10 +76,10 @@ ReactDOM.render(
           <Route exact path="/updatemember/:id" component={EditTeam} />
           <Route exact path="/detailmember/:id" component={ViewTeam} />
 
-          <Route exact path="/faq" component={Faq} />
+          {/* <Route exact path="/faq" component={Faq} />
           <Route exact path="/add-faq" component={AddFaq} />
           <Route exact path="/edit-faq/:id" component={EditFaq} />
-          <Route exact path="/view-faq/:id" component={ViewFaq} />
+          <Route exact path="/view-faq/:id" component={ViewFaq} /> */}
 
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
