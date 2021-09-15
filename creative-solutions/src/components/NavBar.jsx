@@ -180,7 +180,7 @@ class NavBar extends Component {
                                     </Link>
                                 </Nav.Item>
 
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <Link
                                         activeclass="active"
                                         to="blog"
@@ -193,7 +193,7 @@ class NavBar extends Component {
                                     >
                                         Blog
                                     </Link>
-                                </Nav.Item>
+                                </Nav.Item> */}
 
                                 <Nav.Item>
                                     <Link

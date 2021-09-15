@@ -8,8 +8,7 @@ import WelcomeServices from "../components/WelcomeServices";
 import Works from "../components/Works";
 import About from "../components/About";
 import Team from "../components/Team";
-import Blog from "../components/Blog";
-import VideoArea from "../components/VideoArea";
+// import VideoArea from "../components/VideoArea";
 import Pricing from "../components/Pricing";
 import FunFacts from "../components/FunFacts";
 import Testimonials from "../components/Testimonials";
@@ -25,11 +24,11 @@ class HomeOne extends Component {
             {/* NavBar: src/components/NavBar.jsx */}
             <NavBar pageName="home" />
             {/* BannerOne: src/components/banner/BannerOne */}
-            <BannerOne />
+            <BannerOne  />
             {/* Services: src/components/Services.jsx */}
             <Services />
             {/* WelcomeServices: src/components/WelcomeServices.jsx */}
-            <WelcomeServices />
+            {/* <WelcomeServices /> */}
             {/* Works: src/components/Works.jsx */}
             <Works />
             {/* About: src/components/About.jsx */}
@@ -37,9 +36,9 @@ class HomeOne extends Component {
             {/* Team: src/components/Team.jsx */}
             <Team />
             {/* Blog: src/components/Blog.jsx */}
-            <Blog />
+           
             {/* VideoArea: src/components/VideoArea.jsx */}
-            <VideoArea />
+            {/* <VideoArea /> */}
             {/* Pricing: src/components/Pricing.jsx */}
             <Pricing />
             {/* FunFacts: src/components/FunFacts.jsx */}

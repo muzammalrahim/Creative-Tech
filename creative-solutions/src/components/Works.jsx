@@ -52,19 +52,62 @@ class Works extends Component {
         const { photoIndex, isOpen } = this.state;
 
             const workData = this.state.work.map((w,i)=>(
-                <div className="col-md-6 col-lg-4" key={i}>
-                <div className="team-box" >
-                <img src={w.image} alt="Description" />
-                <div className="box-content">
-                <div className="box-inner-content">
-                <h3 className="title"> {w.title}</h3>
-                 <span className="post"> {w.description} </span>
-                  <a href={w.link}>LINK</a>
-            </div>
-        </div>
-    </div>
- </div>
+//                 <div className="col-md-6 col-lg-4" key={i}>
+//                     <a href={w.link}> 
+//                     <div className="team-box" >
+//                 <img src={w.image} alt="Description" />
+//                 <div className="box-content">
+//                 <div className="box-inner-content">
+//                 <h1 className="title">  {w.title}</h1>
+//                  <span className="post"> {w.description} </span>
+//                   {/* <a href={w.link}>{w.title}</a> */}
+//             </div>
+//         </div>
+//     </div>
+//     </a>
+//  </div>
+  
+ <div className="col-md-6 col-lg-4">
+       
+<div className="work-details">
+<figure>
+
+   <img
+   src={w.image}
+   alt="Gallery"
+   className="img-fluid"
+   />
+
+   <div className="box-content">
+   
+        
+       <ul className="icon">
+           <li>
+               <span 
+                   href= "ll"
+                   onClick={() => this.setState({ photoIndex: i, isOpen: true })}
+                   className="popup-btn">
+                   <Icofont icon="icofont-search-2"/>
+               </span>
+           </li>
+           <a href={w.link}> 
+           <li>
+               <span 
+                   href= "ll"
+                   
+                   className="popup-btn">
+                   <Icofont icon="icofont-link"/>
+               </span>
+           </li>
+           </a>
+       </ul>
+   </div>
+</figure>
+</div>
+
+</div> 
             ))
+          
 
 
         return (
@@ -100,19 +143,19 @@ class Works extends Component {
                         </div>
                         {isOpen && (
                         <Lightbox
-                            mainSrc={images[photoIndex]}
-                            nextSrc={images[(photoIndex + 1) % images.length]}
-                            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                            imageTitle={photoIndex + 1 + "/" + images.length}
+                            mainSrc={this.state.work[photoIndex].image}
+                            nextSrc={this.state.work[(photoIndex + 1) % this.state.work.length].image}
+                            prevSrc={this.state.work[(photoIndex + this.state.work.length - 1) % this.state.work.length].image}
+                            imageTitle={photoIndex + 1 + "/" + this.state.work.length}
                             onCloseRequest={() => this.setState({ isOpen: false })}
                             onMovePrevRequest={() =>
                             this.setState({
-                                photoIndex: (photoIndex + images.length - 1) % images.length
+                                photoIndex: (photoIndex + this.state.work.length - 1) % this.state.work.length
                             })
                             }
                             onMoveNextRequest={() =>
                             this.setState({
-                                photoIndex: (photoIndex + 1) % images.length
+                                photoIndex: (photoIndex + 1) % this.state.work.length
                             })
                             }
                         />
@@ -135,7 +178,7 @@ Works.defaultProps = {
     SectionbgTitle: "works",
     sectionTitle: "works",
     sectionDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+        "Our work comprises of Joomla, WordPress and e commerce platform projects.",
 };
 
 export default Works;

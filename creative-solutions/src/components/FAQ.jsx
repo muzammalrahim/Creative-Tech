@@ -106,7 +106,7 @@ FAQ.defaultProps = {
     SectionbgTitle: "FAQ",
     sectionTitle: "Frequntly Ask & Questions",
     sectionDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+        "Based on over ten years of experience and questions we receive from our clients, we wrote down a list of Frequently Asked Questions (FAQ). We hope that it will help you better understand the issues related to software development. For your convenience, we have divided the questions into three categories: process, costs and experience.",
     
     ContentTitle: "One More Question?",
     ContentDescription: "If you have more questions, send us a message and we will answer you as soon as possible.",

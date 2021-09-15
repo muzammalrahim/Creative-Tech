@@ -1,5 +1,5 @@
 {
-  "name": "http://stagings.tk:6501",
+  "name": "admin_panel",
   "version": "1.0.0",
   "description": "Office site",
   "private": true,

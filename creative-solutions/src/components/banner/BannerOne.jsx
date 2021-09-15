@@ -28,7 +28,7 @@ class BannerOne extends Component {
                                                 {bannerone.TopTitle}
                                             </span>
 
-                                            <h1
+                                            <h1 style={{color:"#FE5619"}}
                                                 className={
                                                     isVisible
                                                         ? "animated fadeInDown slow opacityOne"
@@ -37,7 +37,7 @@ class BannerOne extends Component {
                                             >
                                                 {bannerone.Title}
                                             </h1>
-                                            <p
+                                            <p style={{color:"gray"}}
                                                 className={
                                                     isVisible
                                                         ? "animated fadeInDown slow opacityOne"

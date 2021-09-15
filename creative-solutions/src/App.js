@@ -18,9 +18,6 @@ import "./assets/css/color/color-default.css"
 import HomeOne from "./pages/HomeOne";
 import HomeTwo from "./pages/HomeTwo";
 import HomeThree from "./pages/HomeThree";
-import BlogOne from "./pages/BlogOne";
-import BlogTwo from "./pages/BlogTwo";
-import SingleBlog from "./pages/SingleBlog";
 import ScrollUpBtn from "./components/ScrollUp";
 
 class App extends Component {
@@ -38,18 +35,18 @@ class App extends Component {
                                 >
                                     <section className="route-section">
                                         <Switch location={location}>
-                                            <Route
+                                            {/* <Route
                                                 path="/blog-details"
                                                 component={SingleBlog}
                                             />
                                             <Route
                                                 path="/blog-two"
                                                 component={BlogTwo}
-                                            />
-                                            <Route
+                                            /> */}
+                                            {/* <Route
                                                 path="/blog-one"
                                                 component={BlogOne}
-                                            />
+                                            /> */}
                                             <Route
                                                 path="/home-three"
                                                 component={HomeThree}

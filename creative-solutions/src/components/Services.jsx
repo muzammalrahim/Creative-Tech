@@ -79,7 +79,7 @@ Services.defaultProps = {
     SectionbgTitle: "Services",
     sectionTitle: "Services",
     sectionDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+        "our services include but not limited to React , Angular , Django , Nodejs , Laravel , Codeigniter , Wordpress, Joomla and Magento",
 
     servicesData: [
         {
