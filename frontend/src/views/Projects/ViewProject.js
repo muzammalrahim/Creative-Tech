@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import get from "../../helper/api"
 
-const ViewProject = () => {
+const ViewProject = (props) => {
   const [user, setUser] = useState({
     title: "",
     description: "",
-    link
+    link:''
   });
   const { id } = useParams();
   useEffect(() => {
@@ -23,6 +23,7 @@ const ViewProject = () => {
     .catch(() => {});
 
   };
+  console.log("route", props.match.params)
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/">

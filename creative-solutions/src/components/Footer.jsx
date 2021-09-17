@@ -42,7 +42,7 @@ Footer.propTypes = {
 
 //Default Props
 Footer.defaultProps = {
-    copyrightText: "2019 © All Rights Reserved.",
+    copyrightText: "2021 © All Rights Reserved.",
     socialTitle: "Follow Us On:",
     FacebookLink: "/#0",
     TwitterLink: "/#0",

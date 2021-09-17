@@ -9,7 +9,7 @@ const EditProject = () => {
   const [portfolio, setPortfolio] = useState({
     title: "",
     description: "",
-    link,
+    link:"",
   });
   const [loading, isLoading] = useState(false);
 

@@ -19,11 +19,158 @@ import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
 import bgImage from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
+
+import ViewProject from "../views/Projects/ViewProject";
+import EditProject from "../views/Projects/EditProject";
+import AddProject from "../views/Projects/AddProject";
+
+import ViewService from "../views/Services/ViewService";
+import EditService from "../views/Services/EditService";
+import AddService from "../views/Services/AddService";
+
+import ViewFaq from "../views/Faq/ViewFaq";
+import EditFaq from "../views/Faq/EditFaq";
+import AddFaq from "../views/Faq/AddFaq";
+
+import ViewTestimonial from "../views/Testimonials/ViewTestimonial";
+import EditTestimonial from "../views/Testimonials/EditTestimonial";
+import AddTestimonial from "../views/Testimonials/AddTestimonial";
+
+import ViewTeam from "../views/Team/ViewTeam";
+import EditTeam from "../views/Team/EditTeam";
+import AddTeam from "../views/Team/AddTeam";
+
+
 let ps;
 
+const extraRoute = [
+  {
+    path: "/add-project",
+    name: "Add Project",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: AddProject,
+    layout: "/admin",
+  },
+  {
+    path: "/view-project/:id",
+    name: "view Project",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewProject,
+    layout: "/admin",
+  },
+  {
+    path: "/edit-project/:id",
+    name: "Edit Project",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditProject,
+    layout: "/admin",
+  },
+  {
+    path: "/add-service",
+    name: "Add Service",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: AddService,
+    layout: "/admin",
+  },
+  {
+    path: "/view-service/:id",
+    name: "view Service",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewService,
+    layout: "/admin",
+  },
+  {
+    path: "/edit-service/:id",
+    name: "Edit Service",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditService,
+    layout: "/admin",
+  },
+  {
+    path: "/add-faq",
+    name: "Add faq",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: AddFaq,
+    layout: "/admin",
+  },
+  {
+    path: "/view-faq/:id",
+    name: "view faq",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewFaq,
+    layout: "/admin",
+  },
+  {
+    path: "/edit-faq/:id",
+    name: "Edit faq",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditFaq,
+    layout: "/admin",
+  },
+  {
+    path: "/add-testimonial",
+    name: "Add Testimonial",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: AddTestimonial,
+    layout: "/admin",
+  },
+  {
+    path: "/view-testimonial/:id",
+    name: "view Testimonial",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewTestimonial,
+    layout: "/admin",
+  },
+  {
+    path: "/edit-testimonial/:id",
+    name: "Edit Testimonial",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditTestimonial,
+    layout: "/admin",
+  },
+  {
+    path: "/add-team",
+    name: "Add Team",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: AddTeam,
+    layout: "/admin",
+  },
+  {
+    path: "/detailmember/:id",
+    name: "view Team",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewTeam,
+    layout: "/admin",
+  },
+  {
+    path: "/updatemember/:id",
+    name: "Edit Team",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditTeam,
+    layout: "/admin",
+  },
+];
+
+const totalRoute = routes.concat(extraRoute)
+ console.log("total route", routes.concat(extraRoute));
 const switchRoutes = (
   <Switch>
-    {routes.map((prop, key) => {
+    {totalRoute.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
           <Route

@@ -31,13 +31,12 @@ const ViewTeam = () => {
       </Link>
       <h1 className="display-4">Team Id: {id}</h1>
       <hr />
-      {console.log("sda",service)}
       <ul className="list-group w-50">
-        <li className="list-group-item">Name: {Team.name}</li>
-        <li className="list-group-item">Designation: {Team.designation}</li>
-        
-        <li className="list-group-item">LinkedIn: {Team.linkedin}</li>
-              </ul>
+        <li className="list-group-item">Name: {team.name}</li>
+        <li className="list-group-item">Designation: {team.designation}</li>
+
+        <li className="list-group-item">LinkedIn: {team.linkedin}</li>
+      </ul>
     </div>
   );
 };

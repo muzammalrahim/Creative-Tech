@@ -59,7 +59,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Projects,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/services",
@@ -67,7 +67,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Services,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/faq",
@@ -75,7 +75,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Faq,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/testimonials",
@@ -83,7 +83,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Testimonials,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/team",
@@ -91,7 +91,7 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Team,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/user",
@@ -99,7 +99,7 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
-    layout: "",
+    layout: "/admin",
   },
   {
     path: "/table",
@@ -107,56 +107,9 @@ const dashboardRoutes = [
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
-    layout: "",
+    layout: "/admin",
   },
-  // {
-  //   path: "/typography",
-  //   name: "Typography",
-  //   rtlName: "طباعة",
-  //   icon: LibraryBooks,
-  //   component: Typography,
-  //   layout: "/admin",
-  // },
-  // {
-  //   path: "/icons",
-  //   name: "Icons",
-  //   rtlName: "الرموز",
-  //   icon: BubbleChart,
-  //   component: Icons,
-  //   layout: "/admin",
-  // },
-  //   {
-  //     path: "/maps",
-  //     name: "Maps",
-  //     rtlName: "خرائط",
-  //     icon: LocationOn,
-  //     component: Maps,
-  //     layout: "/admin",
-  // },
-  // {
-  //   path: "/notifications",
-  //   name: "Notifications",
-  //   rtlName: "إخطارات",
-  //   icon: Notifications,
-  //   component: NotificationsPage,
-  //   layout: "/admin",
-  // },
-  // {
-  //   path: "/rtl-page",
-  //   name: "RTL Support",
-  //   rtlName: "پشتیبانی از راست به چپ",
-  //   icon: Language,
-  //   component: RTLPage,
-  //   layout: "/rtl",
-  // },
-  // {
-  //   path: "/upgrade-to-pro",
-  //   name: "Upgrade To PRO",
-  //   rtlName: "التطور للاحترافية",
-  //   icon: Unarchive,
-  //   component: UpgradeToPro,
-  //   layout: "/admin",
-  // },
+  
 ];
 
 export default dashboardRoutes;

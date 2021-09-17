@@ -46,7 +46,7 @@ const getFaq = async (req, res) => {
 
     return res.json({
       data: faq,
-      documents: faq.length,
+      total: faq.length,
       success: true,
     });
   } catch (error) {

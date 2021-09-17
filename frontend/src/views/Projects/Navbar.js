@@ -29,7 +29,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <Link className="btn btn-outline-light" to="/add-project">Add project</Link>
+        <Link className="btn btn-outline-light" to="/admin/add-project">Add project</Link>
       </div>
     </nav>
   );

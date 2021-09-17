@@ -52,21 +52,6 @@ class Works extends Component {
         const { photoIndex, isOpen } = this.state;
 
             const workData = this.state.work.map((w,i)=>(
-//                 <div className="col-md-6 col-lg-4" key={i}>
-//                     <a href={w.link}> 
-//                     <div className="team-box" >
-//                 <img src={w.image} alt="Description" />
-//                 <div className="box-content">
-//                 <div className="box-inner-content">
-//                 <h1 className="title">  {w.title}</h1>
-//                  <span className="post"> {w.description} </span>
-//                   {/* <a href={w.link}>{w.title}</a> */}
-//             </div>
-//         </div>
-//     </div>
-//     </a>
-//  </div>
-  
  <div className="col-md-6 col-lg-4">
        
 <div className="work-details">

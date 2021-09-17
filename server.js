@@ -15,6 +15,7 @@ const serviceRouter = require("./routes/service");
 const testimonialRouter = require("./routes/testimonial");
 const teamRouter = require("./routes/team.rout");
 const faqRouter = require("./routes/faq");
+const allEntities = require("./routes/totalEntities");
 db();
 // app.use(cors())
 // // for parsing application/json
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
   });
 });
 
+app.use("/", allEntities);
 app.use("/user", userRouter);
 app.use("/service" , serviceRouter);
 

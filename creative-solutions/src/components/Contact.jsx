@@ -222,14 +222,15 @@ Contact.propTypes = {
 
 //Default Props
 Contact.defaultProps = {
-    SectionbgTitle: "Contact",
-    sectionTitle: "Our Contact",
-    sectionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
-    AddTitle: "Address",
-    Address: "2750 Quadra Street Victoria, Canada.",
-    EmailTitle: "Email",
-    Email: "roxy@gmail.com",
-    PhoneTitle: "Phone",
-    Phone: "+1-325-555-0156",
+  SectionbgTitle: "Contact",
+  sectionTitle: "Our Contact",
+  sectionDescription:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+  AddTitle: "Address",
+  Address: "Street 21 Sector G13/3 Islamabad, Pakistan",
+  EmailTitle: "Email",
+  Email: "creative.joomdev@gmail.com",
+  PhoneTitle: "Phone",
+  Phone: "0512300537",
 };
 export default Contact;
