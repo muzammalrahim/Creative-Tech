@@ -40,6 +40,10 @@ import ViewTeam from "../views/Team/ViewTeam";
 import EditTeam from "../views/Team/EditTeam";
 import AddTeam from "../views/Team/AddTeam";
 
+import ViewBanner from "../views/Banners/ViewBanner";
+import EditBanner from "../views/Banners/EditBanner";
+import AddBanner from "../views/Banners/AddBanner";
+
 
 let ps;
 
@@ -53,19 +57,27 @@ const extraRoute = [
     layout: "/admin",
   },
   {
-    path: "/view-project/:id",
-    name: "view Project",
+    path: "/add-banner",
+    name: "Add Banner",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
-    component: ViewProject,
+    component: AddBanner,
     layout: "/admin",
   },
   {
-    path: "/edit-project/:id",
-    name: "Edit Project",
+    path: "/view-banner/:id",
+    name: "view Banner",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
-    component: EditProject,
+    component: ViewBanner,
+    layout: "/admin",
+  },
+  {
+    path: "/edit-banner/:id",
+    name: "Edit Banner",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditBanner,
     layout: "/admin",
   },
   {

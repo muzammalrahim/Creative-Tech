@@ -21,9 +21,12 @@ const Banners = () => {
   }, []);
 
   const deletePortfolio =(id) => {
-    del(`banner/remove-banner/${id}`);
-    setPortfolios([])
-      loadPortfolio([]);
+    del(`banner/remove-banner/${id}`).then((res) => {
+      console.log("delete res", res.data.response)
+      loadPortfolio();
+    }).catch(error => {
+      console.log(error)
+    });
   };
 
 
@@ -34,7 +37,9 @@ const Banners = () => {
       console.log("oops",data)
      setPortfolios(data);
     })
-    .catch(() => {});   
+       .catch((error) => {
+      console.log("banner page", error)
+    });   
   };
 
  
@@ -110,7 +115,7 @@ const Banners = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link onClick={(e) => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

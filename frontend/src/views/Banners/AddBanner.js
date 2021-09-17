@@ -56,6 +56,7 @@ export default function AddBanner () {
     .then((res) => {
       var data = res.data.data
       setBanner(data);
+      history.push("/admin/banners")
     })
     .catch(() => {});
     history.replace("/banners");

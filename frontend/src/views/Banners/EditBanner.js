@@ -24,7 +24,9 @@ const [loading,isLoading]=useState(false)
 
   const onSubmit = async e => {
     e.preventDefault();
-    put(`banner/update-banner/${id}`, portfolio);
+    put(`banner/update-banner/${id}`, portfolio).then(res => {
+      history.push("/admin/banners")
+    });
     loadPortfolio()
     history.push("/banners");
   };
