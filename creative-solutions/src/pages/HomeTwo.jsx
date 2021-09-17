@@ -43,7 +43,7 @@ class HomeTwo extends Component {
             {/* VideoArea: src/components/VideoArea.jsx */}
             {/* <VideoArea /> */}
             {/* Pricing: src/components/Pricing.jsx */}
-            <Pricing />
+            {/* <Pricing /> */}
             {/* FunFacts: src/components/FunFacts.jsx */}
             <FunFacts />
             {/* Testimonials: src/components/Testimonials.jsx */}

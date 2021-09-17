@@ -195,7 +195,7 @@ class NavBar extends Component {
                                     </Link>
                                 </Nav.Item> */}
 
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <Link
                                         activeclass="active"
                                         to="pricing"
@@ -208,7 +208,7 @@ class NavBar extends Component {
                                     >
                                         Pricing
                                     </Link>
-                                </Nav.Item>
+                                </Nav.Item> */}
 
                                 <Nav.Item>
                                     <Link
@@ -277,7 +277,7 @@ class NavBar extends Component {
                                     </NavLink>
                                 </Nav.Item>
 
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <NavLink
                                         to="/"
                                         className="nav-link"
@@ -285,9 +285,9 @@ class NavBar extends Component {
                                     >
                                         Blog
                                     </NavLink>
-                                </Nav.Item>
+                                </Nav.Item> */}
 
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <NavLink
                                         to="/"
                                         className="nav-link"
@@ -295,7 +295,7 @@ class NavBar extends Component {
                                     >
                                         Pricing
                                     </NavLink>
-                                </Nav.Item>
+                                </Nav.Item> */}
 
                                 <Nav.Item>
                                     <NavLink
@@ -336,7 +336,7 @@ NavBar.propTypes = {
 
 //Default Props
 NavBar.defaultProps = {
-    MainLogo: require('../assets/img/logo.png'),
+    MainLogo: require('../assets/img/logo.svg'),
     Logo2: require('../assets/img/logo2.png'),
     mailLink: "mailto:name@email.com",
     mail: "support@roxy.com ",
