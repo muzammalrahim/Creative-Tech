@@ -106,7 +106,7 @@ class Works extends Component {
                                         <h2>{this.props.sectionTitle}</h2>
                                         <p>{this.props.sectionDescription}</p>
                                         <span className="section-title-bg">
-                                            {this.props.SectionbgTitle}
+                                        {this.props.SectionbgTitle}
                                         </span>
                                     </div>
                                 </ScrollAnimation>
