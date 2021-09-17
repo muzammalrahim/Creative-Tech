@@ -376,6 +376,8 @@ button {
 }
 .navbar-brand img {
     cursor: pointer;
+    position: relative;
+    bottom: 10px;
 }
 .menu-shrink {
     box-shadow: 0 0 10px #ebebeb;

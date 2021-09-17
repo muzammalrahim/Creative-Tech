@@ -11,6 +11,8 @@ const cors = require("cors");
 const PORT = 6501;
 const db = require("./config/db");
 const userRouter = require("./routes/user");
+
+const bannerRouter = require("./routes/banner");
 const serviceRouter = require("./routes/service");
 const testimonialRouter = require("./routes/testimonial");
 const teamRouter = require("./routes/team.rout");
@@ -34,6 +36,8 @@ app.get("/", (req, res) => {
 
 app.use("/", allEntities);
 app.use("/user", userRouter);
+
+app.use("/banner", bannerRouter);
 app.use("/service" , serviceRouter);
 
 app.use("/testimonial" , testimonialRouter);

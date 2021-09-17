@@ -10,7 +10,7 @@
   label{
     align-items: center;
     padding: 12px;
-    background: red;
+    background: red; /* Red */
     display: table;
     color: #fff;
     /* margin-left: 700px; */

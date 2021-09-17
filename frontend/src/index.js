@@ -44,6 +44,11 @@ import ViewTeam from "./views/Team/ViewTeam";
 import EditTeam from "./views/Team/EditTeam";
 import AddTeam from "./views/Team/AddTeam";
 
+import Banner from "./views/Banners/Banners" 
+import ViewBanner from "./views/Banners/ViewBanner";
+import EditBanner from "./views/Banners/EditBanner";
+import AddBanner from "./views/Banners/AddBanner";
+
 import Faq from "./views/Faq/Faq" 
 import ViewFaq from "./views/Faq/ViewFaq";
 import EditFaq from "./views/Faq/EditFaq";
@@ -75,6 +80,11 @@ ReactDOM.render(
           <Route exact path="/add-team" component={AddTeam} />
           <Route exact path="/updatemember/:id" component={EditTeam} />
           <Route exact path="/detailmember/:id" component={ViewTeam} />
+
+          <Route exact path="/banners" component={Banner} />
+          <Route exact path="/add-banner" component={AddBanner} />
+          <Route exact path="/update-banner/:id" component={EditBanner} />
+          <Route exact path="/view-banner/:id" component={ViewBanner} />
 
           {/* <Route exact path="/faq" component={Faq} />
           <Route exact path="/add-faq" component={AddFaq} />
