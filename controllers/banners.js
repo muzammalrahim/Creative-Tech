@@ -78,14 +78,14 @@ const deleteBanner = async (req, res) => {
 
 const updateBanner = async (req, res) => {
   try {
-    const { title, description  } = req.body;
+    const { title, description  ,link,image} = req.body;
     const { id } = req.params;
 
     const updatedBanner = await BannerModel.findByIdAndUpdate(
       id,
       {
         title,
-        description
+        description,link,image
       },
       {
         new: true,

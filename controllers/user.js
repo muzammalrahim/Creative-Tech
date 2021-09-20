@@ -88,7 +88,7 @@ const deleteUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { title, description, link } = req.body;
+    const { title, description,} = req.body;
     const { id } = req.params;
 
     const updatedUser = await UserModel.findByIdAndUpdate(
@@ -96,7 +96,7 @@ const updateUser = async (req, res) => {
       {
         title,
         description,
-       link
+      
       },
       {
         new: true,

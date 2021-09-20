@@ -4,13 +4,30 @@ import Icofont from "react-icofont";
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 import VisibilitySensor from "react-visibility-sensor";
+import { api_url } from '../../helper/Api';
+import axios from 'axios'
 
 class BannerOne extends Component {
+
+    state={
+        banner:[""]
+    }
+    componentDidMount(){
+            axios.get(api_url+"banner/banners").then(res=>{
+                console.log("banner",res.data.data)
+                this.setState({banner:res.data.data})
+            }).catch(err => {
+                console.log("error occured", err)
+            })
+    }
+
+
+
     render() {
         //BannerOne loop start
-        const banneronedata = this.props.banneronesData.map(
+        const banneronedata = this.state.banner.map(
             (bannerone, index) => (
-                <div className={bannerone.BgClass} key={index}>
+                <div className="single-slider-item " key={index} style={{backgroundImage:`url(${bannerone.image})`}}   >
                     <div className="diplay-table">
                         <div className="display-table-cell">
                             <VisibilitySensor>
@@ -35,7 +52,7 @@ class BannerOne extends Component {
                                                         : "opacityZero"
                                                 }
                                             >
-                                                {bannerone.Title}
+                                                {bannerone?.title}
                                             </h1>
                                             <p style={{color:"gray"}}
                                                 className={
@@ -44,12 +61,12 @@ class BannerOne extends Component {
                                                         : "opacityZero"
                                                 }
                                             >
-                                                {bannerone.Content}
+                                                {bannerone.description}
                                             </p>
                                             <div className="center-wrap">
-                                                <Link to={bannerone.BtnLink} className="btn-a">
+                                                <Link to={bannerone.link} className="btn-a">
                                                     <div className="button">
-                                                        {bannerone.BtnName}
+                                                       get started
                                                         <Icofont icon="icofont-long-arrow-right" />
                                                     <div className="mask" /></div>
                                                 </Link>
@@ -67,14 +84,15 @@ class BannerOne extends Component {
         //BannerOne loop END
         
         //Thumbs loop Start
-        const thumbdata = this.props.thumbsData.map((thumb, index) => (
-            <div className="owl-thumb-item" key={index}>
-                <Icofont icon={thumb.ThumbIcon} />
-                <h3>{thumb.ThumbTitle}</h3>
-                <p>{thumb.ThumbContent}</p>
-            </div>
-            )
-        );
+        // const thumbdata = this.props.thumbsData.map((thumb, index) => (
+        //     <div className="owl-thumb-item" key={index}>
+        //         <Icofont icon={thumb.ThumbIcon} />
+        //         <h3>{thumb.ThumbTitle}</h3>
+        //         <p>{thumb.ThumbContent}</p>
+        //     </div>
+        //     )
+        // );
+        console.log("thumbs",this.state.banner)
         //Thumbs loop END
         return (
             <React.Fragment>
@@ -93,7 +111,18 @@ class BannerOne extends Component {
                     </OwlCarousel>
 
                     <div className="owl-thumbs">
-                        {thumbdata}
+                        {/* {thumbdata} */}
+                        {
+                            this.state.banner.map((thumb,index)=>{
+                                return (
+                                    <div className="owl-thumb-item" key={index}>
+                                         <Icofont icon="icofont-rocket-alt-1" />
+                                         <h3>{thumb.title}</h3>
+                                         <p>{thumb.description}</p>
+                                        </div>
+                                );
+                            })
+                        }
                     </div>
                 </div>
             </React.Fragment>
@@ -110,7 +139,7 @@ BannerOne.propTypes = {
 BannerOne.defaultProps = {
     banneronesData: [
         {
-            BgClass: "single-slider-item slide-bg-1",
+            BgClass: "single-slider-item ",
             // TopTitle: "Clean & Creative",
             Title: "Beautiful Designs",
             Content:
@@ -119,7 +148,7 @@ BannerOne.defaultProps = {
             BtnName: "get started"
         },
         {
-            BgClass: "single-slider-item slide-bg-2",
+            BgClass: "single-slider-item ",
             // TopTitle: "Clean & Creative",
             Title: "Unique Features",
             Content:
@@ -128,7 +157,7 @@ BannerOne.defaultProps = {
             BtnName: "get started"
         },
         {
-            BgClass: "single-slider-item slide-bg-3",
+            BgClass: "single-slider-item ",
             // TopTitle: "Clean & Creative",
             Title: "Reliable Support",
             Content:
