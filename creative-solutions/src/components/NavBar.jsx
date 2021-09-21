@@ -110,11 +110,11 @@ class NavBar extends Component {
             <Navbar.Brand className="navbar-brand logo-2">
               <React.Fragment>
                 <LinkContainer exact to="/">
-                  <img style={{position:"relative",bottom:"20px"}}
+                  <img style={{position:"relative",bottom:"30px"}}
                     className="img-fluid"
                     src={this.props.Logo2}
                     alt="Logo"
-                    width="66%"
+                    width="52%"
                   />
                 </LinkContainer>
               </React.Fragment>

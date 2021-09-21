@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get, { put } from "../../helper/api";
 
+import firebase from '../../firebase/firebase'
+
 const EditProject = () => {
   let history = useHistory();
   const { id } = useParams();

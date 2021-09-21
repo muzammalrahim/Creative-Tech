@@ -3,9 +3,13 @@ import {  useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
+import firebase from '../../firebase/firebase'
 const EditTeam = () => {
   let history = useHistory();
   const { id } = useParams();
+  const [imagess, setImagess] = useState([]);
+  const[progress , setProgress] = useState(0);
+  const[downloadURL , setDownloadURL] = useState(null)
   const [portfolio, setPortfolio] = useState({
     name: "",
     designation: "",
@@ -22,9 +26,37 @@ const [loading,isLoading]=useState(false)
     loadPortfolio();
   }, []);
 
+  const handleUpload = (e) => {
+    e.preventDefault()
+    let file = imagess;
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+    var uploadTask = storageRef.child('images/' + file.name).put(file);
+  
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) =>{
+        var progress = Math.round((snapshot.bytesTransferred/snapshot.totalBytes))*100
+        setProgress(progress)
+      },(error) =>{
+        throw error
+      },() =>{
+        // uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) =>{
+  
+        uploadTask.snapshot.ref.getDownloadURL().then((url) =>{
+          setDownloadURL(url)
+        })
+      document.getElementById("file").value = null
+  
+     }
+   ) 
+   
+  }
+ 
+
+
   const onSubmit = async e => {
     e.preventDefault();
-    put(`team/updatemember/${id}`, portfolio);
+    put(`team/updatemember/${id}`, {name:portfolio.name,designation:portfolio.designation,linkedin:portfolio.linkedin,image:downloadURL});
     loadPortfolio()
     history.push("/team");
   };
@@ -41,7 +73,7 @@ const [loading,isLoading]=useState(false)
     })
     .catch(() => {});
   };
-  const { name, designation , linkedin} = portfolio;
+  const { name, designation , linkedin , image} = portfolio;
   return (
    
     loading ?"loading...": <div className="container">
@@ -78,6 +110,44 @@ const [loading,isLoading]=useState(false)
               onChange={e => onInputChange(e)}
             />
           </div>
+          <div className="card-body">
+             
+             <div className='row'>
+                 <div className='col-9'><input type="file" id="file" onChange={(e)=>{
+                 if(e.nativeEvent.target.files[0]){
+ 
+                  setImagess(e.nativeEvent.target.files[0])
+                  console.log("iameee",e)
+                   
+                 }
+ 
+               }}  />
+                 {progress}
+               </div>
+                 <div className='col-3'>
+                 <button
+                         className="btn btn-success btn-sm ml-5 "
+ 
+                         
+                         onClick={(e)=>handleUpload(e)}
+                       >
+                         Upload
+                       </button>
+                 </div>
+ 
+               </div>
+                 
+              
+               
+                            <img
+           className="ref"
+           src={downloadURL || "https://via.placeholder.com/400x300"}
+           alt="Uploaded Images"
+           height="300"
+           width="400"
+         />
+             </div>
+
                     <button className="btn btn-warning btn-block">Update Team</button>
         </form>
       </div>

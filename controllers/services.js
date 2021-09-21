@@ -80,14 +80,15 @@ const deleteService = async (req, res) => {
 
 const updateService = async (req, res) => {
   try {
-    const { title, description  } = req.body;
+    const { title, description ,image } = req.body;
     const { id } = req.params;
 
     const updatedService = await ServiceModel.findByIdAndUpdate(
       id,
       {
         title,
-        description
+        description,
+        image
       },
       {
         new: true,

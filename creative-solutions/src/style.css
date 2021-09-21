@@ -567,7 +567,7 @@ button {
 /* END VIDEO-AREA */
 
 /* Styling Thumbs */
-.owl-thumbs {
+.owl-thumb {
     position: absolute;
     bottom: -100px;
     left: 0;
