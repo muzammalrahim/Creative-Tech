@@ -59,7 +59,6 @@ import firebase from '../../firebase/firebase'
     .then((res) => {
       var data = res.data.data
       setTeam(data);
-      console.log('abc',data)
     })
     .catch(() => {});
     history.replace("/team");
@@ -113,7 +112,6 @@ import firebase from '../../firebase/firebase'
   if(e.nativeEvent.target.files[0]){
 
    setImagess(e.nativeEvent.target.files[0])
-   console.log("iameee",e)
     
   }
 

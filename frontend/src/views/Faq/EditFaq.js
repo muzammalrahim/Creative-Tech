@@ -33,7 +33,6 @@ const [loading,isLoading]=useState(false)
     get(`faq/getFaq/${id}`)
     .then((res) => {
       var data = res.data.data
-      console.log("oops",data)
       isLoading(false)
       // alert(res.data.data)
       setPortfolio(data);

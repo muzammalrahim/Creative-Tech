@@ -15,7 +15,6 @@ class BannerOne extends Component {
     axios
       .get(api_url + "banner/banners")
       .then((res) => {
-        console.log("banner", res.data.data);
         this.setState({ banner: res.data.data });
       })
       .catch((err) => {
@@ -96,7 +95,6 @@ class BannerOne extends Component {
         <p>{thumb.description}</p>
       </div>
     ));
-    console.log("thumbs", this.state.banner);
     //Thumbs loop END
     return (
       <React.Fragment>

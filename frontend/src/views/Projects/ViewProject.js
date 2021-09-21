@@ -23,7 +23,6 @@ const ViewProject = (props) => {
     .catch(() => {});
 
   };
-  console.log("route", props.match.params)
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/">
@@ -31,7 +30,6 @@ const ViewProject = (props) => {
       </Link>
       <h1 className="display-4">Project Id: {id}</h1>
       <hr />
-      {console.log("sda",user)}
       <ul className="list-group w-50">
         <li className="list-group-item">name: {user.title}</li>
         <li className="list-group-item">user name: {user.description}</li>

@@ -63,7 +63,6 @@ export default function AddProject() {
     .catch(() => {});
     history.replace("/projects");
     // const imagenames = imagess.map((data) => "/images/" + data.name);
-    // console.log({ imagenames });
     // posting();
   };
 
@@ -113,7 +112,6 @@ export default function AddProject() {
                 if(e.nativeEvent.target.files[0]){
 
                  setImagess(e.nativeEvent.target.files[0])
-                 console.log("iameee",e)
                   
                 }
 

@@ -67,7 +67,6 @@ const EditProject = () => {
     get(`user/getUser/${id}`)
       .then((res) => {
         var data = res.data.data;
-        console.log("oops", data);
         isLoading(false);
         // alert(res.data.data)
         setPortfolio(data);
@@ -120,7 +119,6 @@ const EditProject = () => {
                  if(e.nativeEvent.target.files[0]){
  
                   setImagess(e.nativeEvent.target.files[0])
-                  console.log("iameee",e)
                    
                  }
  

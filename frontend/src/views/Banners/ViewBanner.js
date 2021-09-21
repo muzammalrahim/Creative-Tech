@@ -31,7 +31,6 @@ const ViewBanner = () => {
       </Link>
       <h1 className="display-4">Banner Id: {id}</h1>
       <hr />
-      {console.log("sda",banner)}
       <ul className="list-group w-50">
         <li className="list-group-item">Title: {banner.title}</li>
         <li className="list-group-item">Description: {banner.description}</li>

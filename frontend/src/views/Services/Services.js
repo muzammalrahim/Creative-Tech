@@ -31,7 +31,6 @@ const Services = () => {
      get("service/services")
     .then((res) => {
       var data = res.data?.data
-      console.log("oops",data)
      setPortfolios(data);
     })
     .catch(() => {});   

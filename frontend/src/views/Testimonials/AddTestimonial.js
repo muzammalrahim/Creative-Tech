@@ -55,7 +55,6 @@ export default function AddTestimonial () {
     e.preventDefault();
    
 
-  console.log("tesmonial", testimonial, downloadURL)
   post("testimonial/save-testimonial",{description: testimonial.description,name:testimonial.name, designition:testimonial.designition, image:downloadURL })
   .then((res) => {
     var data = res.data.data
@@ -119,7 +118,6 @@ export default function AddTestimonial () {
                 if(e.nativeEvent.target.files[0]){
 
                  setImagess(e.nativeEvent.target.files[0])
-                 console.log("iameee",e)
                   
                 }
 

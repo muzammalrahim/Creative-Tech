@@ -69,7 +69,6 @@ const [loading,isLoading]=useState(false)
     get(`testimonial/getTestimonial/${id}`)
     .then((res) => {
       var data = res.data.data
-      console.log("oops",data)
       isLoading(false)
       // alert(res.data.data)
       setPortfolio(data);
@@ -131,7 +130,6 @@ const [loading,isLoading]=useState(false)
                   onChange={(e) => {
                     if (e.nativeEvent.target.files[0]) {
                       setImagess(e.nativeEvent.target.files[0]);
-                      console.log("iameee", e);
                     }
                   }}
                 />

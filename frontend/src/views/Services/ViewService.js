@@ -30,7 +30,6 @@ const ViewService = () => {
       </Link>
       <h1 className="display-4">Service Id: {id}</h1>
       <hr />
-      {console.log("sda",service)}
       <ul className="list-group w-50">
         <li className="list-group-item">Title: {service.title}</li>
         <li className="list-group-item">Description: {service.description}</li>

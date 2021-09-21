@@ -31,7 +31,6 @@ const Testimonials = () => {
      get("testimonial/testimonials")
     .then((res) => {
       var data = res.data?.data
-      console.log("oops",data)
      setPortfolios(data);
     })
     .catch(() => {});   

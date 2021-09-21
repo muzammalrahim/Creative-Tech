@@ -17,10 +17,8 @@ class Services extends Component {
       .get(api_url + "service/services")
       .then((res) => {
         this.setState({ services: res.data.data });
-        console.log("data", res.data);
       })
       .catch((err) => {
-        console.log("error occured", err);
       });
   }
 
@@ -41,7 +39,6 @@ class Services extends Component {
       </div>
     ));
     //Service loop END
-    console.log(this.state.services);
     return (
       <React.Fragment>
         <section id="services" className="services ptb-100">

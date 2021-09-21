@@ -195,7 +195,6 @@ const extraRoute = [
 ];
 
 const totalRoute = routes.concat(extraRoute)
- console.log("total route", routes.concat(extraRoute));
 const switchRoutes = (
   <Switch>
     {totalRoute.map((prop, key) => {

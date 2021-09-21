@@ -31,7 +31,6 @@ const Faq = () => {
      get("faq/faq")
     .then((res) => {
       var data = res.data?.data
-      console.log("oops",data)
      setPortfolios(data);
     })
     .catch(() => {});   

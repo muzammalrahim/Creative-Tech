@@ -21,7 +21,6 @@ export default function AddFaq () {
   const onSubmit = async e => {
     e.preventDefault();
     // const imagenames=imagess.map((data)=>"/images/"+data.name)
-    // console.log({imagenames})
     post("faq/save-faq",faq)
     .then((res) => {
       var data = res.data.data

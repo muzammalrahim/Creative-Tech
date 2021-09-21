@@ -41,7 +41,6 @@ const Works = () => {
         setWork(res.data.data);
       })
       .catch((err) => {
-        console.log("error occured", err);
       });
   },[]);
 
@@ -51,7 +50,6 @@ const Works = () => {
   };
 
   let projects = work.slice(0, 6);
-  console.log("projects after splice", projects);
 
   const workData = projects.map((w, i) => (
     <div className="col-md-6 col-lg-4">
