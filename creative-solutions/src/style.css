@@ -322,6 +322,10 @@ button {
 	color: #9a9a9a;
 	font-size: 14px;
 }
+.ril__captionContent{
+    width: 100%;
+    text-align: center;
+}
 .social-icons {
     text-align: right;
 }
@@ -374,11 +378,19 @@ button {
     z-index: 99999;
     padding: 0;
 }
-.navbar-brand img {
+ .navbar-brand img {
     cursor: pointer;
     position: relative;
     bottom: 10px;
+ 
+    
+ }
+.navbar .logo img{
+    position: relative;
+    top: 11px ;
+    right: 70px;
 }
+
 .menu-shrink {
     box-shadow: 0 0 10px #ebebeb;
 }
@@ -476,14 +488,14 @@ button {
 /* =========================
     Slider Area CSS
    ========================= */
-.slide-bg-1 {
-    background-image: url(assets/img/slide-bg-1.png);
+   .slide-bg-1 {
+    background-image: url(assets/img/banner-1.jpg);
 }
 .slide-bg-2 {
-    background-image: url(assets/img/slide-bg-2.jpg);
+    background-image: url(assets/img/banner-2.jpg);
 }
 .slide-bg-3 {
-    background-image: url(assets/img/slide-bg-3.jpg);
+    background-image: url(assets/img/banner-3.jpg);
 }
 .hompage-slides-wrapper {
 	position: relative;
@@ -979,6 +991,8 @@ Services Area CSS
     font-size: 26px;
     font-weight: 500;
     margin: 0;
+    
+  
 }
 .team-box .post{
     display: block;

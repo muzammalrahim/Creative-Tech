@@ -43,7 +43,7 @@ h2, a:focus {
 .filter-menu button.programs-filter-btn-active, .filter-menu button:hover {
 	background-color: #fe5619;
 }
-.work-details .icon li span, .team-box .title, .team-box .icon li a, .team-slides .owl-nav div {
+.work-details .icon li span,  .team-box .icon li a, .team-slides .owl-nav div {
 	color: #fe5619 !important;
 }
 .team-box .icon li a:hover {

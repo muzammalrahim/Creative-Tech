@@ -8,9 +8,13 @@ import firebase from '../../firebase/firebase'
 const EditProject = () => {
   let history = useHistory();
   const { id } = useParams();
-  const [imagess, setImagess] = useState([]);
+  const [imagess, setImagess] = useState([]);const [image2, setImage2] = useState([]);
+
   const[progress , setProgress] = useState(0);
-  const[downloadURL , setDownloadURL] = useState(null)
+  const[progress2 , setProgress2] = useState(0);
+  const[downloadURL , setDownloadURL] = useState(null);
+  
+  const[downloadURL2 , setDownloadURL2] = useState(null)
   const [portfolio, setPortfolio] = useState({
     title: "",
     description: "",
@@ -51,6 +55,32 @@ const EditProject = () => {
    ) 
    
   }
+  const handleUpload2 = (e) => {
+    e.preventDefault()
+    let file = image2;
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+    var uploadTask = storageRef.child('images/' + file.name).put(file);
+  
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) =>{
+        var progress = Math.round((snapshot.bytesTransferred/snapshot.totalBytes))*100
+        setProgress2(progress)
+      },(error) =>{
+        throw error
+      },() =>{
+        // uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) =>{
+  
+        uploadTask.snapshot.ref.getDownloadURL().then((url) =>{
+          setDownloadURL2(url)
+        })
+      document.getElementById("file").value = null
+  
+     }
+   ) 
+   
+  }
+ 
  
 
 
@@ -137,8 +167,31 @@ const EditProject = () => {
                          Upload
                        </button>
                  </div>
- 
-               </div>
+                 <br/>
+                <br/>
+                <div className='col-9'><input type="file" id="file" onChange={(e)=>{
+                if(e.nativeEvent.target.files[0]){
+
+                 setImage2(e.nativeEvent.target.files[0])
+                 console.log("iameee",e)
+                  
+                }
+
+              }}  />
+                {progress2}
+              </div>
+                <div className='col-3'>
+                <button
+                        className="btn btn-success btn-sm ml-5 "
+
+                        
+                        onClick={(e)=>handleUpload2(e)}
+                      >
+                        Upload
+                      </button>
+                </div>
+
+              </div>
                  
               
                
@@ -149,6 +202,15 @@ const EditProject = () => {
            height="300"
            width="400"
          />
+           <br/>
+        <br/>
+        <img
+          className="ref"
+          src={downloadURL2 || "https://via.placeholder.com/400x300"}
+          alt="Uploaded Images"
+          height="300"
+          width="400"
+        />
              </div>
           <button className="btn btn-warning btn-block">Update Project</button>
         </form>

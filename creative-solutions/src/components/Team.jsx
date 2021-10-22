@@ -12,6 +12,7 @@ class Team extends Component {
     super(props);
     this.state = {
       teams: [""],
+      isShow:true
     };
   }
 
@@ -33,9 +34,10 @@ class Team extends Component {
     const teamdata = this.state.teams.map((team, index) => (
       <div className="team-box" key={index}>
         <img src={team.image} alt="Description" />
-        <div className="box-content">
+        <div className="box-content" >
+          {/* onMouseOver={()=>this.setState({isShow:false})} onMouseLeave={()=>this.setState({isShow:true})} */}
           <div className="box-inner-content">
-            <h3 className="title">{team?.name}</h3>
+            <h3 style={{color:"white"}} className="title">{team?.name}</h3>
             <span className="post">{team?.designation}</span>
             <ul className="icon">
               {/* <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li> */}
@@ -48,6 +50,9 @@ class Team extends Component {
               {/* <li><Link to={team.twitterLink}><Icofont icon="icofont-twitter" /></Link></li> */}
             </ul>
           </div>
+         
+  {/* <span className="post" style={{position:"absolute",bottom:"20px"}}>{team?.designation}</span> */}
+   
         </div>
       </div>
     ));

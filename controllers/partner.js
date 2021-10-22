@@ -1,23 +1,15 @@
-const UserModel = require("../models/User");
+const PartnerModel = require("../models/Partner");
 
-// let productPictures = [];
-// if (req.files.length > 0) {
-//   productPictures = req.files.map((file) => {
-//     return { image: file.filename };
-//   });
-// }
 
-const saveUser = async (req, res) => {
+
+const savePartner = async (req, res) => {
   try {
-    const { title, description,link, image,image2 } = req.body;
 
-    await new UserModel({
-      title,
-      
-      description,
-      link,
-      image,
-      image2
+    
+    const {  link , image} = req.body;
+
+    await new PartnerModel({         
+     link,image
     }).save();
 
     return res.json({
@@ -33,15 +25,15 @@ const saveUser = async (req, res) => {
   }
 };
 
-const getUserBYId = async (req, res) => {
+const getPartnerById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const user = await UserModel.findById(id);
+    const partner = await PartnerModel.findById(id);
 
     return res.json({
-      data: user,
-
+      data: partner,
+      
       success: true,
     });
   } catch (error) {
@@ -51,14 +43,13 @@ const getUserBYId = async (req, res) => {
     });
   }
 };
-const getUsers = async (req, res) => {
-  // console.log("users");
+const getPartners = async (req, res) => {
   try {
-    const users = await UserModel.find();
+    const partners = await PartnerModel.find();
 
     return res.json({
-      data: users,
-      documents: users.length,
+      data: partners,
+      documents: partners.length,
       success: true,
     });
   } catch (error) {
@@ -69,11 +60,11 @@ const getUsers = async (req, res) => {
   }
 };
 
-const deleteUser = async (req, res) => {
+const deletePartner = async (req, res) => {
   try {
     const { id } = req.params;
 
-    await UserModel.findByIdAndRemove(id);
+    await PartnerModel.findByIdAndRemove(id);
     return res.json({
       data: null,
       response: "Post deleted successfuly",
@@ -87,19 +78,16 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const updateUser = async (req, res) => {
+const updatePartner = async (req, res) => {
   try {
-    const { title, description,image} = req.body;
+    const { link ,image } = req.body;
     const { id } = req.params;
 
-    const updatedUser = await UserModel.findByIdAndUpdate(
+    const updatedPartner = await PartnerModel.findByIdAndUpdate(
       id,
       {
-        title,
-        description,
-        image,
-        image2
-      
+          link,
+        image
       },
       {
         new: true,
@@ -107,7 +95,7 @@ const updateUser = async (req, res) => {
     );
 
     return res.json({
-      data: updatedUser,
+      data: updatedPartner,
       response: "Post updated successfuly",
       success: true,
     });
@@ -115,9 +103,9 @@ const updateUser = async (req, res) => {
 };
 
 module.exports = {
-  saveUser,
-  getUsers,
-  getUserBYId,
-  deleteUser,
-  updateUser,
+  savePartner,
+  getPartners,
+  getPartnerById,
+  deletePartner,
+  updatePartner,
 };

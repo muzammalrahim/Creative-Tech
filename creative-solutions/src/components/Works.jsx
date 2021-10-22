@@ -188,14 +188,16 @@ const Works = () => {
           </div>
           {isOpen && (
             <Lightbox
-              mainSrc={work[photoIndex].image}
-              nextSrc={work[(photoIndex + 1) % work.length].image}
-              prevSrc={work[(photoIndex + work.length - 1) % work.length].image}
+              mainSrc={work[photoIndex].image2}
+              nextSrc={work[(photoIndex + 1) % work.length].image2}
+              prevSrc={work[(photoIndex + work.length - 1) % work.length].image2}
               imageTitle={photoIndex + 1 + "/" + work.length}
               imageCaption={
-                <a style={{ color: "white" }} href={work[photoIndex].link}>
+               <div className="ril__captionContent">
+                  <a style={{ color: "#FE5619",fontSize:"25px" }} href={work[photoIndex].link}>
                   {work[photoIndex].link}
                 </a>
+               </div>
               }
               onCloseRequest={() => setIsOpen(false)}
               onMovePrevRequest={() =>

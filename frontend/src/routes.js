@@ -44,6 +44,7 @@ import Banners from 'views/Banners/Banners'
 import Faq from 'views/Faq/Faq'
 
 import Team from "views/Team/Team";
+import Partners from 'views/Partners/Partners'
 
 const dashboardRoutes = [
   {
@@ -60,6 +61,14 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: ChromeReaderModeIcon,
     component: Banners,
+    layout: "/admin",
+  },
+  {
+    path: "/partners",
+    name: "Partners",
+    rtlName: "لوحة القيادة",
+    icon: ChromeReaderModeIcon,
+    component: Partners,
     layout: "/admin",
   },
   {

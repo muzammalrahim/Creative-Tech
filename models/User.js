@@ -6,6 +6,7 @@ const UserSchema = new mongoose.Schema({
   description: String,
   link:String,
   image: String,
+  image2:String
  
 });
 

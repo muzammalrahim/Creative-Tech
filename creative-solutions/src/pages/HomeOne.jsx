@@ -16,15 +16,31 @@ import FAQ from "../components/FAQ";
 import Partner from "../components/Partner";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { api_url } from "../helper/Api";
+import axios from "axios";
 
 class HomeOne extends Component {
+  state={
+    banner:[]
+  }
+  componentDidMount() {
+    axios
+      .get(api_url + "banner/banners")
+      .then((res) => {
+        console.log("banner", res.data.data);
+        this.setState({ banner: res.data.data });
+      })
+      .catch((err) => {
+        console.log("error occured", err);
+      });
+  }
   render() {
     return (
         <React.Fragment>
             {/* NavBar: src/components/NavBar.jsx */}
             <NavBar pageName="home" />
             {/* BannerOne: src/components/banner/BannerOne */}
-            <BannerOne  />
+            <BannerOne />
             {/* Services: src/components/Services.jsx */}
             <Services />
             {/* WelcomeServices: src/components/WelcomeServices.jsx */}

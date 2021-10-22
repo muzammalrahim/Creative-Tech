@@ -1,6 +1,6 @@
 /*
  Default: #f41c54;
- */ #f41c54;
+ */ 
  h2, a:focus {
     color: #f41c54;
 }
@@ -42,7 +42,7 @@
 .filter-menu button.programs-filter-btn-active, .filter-menu button:hover {
 	background-color: #f41c54;
 }
-.work-details .icon li a, .team-box .title, .team-box .icon li a, .team-slides .owl-nav div {
+.work-details .icon li a, .team-box .icon li a, .team-slides .owl-nav div {
 	color: #fe5619 !important;
 }
 .team-box .icon li a:hover {

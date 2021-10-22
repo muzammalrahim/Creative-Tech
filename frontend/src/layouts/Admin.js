@@ -44,6 +44,10 @@ import ViewBanner from "../views/Banners/ViewBanner";
 import EditBanner from "../views/Banners/EditBanner";
 import AddBanner from "../views/Banners/AddBanner";
 
+import ViewPartner from "../views/Partners/ViewPartner";
+import EditPartner from "../views/Partners/EditPartner";
+import AddPartner from "../views/Partners/AddPartner";
+
 
 let ps;
 
@@ -80,6 +84,32 @@ const extraRoute = [
     component: EditBanner,
     layout: "/admin",
   },
+
+  {
+    path: "/add-partner",
+    name: "Add Partner",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: AddPartner,
+    layout: "/admin",
+  },
+  {
+    path: "/view-partner/:id",
+    name: "view Partner",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewPartner,
+    layout: "/admin",
+  },
+  {
+    path: "/edit-partner/:id",
+    name: "Edit partner",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditPartner,
+    layout: "/admin",
+  },
+
   {
     path: "/add-service",
     name: "Add Service",

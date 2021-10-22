@@ -102,7 +102,7 @@ class NavBar extends Component {
             <Navbar.Brand className="navbar-brand logo">
               <React.Fragment>
                 <LinkContainer exact to="/">
-                  <img src={this.props.MainLogo} alt="Logo" width="27%"/>
+                  <img  src={this.props.MainLogo} alt="Logo" width="60%"/>
                 </LinkContainer>
               </React.Fragment>
             </Navbar.Brand>
@@ -352,7 +352,7 @@ NavBar.propTypes = {
 
 //Default Props
 NavBar.defaultProps = {
-  MainLogo: require("../assets/img/logo.svg"),
+  MainLogo: require("../assets/img/only logo (1).svg"),
   Logo2: require("../assets/img/logo2.svg"),
   mailLink: "mailto:support@creativetech-solutions.com",
   mail: "support@creativetech-solutions.com",

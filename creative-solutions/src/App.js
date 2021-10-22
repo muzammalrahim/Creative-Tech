@@ -47,14 +47,14 @@ class App extends Component {
                                                 path="/blog-one"
                                                 component={BlogOne}
                                             /> */}
-                                            <Route
+                                            {/* <Route
                                                 path="/home-three"
                                                 component={HomeThree}
                                             />
                                             <Route
                                                 path="/home-two"
                                                 component={HomeTwo}
-                                            />
+                                            /> */}
                                             <Route
                                                 path="/"
                                                 component={HomeOne}

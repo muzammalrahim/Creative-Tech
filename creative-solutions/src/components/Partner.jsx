@@ -3,15 +3,33 @@ import PropTypes from "prop-types";
 import OwlCarousel from "react-owl-carousel3";
 import { Link } from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
+import axios from "axios";
+import { api_url } from "../helper/Api";
 
 class Partners extends Component {
+    state = {
+        partners:[''],
+    }
+    componentDidMount() {
+        axios
+          .get(api_url + "partner/partners")
+          .then((res) => {
+            this.setState({ partners: res.data.data });
+            console.log("data partners", res.data.data);
+          })
+          .catch((err) => {
+            console.log("error occured", err);
+          });
+      }
+    
+
     render() {
         //Partner loop start
-        const partnerData = this.props.partnersData.map((partner, index) => (
+        const partnerData = this.state.partners.map((partner, index) => (
             <div className="single-partner-logo" key={index}>
-                <Link to={partner.partnerLink} className="logo-preview">
-                    <img src={partner.partnerLogo} alt="partnerLogo" />
-                </Link>
+                <a href={partner.link} className="logo-preview">
+                    <img src={partner.image} alt="partnerLogo" />
+                </a>
             </div>
         ));
         //Partner loop END
@@ -37,7 +55,7 @@ class Partners extends Component {
                                 dots= {false}
                                 loop={true}
                                 margin={100}
-                                autoplay={true}
+                                // autoplay={true}
                                 smartSpeed={1000}
                                 nav={true}
                                 navText={[
