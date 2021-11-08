@@ -22,10 +22,8 @@ const Banners = () => {
 
   const deletePortfolio =(id) => {
     del(`banner/remove-banner/${id}`).then((res) => {
-      console.log("delete res", res.data.response)
       loadPortfolio();
     }).catch(error => {
-      console.log(error)
     });
   };
 
@@ -34,11 +32,9 @@ const Banners = () => {
      get("banner/banners")
     .then((res) => {
       var data = res.data?.data
-      console.log("oops",data)
      setPortfolios(data);
     })
        .catch((error) => {
-      console.log("banner page", error)
     });   
   };
 

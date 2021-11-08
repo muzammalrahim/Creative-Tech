@@ -16,9 +16,7 @@ class FAQ extends Component {
     componentDidMount() {
         axios.get(api_url + 'faq/faq').then(res => {
             this.setState({faq:res.data.data})
-            console.log("data" , res.data.data)
         }).catch(err => {
-            console.log("error occured", err)
         })
     }
     render() {
@@ -59,7 +57,6 @@ class FAQ extends Component {
                                         className="panel-group"
                                     >
                                         {this.state.faq.map((item) => {
-                                            console.log("abc")
                                            
                                             return (
                                                       <AccordionItem

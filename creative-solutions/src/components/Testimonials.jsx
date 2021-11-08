@@ -11,12 +11,10 @@ class Testimonials extends Component {
     }
     componentDidMount(){
         axios.get(api_url+"testimonial/testimonials").then((res)=>{
-            console.log("response data", res.data)
             this.setState({
                     testimonials:res.data.data
             })
         }).catch((err)=>{
-            console.log("error:",err)
         })
 
     }

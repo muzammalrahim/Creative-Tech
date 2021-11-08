@@ -61,6 +61,22 @@ const extraRoute = [
     layout: "/admin",
   },
   {
+    path: "/edit-project/:id",
+    name: "Add Project",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: EditProject,
+    layout: "/admin",
+  },
+  {
+    path: "/view-project/:id",
+    name: "Add Project",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: ViewProject,
+    layout: "/admin",
+  },
+  {
     path: "/add-banner",
     name: "Add Banner",
     rtlName: "قائمة الجدول",
@@ -209,7 +225,6 @@ const extraRoute = [
 ];
 
 const totalRoute = routes.concat(extraRoute)
- console.log("total route", routes.concat(extraRoute));
 const switchRoutes = (
   <Switch>
     {totalRoute.map((prop, key) => {

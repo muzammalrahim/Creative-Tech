@@ -110,7 +110,6 @@ export default function AddBanner () {
                 if(e.nativeEvent.target.files[0]){
 
                  setImagess(e.nativeEvent.target.files[0])
-                 console.log("iameee",e)
                   
                 }
 

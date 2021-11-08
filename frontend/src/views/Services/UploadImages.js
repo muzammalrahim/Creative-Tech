@@ -35,14 +35,11 @@ export default class MultipleImageUploadComponent extends Component {
         },() => {
 
           //  selectedFiles.map((files)=>{
-          //       console.log("wa",files)
           // })
          
         }
         )
         
-        console.log("wa",event.target.files)
-        console.log("wa",imagesName)
       }
 
 

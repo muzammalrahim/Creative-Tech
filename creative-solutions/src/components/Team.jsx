@@ -21,16 +21,13 @@ class Team extends Component {
       .get(api_url + "team/teams")
       .then((res) => {
         this.setState({ teams: res.data.data });
-        console.log("data", res.data.data);
       })
       .catch((err) => {
-        console.log("error occured", err);
       });
   }
 
   render() {
     //Team loop start
-    console.log("team state data", this.state.teams);
     const teamdata = this.state.teams.map((team, index) => (
       <div className="team-box" key={index}>
         <img src={team.image} alt="Description" />

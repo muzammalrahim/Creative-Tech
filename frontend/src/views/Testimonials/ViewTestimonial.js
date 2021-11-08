@@ -32,7 +32,6 @@ const ViewTestimonial = () => {
       </Link>
       <h1 className="display-4">Testimonial Id: {id}</h1>
       <hr />
-      {console.log("sda",testimonial)}
       <ul className="list-group w-50">
         <li className="list-group-item">Description: {testimonial.description}</li>
         
