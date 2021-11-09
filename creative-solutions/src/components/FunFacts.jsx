@@ -50,7 +50,7 @@ class FunFacts extends Component {
                                         start={0}
                                         end={
                                             this.state.didViewCountUp
-                                                ? 1548
+                                                ? 2548
                                                 : 0
                                         }
                                         duration={3}

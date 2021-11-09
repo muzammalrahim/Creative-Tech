@@ -7,12 +7,12 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-// var bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 const PORT = 6501;
 const db = require("./config/db");
 const userRouter = require("./routes/user");
 
-// const bannerRouter = require("./routes/banner");
+const bannerRouter = require("./routes/banner");
 const serviceRouter = require("./routes/service");
 const partnerRouter = require("./routes/partner")
 const testimonialRouter = require("./routes/testimonial");
@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 app.use("/", allEntities);
 app.use("/user", userRouter);
 
-// app.use("/banner", bannerRouter);
+app.use("/banner", bannerRouter);
 app.use("/service" , serviceRouter);
 app.use("/partner" , partnerRouter);
 

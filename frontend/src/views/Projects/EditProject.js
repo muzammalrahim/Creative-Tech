@@ -144,7 +144,6 @@ const EditProject = () => {
             />
           </div>
           <div className="card-body">
-<<<<<<< HEAD
              
              <div className='row'>
                  <div className='col-9'><input type="file" id="file" onChange={(e)=>{
@@ -213,38 +212,6 @@ const EditProject = () => {
           width="400"
         />
              </div>
-=======
-            <img
-              className="ref"
-              src={downloadURL || "https://via.placeholder.com/400x300"}
-              alt="Uploaded Images"
-              height="300"
-              width="400"
-            />
-            <div className="row">
-              <div className="col-9">
-                <input
-                  type="file"
-                  id="file"
-                  onChange={(e) => {
-                    if (e.nativeEvent.target.files[0]) {
-                      setImagess(e.nativeEvent.target.files[0]);
-                    }
-                  }}
-                />
-                {progress}
-              </div>
-              <div className="col-3">
-                <button
-                  className="btn btn-success btn-sm ml-5 "
-                  onClick={(e) => handleUpload(e)}
-                >
-                  Upload
-                </button>
-              </div>
-            </div>
-          </div>
->>>>>>> d11fc60135dd152a9b51cedb2c5fc76142edfe17
           <button className="btn btn-warning btn-block">Update Project</button>
         </form>
       </div>

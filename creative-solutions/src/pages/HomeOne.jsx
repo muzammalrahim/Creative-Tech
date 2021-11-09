@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 //Import Component
 import NavBar from "../components/NavBar";
 import BannerOne from "../components/banner/BannerOne";
+
+import BannerTwo from "../components/banner/BannerTwo";
 import Services from "../components/Services";
 import WelcomeServices from "../components/WelcomeServices";
 import Works from "../components/Works";
@@ -41,6 +43,7 @@ class HomeOne extends Component {
             <NavBar pageName="home" />
             {/* BannerOne: src/components/banner/BannerOne */}
             <BannerOne />
+            {/* <BannerTwo/> */}
             {/* Services: src/components/Services.jsx */}
             <Services />
             {/* WelcomeServices: src/components/WelcomeServices.jsx */}
@@ -48,7 +51,7 @@ class HomeOne extends Component {
             {/* Works: src/components/Works.jsx */}
             <Works />
             {/* About: src/components/About.jsx */}
-            <About />
+            {/* <About /> */}
             {/* Team: src/components/Team.jsx */}
             <Team />
             {/* Blog: src/components/Blog.jsx */}
@@ -58,7 +61,7 @@ class HomeOne extends Component {
             {/* Pricing: src/components/Pricing.jsx */}
             {/* <Pricing /> */}
             {/* FunFacts: src/components/FunFacts.jsx */}
-            <FunFacts />
+            {/* <FunFacts /> */}
             {/* Testimonials: src/components/Testimonials.jsx */}
             <Testimonials />
             {/* FAQ: src/components/FAQ.jsx */}

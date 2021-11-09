@@ -179,7 +179,7 @@ class NavBar extends Component {
                       </Link>
                     </Nav.Item>
 
-                    <Nav.Item>
+                    {/* <Nav.Item>
                       <Link
                         activeclass="active"
                         to="about"
@@ -192,7 +192,7 @@ class NavBar extends Component {
                       >
                         About
                       </Link>
-                    </Nav.Item>
+                    </Nav.Item> */}
 
                     <Nav.Item>
                       <Link
@@ -209,7 +209,7 @@ class NavBar extends Component {
                       </Link>
                     </Nav.Item>
 
-                    <Nav.Item>
+                    {/* <Nav.Item>
                         <Link
                             activeclass="active"
                             to="funfacts"
@@ -222,7 +222,7 @@ class NavBar extends Component {
                         >
                             Facts
                         </Link>
-                    </Nav.Item>
+                    </Nav.Item> */}
                     <Nav.Item>
                         <Link
                             activeclass="active"
