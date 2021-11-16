@@ -5,7 +5,6 @@ import UploadImages from './UploadImages'
 
 import firebase from '../../firebase/firebase'
 
-
  function AddTeam () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
