@@ -22,7 +22,7 @@ const Team = () => {
 
   const deletePortfolio =(id) => {
     del(`team/deletemember/${id}`);
-    setPortfolios([])
+    setPortfolios([]);
       loadPortfolio([]);
   };
 
@@ -50,8 +50,7 @@ const Team = () => {
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Designation</th>
-
-                <th scope="col">LinkedIn</th>
+                <th scope="col">Skills</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -61,8 +60,8 @@ const Team = () => {
                   <th scope="row">{index + 1}</th>
                   <td>{portfolio.name}</td>
                   <td>{portfolio.designation}</td>
+                  <td>{portfolio?.skills}</td>
 
-                  <td>{portfolio.linkedin}</td>
                   <td>
                     <Tooltip
                       id="tooltip-top"
@@ -108,7 +107,7 @@ const Team = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link to="/admin/team" onClick={() => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}
