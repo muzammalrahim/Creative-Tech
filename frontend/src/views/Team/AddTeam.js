@@ -46,7 +46,6 @@ import firebase from '../../firebase/firebase'
           setDownloadURL(url)
         })
       document.getElementById("file").value = null
-  
      }
    ) 
    
