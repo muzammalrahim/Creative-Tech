@@ -25,7 +25,7 @@ const ViewProject = (props) => {
   };
   return (
     <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
+      <Link className="btn btn-primary" to="/admin/projects">
         back to Home
       </Link>
       <h1 className="display-4">Project Id: {id}</h1>

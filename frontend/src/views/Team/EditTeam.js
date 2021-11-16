@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
@@ -57,7 +57,7 @@ const [loading,isLoading]=useState(false)
   const onSubmit = async e => {
     e.preventDefault();
     put(`team/updatemember/${id}`, {name:portfolio.name,designation:portfolio.designation,skills:portfolio.skills,image:downloadURL});
-    loadPortfolio()
+    loadPortfolio();
     history.push("/team");
   };
 
@@ -143,7 +143,9 @@ const [loading,isLoading]=useState(false)
             </div>
           </div>
 
-          <button className="btn btn-warning btn-block">Update Team</button>
+          <Link to="/admin/team" className="btn btn-warning btn-block">
+            Update Team
+          </Link>
         </form>
       </div>
     </div>

@@ -90,7 +90,7 @@ const deleteTeamMember = async (req, res) => {
 
 const updateTeamMember = async (req, res) => {
   try {
-    const { name, designation, linkedin , image } = req.body;
+    const { name, designation, skills , image } = req.body;
     const { id } = req.params;
 
     const updatedTeamMember = await UserModel.findByIdAndUpdate(
@@ -98,7 +98,7 @@ const updateTeamMember = async (req, res) => {
       {
         name,
         designation,
-        linkedin,
+        skills,
         image
       },
       {

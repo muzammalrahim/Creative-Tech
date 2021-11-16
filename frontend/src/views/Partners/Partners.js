@@ -20,10 +20,18 @@ const Partners = () => {
     loadPortfolio();
   }, []);
 
-  const deletePortfolio =(id) => {
-    del(`partner/remove-partner/${id}`);
-    setPortfolios([])
-      loadPortfolio([]);
+  // const deletePortfolio =(id) => {
+  //   del(`partner/remove-partner/${id}`);
+  //   setPortfolios([])
+  //     loadPortfolio([]);
+  // };
+
+  const deletePortfolio = (id) => {
+    del(`partner/remove-partner/${id}`)
+      .then((res) => {
+        loadPortfolio();
+      })
+      .catch((error) => {});
   };
 
 
@@ -104,7 +112,7 @@ const Partners = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link to="partners" onClick={() => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

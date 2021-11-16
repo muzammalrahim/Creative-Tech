@@ -20,10 +20,18 @@ const Testimonials = () => {
     loadPortfolio();
   }, []);
 
-  const deletePortfolio =(id) => {
-    del(`testimonial/remove-testimonial/${id}`);
-    setPortfolios([])
-      loadPortfolio([]);
+  // const deletePortfolio =(id) => {
+  //   del(`testimonial/remove-testimonial/${id}`);
+  //   setPortfolios([])
+  //     loadPortfolio([]);
+  // };
+
+  const deletePortfolio = (id) => {
+    del(`testimonial/remove-testimonial/${id}`)
+      .then((res) => {
+        loadPortfolio();
+      })
+      .catch((error) => {});
   };
 
 
@@ -110,7 +118,10 @@ const Testimonials = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link
+                        to="testimonials"
+                        onClick={() => deletePortfolio(portfolio._id)}
+                      >
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

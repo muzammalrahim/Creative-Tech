@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
@@ -133,7 +133,9 @@ const [loading,isLoading]=useState(false)
               </div>
             </div>
           </div>
-          <button className="btn btn-warning btn-block">Update Service</button>
+          <Link to="/admin/services" className="btn btn-warning btn-block">
+            Update Service
+          </Link>
         </form>
       </div>
     </div>

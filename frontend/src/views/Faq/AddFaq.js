@@ -25,6 +25,7 @@ export default function AddFaq () {
     .then((res) => {
       var data = res.data.data
       setFaq(data);
+      history.push("/admin/faq");
     })
     .catch(() => {});
     history.replace("/faq");

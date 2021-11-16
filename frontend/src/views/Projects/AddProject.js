@@ -90,6 +90,7 @@ export default function AddProject() {
     .then((res) => {
       var data = res.data.data
       setUser(data);
+      history.push("/admin/projects");
     })
     .catch(() => {});
     history.replace("/projects");
