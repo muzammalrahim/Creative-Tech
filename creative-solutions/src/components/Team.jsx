@@ -36,16 +36,16 @@ class Team extends Component {
           <div className="box-inner-content">
             <h3 style={{color:"white"}} className="title">{team?.name}</h3>
             <span className="post">{team?.designation}</span>
-            <ul className="icon">
+            {/* <ul className="icon"> */}
               {/* <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li> */}
-              <li>
+              {/* <li>
                 <a to={team?.linkedin}>
                   <Icofont icon="icofont-linkedin" />
                 </a>
-              </li>
+              </li> */}
 
               {/* <li><Link to={team.twitterLink}><Icofont icon="icofont-twitter" /></Link></li> */}
-            </ul>
+            {/* </ul> */}
           </div>
          
   {/* <span className="post" style={{position:"absolute",bottom:"20px"}}>{team?.designation}</span> */}
