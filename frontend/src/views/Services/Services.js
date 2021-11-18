@@ -20,12 +20,19 @@ const Services = () => {
     loadPortfolio();
   }, []);
 
-  const deletePortfolio =(id) => {
-    del(`service/remove-service/${id}`);
-    setPortfolios([])
-      loadPortfolio([]);
-  };
+  // const deletePortfolio =(id) => {
+  //   del(`service/remove-service/${id}`);
+  //   setPortfolios([])
+  //     loadPortfolio([]);
+  // };
 
+  const deletePortfolio = (id) => {
+    del(`service/remove-service/${id}`)
+      .then((res) => {
+        loadPortfolio();
+      })
+      .catch((error) => {});
+  };
 
   const loadPortfolio =() => {
      get("service/services")
@@ -105,7 +112,7 @@ const Services = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link to="services" onClick={() => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

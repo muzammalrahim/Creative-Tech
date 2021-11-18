@@ -111,7 +111,7 @@ const Banners = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={(e) => deletePortfolio(portfolio._id)}>
+                      <Link to="banners" onClick={(e) => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

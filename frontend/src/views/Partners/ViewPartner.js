@@ -24,7 +24,7 @@ const ViewPartner = () => {
   };
   return (
     <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
+      <Link className="btn btn-primary" to="/admin/partners">
         back to Home
       </Link>
       <h1 className="display-4">Partner Id: {id}</h1>

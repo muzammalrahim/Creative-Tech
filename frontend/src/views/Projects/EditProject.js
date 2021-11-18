@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get, { put } from "../../helper/api";
 
@@ -144,75 +144,73 @@ const EditProject = () => {
             />
           </div>
           <div className="card-body">
-             
-             <div className='row'>
-                 <div className='col-9'><input type="file" id="file" onChange={(e)=>{
-                 if(e.nativeEvent.target.files[0]){
- 
-                  setImagess(e.nativeEvent.target.files[0])
-                  console.log("iameee",e)
-                   
-                 }
- 
-               }}  />
-                 {progress}
-               </div>
-                 <div className='col-3'>
-                 <button
-                         className="btn btn-success btn-sm ml-5 "
- 
-                         
-                         onClick={(e)=>handleUpload(e)}
-                       >
-                         Upload
-                       </button>
-                 </div>
-                 <br/>
-                <br/>
-                <div className='col-9'><input type="file" id="file" onChange={(e)=>{
-                if(e.nativeEvent.target.files[0]){
-
-                 setImage2(e.nativeEvent.target.files[0])
-                 console.log("iameee",e)
-                  
-                }
-
-              }}  />
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="file"
+                  id="file"
+                  onChange={(e) => {
+                    if (e.nativeEvent.target.files[0]) {
+                      setImagess(e.nativeEvent.target.files[0]);
+                      console.log("iameee", e);
+                    }
+                  }}
+                />
+                {progress}
+              </div>
+              <div className="col-3">
+                <button
+                  className="btn btn-success btn-sm ml-5 "
+                  onClick={(e) => handleUpload(e)}
+                >
+                  Upload
+                </button>
+              </div>
+              <br />
+              <br />
+              <div className="col-9">
+                <input
+                  type="file"
+                  id="file"
+                  onChange={(e) => {
+                    if (e.nativeEvent.target.files[0]) {
+                      setImage2(e.nativeEvent.target.files[0]);
+                      console.log("iameee", e);
+                    }
+                  }}
+                />
                 {progress2}
               </div>
-                <div className='col-3'>
+              <div className="col-3">
                 <button
-                        className="btn btn-success btn-sm ml-5 "
-
-                        
-                        onClick={(e)=>handleUpload2(e)}
-                      >
-                        Upload
-                      </button>
-                </div>
-
+                  className="btn btn-success btn-sm ml-5 "
+                  onClick={(e) => handleUpload2(e)}
+                >
+                  Upload
+                </button>
               </div>
-                 
-              
-               
-                            <img
-           className="ref"
-           src={downloadURL || "https://via.placeholder.com/400x300"}
-           alt="Uploaded Images"
-           height="300"
-           width="400"
-         />
-           <br/>
-        <br/>
-        <img
-          className="ref"
-          src={downloadURL2 || "https://via.placeholder.com/400x300"}
-          alt="Uploaded Images"
-          height="300"
-          width="400"
-        />
-             </div>
-          <button className="btn btn-warning btn-block">Update Project</button>
+            </div>
+
+            <img
+              className="ref"
+              src={downloadURL || "https://via.placeholder.com/400x300"}
+              alt="Uploaded Images"
+              height="300"
+              width="400"
+            />
+            <br />
+            <br />
+            <img
+              className="ref"
+              src={downloadURL2 || "https://via.placeholder.com/400x300"}
+              alt="Uploaded Images"
+              height="300"
+              width="400"
+            />
+          </div>
+          <Link to="/admin/projects" className="btn btn-warning btn-block">
+            Update Project
+          </Link>
         </form>
       </div>
     </div>

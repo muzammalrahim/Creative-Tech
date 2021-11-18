@@ -57,7 +57,7 @@ import firebase from '../../firebase/firebase'
     .then((res) => {
       var data = res.data.data
       setTeam(data);
-      history.replace("/team")
+      history.push("/admin/team")
     })
     .catch(() => {});
     history.replace("/team");

@@ -25,7 +25,7 @@ const ViewFaq = () => {
   };
   return (
     <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
+      <Link className="btn btn-primary" to="/admin/faq">
         back to Home
       </Link>
       <h1 className="display-4">Faq Id: {id}</h1>

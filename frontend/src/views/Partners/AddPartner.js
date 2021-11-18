@@ -54,6 +54,7 @@ export default function AddPartner () {
     .then((res) => {
       var data = res.data.data
       setPartner(data);
+      history.push("/admin/partners");
     })
     .catch(() => {});
     history.replace("/partners");

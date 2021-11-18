@@ -20,10 +20,18 @@ const Faq = () => {
     loadPortfolio();
   }, []);
 
-  const deletePortfolio =(id) => {
-    del(`faq/remove-faq/${id}`);
-    setPortfolios([])
-      loadPortfolio([]);
+  // const deletePortfolio =(id) => {
+  //   del(`faq/remove-faq/${id}`);
+  //   setPortfolios([])
+  //     loadPortfolio([]);
+  // };
+
+  const deletePortfolio = (id) => {
+    del(`faq/remove-faq/${id}`)
+      .then((res) => {
+        loadPortfolio();
+      })
+      .catch((error) => {});
   };
 
 
@@ -104,7 +112,7 @@ const Faq = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link to="faq" onClick={() => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

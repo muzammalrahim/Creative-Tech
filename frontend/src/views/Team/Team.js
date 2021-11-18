@@ -20,10 +20,18 @@ const Team = () => {
     loadPortfolio();
   }, []);
 
-  const deletePortfolio =(id) => {
-    del(`team/deletemember/${id}`);
-    setPortfolios([]);
-      loadPortfolio([]);
+  // const deletePortfolio =(id) => {
+  //   del(`team/deletemember/${id}`);
+  //   setPortfolios([]);
+  //     loadPortfolio([]);
+  // };
+
+  const deletePortfolio = (id) => {
+    del(`team/deletemember/${id}`)
+      .then((res) => {
+        loadPortfolio();
+      })
+      .catch((error) => {});
   };
 
 
@@ -35,8 +43,6 @@ const Team = () => {
     })
     .catch(() => {});   
   };
-
- 
 
   return (
     <div>
@@ -107,7 +113,7 @@ const Team = () => {
                       placement="top"
                       classes={{ tooltip: classes.tooltip }}
                     >
-                      <Link to="/admin/team" onClick={() => deletePortfolio(portfolio._id)}>
+                      <Link to="team" onClick={() => deletePortfolio(portfolio._id)}>
                         <IconButton
                           aria-label="Close"
                           className={classes.tableActionButton}

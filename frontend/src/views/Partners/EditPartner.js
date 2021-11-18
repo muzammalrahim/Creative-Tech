@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
@@ -129,7 +129,7 @@ const [loading,isLoading]=useState(false)
            width="400"
          />
              </div>
-                    <button className="btn btn-warning btn-block">Update Partner</button>
+                    <Link to="/admin/partners" className="btn btn-warning btn-block">Update Partner</Link>
         </form>
       </div>
     </div> 

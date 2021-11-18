@@ -26,7 +26,7 @@ const ViewTeam = () => {
   };
   return (
     <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
+      <Link className="btn btn-primary" to="/admin/team">
         back to Home
       </Link>
       <h1 className="display-4">Team Id: {id}</h1>

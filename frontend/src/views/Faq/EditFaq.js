@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  useParams } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
@@ -40,12 +40,13 @@ const [loading,isLoading]=useState(false)
     .catch(() => {});
   };
   const { title, description} = portfolio;
-  return (
-   
-    loading ?"loading...": <div className="container">
+  return loading ? (
+    "loading..."
+  ) : (
+    <div className="container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Edit A Faq</h2>
-        <form onSubmit={e => onSubmit(e)}>
+        <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
@@ -53,7 +54,7 @@ const [loading,isLoading]=useState(false)
               placeholder="Enter Question"
               name="title"
               value={title}
-              onChange={e => onInputChange(e)}
+              onChange={(e) => onInputChange(e)}
             />
           </div>
           <div className="form-group">
@@ -63,13 +64,15 @@ const [loading,isLoading]=useState(false)
               placeholder="Enter Answer"
               name="description"
               value={description}
-              onChange={e => onInputChange(e)}
+              onChange={(e) => onInputChange(e)}
             />
           </div>
-                    <button className="btn btn-warning btn-block">Update Faq</button>
+          <Link to="/admin/faq" className="btn btn-warning btn-block">
+            Update Faq
+          </Link>
         </form>
       </div>
-    </div> 
+    </div>
   );
 };
 

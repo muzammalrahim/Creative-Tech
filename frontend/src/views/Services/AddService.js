@@ -56,6 +56,7 @@ export default function AddService () {
     .then((res) => {
       var data = res.data.data
       setService(data);
+      history.push("/admin/services");
     })
     .catch(() => {});
     history.replace("/services");

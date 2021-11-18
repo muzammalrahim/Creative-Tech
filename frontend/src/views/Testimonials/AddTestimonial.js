@@ -59,6 +59,7 @@ export default function AddTestimonial () {
   .then((res) => {
     var data = res.data.data
     setTestimonial(data);
+    history.push("/admin/testimonials");
   })
   .catch(() => {});
   history.replace("/testimonials");

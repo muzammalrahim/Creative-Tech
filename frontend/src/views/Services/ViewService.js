@@ -25,7 +25,7 @@ const ViewService = () => {
   };
   return (
     <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
+      <Link className="btn btn-primary" to="/admin/services">
         back to Home
       </Link>
       <h1 className="display-4">Service Id: {id}</h1>
