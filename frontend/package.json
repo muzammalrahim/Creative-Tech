@@ -51,5 +51,8 @@
       "not op_mini all"
     ],
     "development": []
-  }
+  },
+  "main": ".eslintrc.js",
+  "author": "",
+  "license": "ISC"
 }

@@ -6,7 +6,7 @@ const ViewTeam = () => {
   const [team, setTeam] = useState({
     name: "",
     designation: "",
-    linkedin:""
+    skills:""
  
   });
   const { id } = useParams();
@@ -35,7 +35,7 @@ const ViewTeam = () => {
         <li className="list-group-item">Name: {team.name}</li>
         <li className="list-group-item">Designation: {team.designation}</li>
 
-        <li className="list-group-item">LinkedIn: {team.linkedin}</li>
+        <li className="list-group-item">LinkedIn: {team.skills}</li>
       </ul>
     </div>
   );

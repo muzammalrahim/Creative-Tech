@@ -13,7 +13,7 @@ const EditTeam = () => {
   const [portfolio, setPortfolio] = useState({
     name: "",
     designation: "",
-    linkedin:""
+    skills:""
    
   });
 const [loading,isLoading]=useState(false)
@@ -56,7 +56,7 @@ const [loading,isLoading]=useState(false)
 
   const onSubmit = async e => {
     e.preventDefault();
-    put(`team/updatemember/${id}`, {name:portfolio.name,designation:portfolio.designation,linkedin:portfolio.linkedin,image:downloadURL});
+    put(`team/updatemember/${id}`, {name:portfolio.name,designation:portfolio.designation,skills:portfolio.skills,image:downloadURL});
     loadPortfolio()
     history.push("/team");
   };
@@ -73,7 +73,7 @@ const [loading,isLoading]=useState(false)
     })
     .catch(() => {});
   };
-  const { name, designation , linkedin , image} = portfolio;
+  const { name, designation , skills , image} = portfolio;
   return loading ? (
     "loading..."
   ) : (
@@ -105,9 +105,9 @@ const [loading,isLoading]=useState(false)
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter LinkedIn"
-              name="linkedin"
-              value={linkedin}
+              placeholder="Enter Skills"
+              name="skills"
+              value={skills}
               onChange={(e) => onInputChange(e)}
             />
           </div>

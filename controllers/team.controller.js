@@ -4,14 +4,13 @@ const TeamModel = require("../models/Team");
 const AddTeam = async (req, res) => {
     console.log('image checking ', req.body)
     try {
-        const { name, designation, skills, image } = req.body
-        console.log(' checking props  ', req.body)
+        const { name, designation, image, skills } = req.body
         
         await new TeamModel({
           name,
           designation,
+          image,
           skills,
-          image
         }).save()
         
         return res.json({

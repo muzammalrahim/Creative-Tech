@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import {Link, useHistory } from "react-router-dom";
 import {post} from "../../helper/api"
 import UploadImages from './UploadImages'
 
 import firebase from '../../firebase/firebase'
-
 
  function AddTeam () {
   let history = useHistory();
@@ -16,11 +15,11 @@ import firebase from '../../firebase/firebase'
 
    name:"",
    designation:"",
-   linkedin:""
+   skills:"",
     
   });
 
-  const {   name , designation , linkedin } = team;
+  const {   name , designation , skills } = team;
   const onInputChange = e => {
     setTeam({ ...team, [e.target.name]: e.target.value });
   };
@@ -46,7 +45,6 @@ import firebase from '../../firebase/firebase'
           setDownloadURL(url)
         })
       document.getElementById("file").value = null
-  
      }
    ) 
    
@@ -55,10 +53,11 @@ import firebase from '../../firebase/firebase'
   
   const onSubmit = async e => {
     e.preventDefault();
-    post("team/addteam",{name:team.name,designation:team.designation,linkedin:team.linkedin, image:downloadURL})
+    post("team/addteam",{name:team.name,designation:team.designation,skills:team.skills, image:downloadURL})
     .then((res) => {
       var data = res.data.data
       setTeam(data);
+      history.replace("/team")
     })
     .catch(() => {});
     history.replace("/team");
@@ -72,7 +71,7 @@ import firebase from '../../firebase/firebase'
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter name"
+              placeholder="Enter Name"
               name="name"
               value={name}
               onChange={e => onInputChange(e)}
@@ -93,9 +92,9 @@ import firebase from '../../firebase/firebase'
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter LinkedIn"
-              name="linkedin"
-              value={linkedin}
+              placeholder="Enter Skills"
+              name="skills"
+              value={skills}
               onChange={e => onInputChange(e)}
             />
           </div>

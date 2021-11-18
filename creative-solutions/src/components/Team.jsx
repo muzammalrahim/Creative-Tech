@@ -36,6 +36,7 @@ class Team extends Component {
           <div className="box-inner-content">
             <h3 style={{color:"white"}} className="title">{team?.name}</h3>
             <span className="post">{team?.designation}</span>
+            <span className="post">({ team?.skills})</span>
             {/* <ul className="icon"> */}
               {/* <li><Link to={team.facebookLink}><Icofont icon="icofont-facebook" /></Link></li> */}
               {/* <li>
