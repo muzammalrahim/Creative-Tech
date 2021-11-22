@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import {post} from "../../helper/api"
 
-
 export default function AddFaq () {
   let history = useHistory();
   const [faq, setFaq] = useState({
@@ -15,8 +14,6 @@ export default function AddFaq () {
   const onInputChange = e => {
     setFaq({ ...faq, [e.target.name]: e.target.value });
   };
-    
-  
   
   const onSubmit = async e => {
     e.preventDefault();
@@ -30,6 +27,7 @@ export default function AddFaq () {
     .catch(() => {});
     history.replace("/faq");
   };
+
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
@@ -55,23 +53,9 @@ export default function AddFaq () {
               onChange={e => onInputChange(e)}
             />
           </div>
-          
-          
-         
           <button type='submit' className="btn btn-primary btn-block">Add Faq</button>
         </form>
-   
-
-         
-      
-         
-       
-   
-
-
-     
       </div>
     </div>
   );
 }
-

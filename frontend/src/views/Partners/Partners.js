@@ -45,8 +45,6 @@ const Partners = () => {
     .catch(() => {});   
   };
 
- 
-
   return (
     <div>
       <Navbar />

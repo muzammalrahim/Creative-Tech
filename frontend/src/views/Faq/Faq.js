@@ -34,7 +34,6 @@ const Faq = () => {
       .catch((error) => {});
   };
 
-
   const loadPortfolio =() => {
      get("faq/faq")
     .then((res) => {
@@ -43,8 +42,6 @@ const Faq = () => {
     })
     .catch(() => {});   
   };
-
- 
 
   return (
     <div>
@@ -57,7 +54,7 @@ const Faq = () => {
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
-                <th scope="col">Desciption</th>
+                <th scope="col">Description</th>
                 <th>Action</th>
               </tr>
             </thead>

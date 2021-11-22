@@ -7,7 +7,7 @@ const ViewTestimonial = () => {
   
     description: "",
     name:"",
-    designition:""
+    designation:""
  
   });
   const { id } = useParams();
@@ -36,7 +36,7 @@ const ViewTestimonial = () => {
         <li className="list-group-item">Description: {testimonial.description}</li>
         
         <li className="list-group-item">Name: {testimonial.name}</li>
-        <li className="list-group-item">Designition: {testimonial.designition}</li>
+        <li className="list-group-item">Designition: {testimonial.designation}</li>
               </ul>
     </div>
   );

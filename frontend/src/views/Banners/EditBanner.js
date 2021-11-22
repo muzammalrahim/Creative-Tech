@@ -3,7 +3,6 @@ import {  useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import get,{put} from "../../helper/api"
 
-
 import firebase from '../../firebase/firebase'
 
 const EditBanner = () => {
@@ -55,9 +54,6 @@ const [loading,isLoading]=useState(false)
    
   }
  
-
-
-
   const onSubmit = async e => {
     e.preventDefault();
     put(`banner/update-banner/${id}`, {title:portfolio.title,description:portfolio.description,link:portfolio.link,image:downloadURL}).then(res => {

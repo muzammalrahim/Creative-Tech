@@ -23,7 +23,9 @@ const [loading,isLoading]=useState(false)
 
   const onSubmit = async e => {
     e.preventDefault();
-    put(`faq/update-faq/${id}`, portfolio);
+    put(`faq/update-faq/${id}`, portfolio).then(res => {
+      history.push("/admin/faq");
+    });
     loadPortfolio()
     history.push("/faq");
   };
@@ -39,7 +41,8 @@ const [loading,isLoading]=useState(false)
     })
     .catch(() => {});
   };
-  const { title, description} = portfolio;
+  const { title, description } = portfolio;
+  
   return loading ? (
     "loading..."
   ) : (
@@ -67,9 +70,9 @@ const [loading,isLoading]=useState(false)
               onChange={(e) => onInputChange(e)}
             />
           </div>
-          <Link to="/admin/faq" className="btn btn-warning btn-block">
+          <button className="btn btn-warning btn-block">
             Update Faq
-          </Link>
+          </button>
         </form>
       </div>
     </div>

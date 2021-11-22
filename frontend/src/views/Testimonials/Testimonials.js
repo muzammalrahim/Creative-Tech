@@ -34,7 +34,6 @@ const Testimonials = () => {
       .catch((error) => {});
   };
 
-
   const loadPortfolio =() => {
      get("testimonial/testimonials")
     .then((res) => {
@@ -43,8 +42,6 @@ const Testimonials = () => {
     })
     .catch(() => {});   
   };
-
- 
 
   return (
     <div>
@@ -56,11 +53,11 @@ const Testimonials = () => {
             <thead className="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Desciption</th>
+                <th scope="col">Description</th>
 
                 <th scope="col">Name</th>
 
-                <th scope="col">Designition</th>
+                <th scope="col">Designation</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -71,7 +68,7 @@ const Testimonials = () => {
                   <td>{portfolio.description}</td>
 
                   <td>{portfolio.name}</td>
-                  <td>{portfolio.designition}</td>
+                  <td>{portfolio.designation}</td>
                   <td>
                     {" "}
                     <Tooltip

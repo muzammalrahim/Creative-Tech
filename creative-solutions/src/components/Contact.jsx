@@ -4,6 +4,8 @@ import Icofont from 'react-icofont';
 import axios from "axios";
 import { ValidationForm, TextInput } from "react-bootstrap4-form-validation";
 import ScrollAnimation from 'react-animate-on-scroll';
+import validator from "validator";
+import { api_url } from "../helper/Api";
 
 class Contact extends Component {
     constructor(props) {
@@ -12,7 +14,7 @@ class Contact extends Component {
             name: "",
             email: "",
             subject: "",
-            number: "",
+            phone: "",
             message: "",
             successMsg: ""
         };
@@ -20,17 +22,17 @@ class Contact extends Component {
     handleForm = e => {
         let that = this;
         axios
-            .post("https://formcarry.com/s/qJalZsYuqY-", this.state, {
-                headers: { Accept: "application/json" }
-            })
-            .then(function(response) {
-                document.getElementById("contactForm").reset();
-                that.setState({
-                    successMsg: "Thank you! We received your message"
-                });
-                document.getElementById("contactForm").reset();
-            })
-            .catch(function(error) {});
+          .post("http://localhost:6501/contact/save-contact", this.state, {
+            headers: { Accept: "application/json" },
+          })
+          .then(function (response) {
+            document.getElementById("contactForm").reset();
+            that.setState({
+              successMsg: "Thank you! We received your message",
+            });
+            document.getElementById("contactForm").reset();
+          })
+          .catch(function (error) {});
     };
 
     handleFields = e => this.setState({ [e.target.name]: e.target.value });
@@ -142,7 +144,7 @@ class Contact extends Component {
                                             <div className="col-lg-6 col-md-6">
                                                 <div className="form-group">
                                                     <TextInput
-                                                        name="number"
+                                                        name="phone"
                                                         id="number"
                                                         type="text"
                                                         successMessage=""

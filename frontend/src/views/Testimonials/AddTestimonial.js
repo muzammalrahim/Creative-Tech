@@ -15,12 +15,10 @@ export default function AddTestimonial () {
   const [testimonial, setTestimonial] = useState({
    description: "",
    name:"",
-   designition:""
-    
+   designation:""
   });
 
-
-  const {  description , name , designition } = testimonial;
+  const {  description , name , designation } = testimonial;
   const onInputChange = e => {
     setTestimonial({ ...testimonial, [e.target.name]: e.target.value });
   };
@@ -55,7 +53,7 @@ export default function AddTestimonial () {
     e.preventDefault();
    
 
-  post("testimonial/save-testimonial",{description: testimonial.description,name:testimonial.name, designition:testimonial.designition, image:downloadURL })
+  post("testimonial/save-testimonial",{description: testimonial.description,name:testimonial.name, designation:testimonial.designation, image:downloadURL })
   .then((res) => {
     var data = res.data.data
     setTestimonial(data);
@@ -63,10 +61,8 @@ export default function AddTestimonial () {
   })
   .catch(() => {});
   history.replace("/testimonials");
-
-   
-
   };
+
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
@@ -96,13 +92,12 @@ export default function AddTestimonial () {
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Designition"
-              name="designition"
-              value={designition}
+              placeholder="Enter Designation"
+              name="designation"
+              value={designation}
               onChange={e => onInputChange(e)}
             />
           </div>
-          
           
           <div>
               <div className="card-header">
@@ -111,9 +106,6 @@ export default function AddTestimonial () {
               <div className="card-body">
               {/* <UploadImages  getImagedata={(image)=>getImages(image)} /> */}
               
-
-              
-            
               <div className='row'>
                 <div className='col-9'><input type="file" id="file" onChange={(e)=>{
                 if(e.nativeEvent.target.files[0]){
@@ -153,16 +145,7 @@ export default function AddTestimonial () {
             </div>
           <button type='submit' className="btn btn-primary btn-block">Add Testimonial</button>
         </form>
-   
 
-         
-      
-         
-       
-   
-
-
-     
       </div>
     </div>
   );

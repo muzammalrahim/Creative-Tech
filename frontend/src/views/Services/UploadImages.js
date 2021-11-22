@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 export default class MultipleImageUploadComponent extends Component {
 
     constructor(props) {
@@ -41,13 +40,6 @@ export default class MultipleImageUploadComponent extends Component {
         )
         
       }
-
-
-
-
-
-
-
 
     render() {
         const { selectedFiles, previewImages, progressInfos, message, imageInfos } = this.state;

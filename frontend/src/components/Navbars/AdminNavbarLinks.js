@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,13 +19,20 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
+import get from "../../helper/api";
 
 const useStyles = makeStyles(styles);
 
 export default function AdminNavbarLinks() {
+
+  const [contacts, setContacts] = useState([]);
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
+
+  useEffect(() => {
+    getContacts()
+  }, [])
   const handleClickNotification = (event) => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
@@ -46,6 +53,19 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
+
+  const getContacts = () => {
+    get("contact/getContacts")
+      .then((res) => {
+        var data = res.data.data
+        console.log(data);
+        setContacts(data)
+      })
+      .catch(err => {
+      
+      });
+  };
+  
   return (
     <div>
       <div className={classes.searchWrapper}>
@@ -87,7 +107,7 @@ export default function AdminNavbarLinks() {
           className={classes.buttonLink}
         >
           <Notifications className={classes.icons} />
-          <span className={classes.notifications}>5</span>
+          <span className={classes.notifications}>{contacts.length}</span>
           <Hidden mdUp implementation="css">
             <p onClick={handleCloseNotification} className={classes.linkText}>
               Notification
@@ -117,36 +137,16 @@ export default function AdminNavbarLinks() {
               <Paper>
                 <ClickAwayListener onClickAway={handleCloseNotification}>
                   <MenuList role="menu">
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Mike John responded to your email
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      You have 5 new tasks
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      You{"'"}re now friend with Andrew
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Another Notification
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Another One
-                    </MenuItem>
+                    {contacts.map((menu) => {
+                      return (
+                        <MenuItem
+                          onClick={handleCloseNotification}
+                          className={classes.dropdownItem}
+                        >
+                          {menu.message}
+                        </MenuItem>
+                      );
+                    })}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

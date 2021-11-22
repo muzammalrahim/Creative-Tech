@@ -20,11 +20,11 @@ const saveBanner = async (req, res) => {
 
     } catch (error) {
 
-        return res.json({
-            response: "something went wrong",
-            error,
-            success: false
-        })
+      return res.json({
+        response: "something went wrong",
+        error,
+        success: false,
+      });
         
     }
 }

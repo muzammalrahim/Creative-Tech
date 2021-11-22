@@ -23,7 +23,9 @@ const ViewProject = (props) => {
     .catch(() => {});
 
   };
+
   return (
+    
     <div className="container py-4">
       <Link className="btn btn-primary" to="/admin/projects">
         back to Home

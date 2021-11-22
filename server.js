@@ -19,6 +19,7 @@ const testimonialRouter = require("./routes/testimonial");
 const teamRouter = require("./routes/team.rout");
 const faqRouter = require("./routes/faq");
 const allEntities = require("./routes/totalEntities");
+const contactRouter = require("./routes/contact");
 db();
 // app.use(cors())
 // // for parsing application/json
@@ -45,7 +46,9 @@ app.use("/partner" , partnerRouter);
 app.use("/testimonial" , testimonialRouter);
 app.use("/team" , teamRouter);
 
-app.use("/faq" , faqRouter);
+app.use("/faq", faqRouter);
+
+app.use("/contact", contactRouter);
 
 // step no 2
 // take two args . one is port and sec is call back function

@@ -43,8 +43,6 @@ const Services = () => {
     .catch(() => {});   
   };
 
- 
-
   return (
     <div>
       <Navbar />

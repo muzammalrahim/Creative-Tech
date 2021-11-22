@@ -47,7 +47,6 @@ export default function AddPartner () {
    
   }
     
-  
   const onSubmit = async e => {
    
     post("partner/save-partner",{link:partner.link, image:downloadURL})
@@ -59,7 +58,8 @@ export default function AddPartner () {
     .catch(() => {});
     history.replace("/partners");
  
-}
+  }
+  
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
@@ -76,7 +76,6 @@ export default function AddPartner () {
             />
           </div>
          
-          
           <div>
               <div className="card-header">
                 Multiple Image Upload Preview
@@ -96,27 +95,22 @@ export default function AddPartner () {
                 {progress}
               </div>
                 <div className='col-3'>
-                <button
-                        className="btn btn-success btn-sm ml-5 "
-
-                        
-                        onClick={(e)=>handleUpload(e)}
-                      >
-                        Upload
-                      </button>
+                  <button
+                    className="btn btn-success btn-sm ml-5"
+                    onClick={(e)=>handleUpload(e)}
+                  >
+                    Upload
+                  </button>
                 </div>
-
               </div>
                 
-             
-              
-                           <img
-          className="ref"
-          src={downloadURL || "https://via.placeholder.com/400x300"}
-          alt="Uploaded Images"
-          height="300"
-          width="400"
-        />
+          <img
+            className="ref"
+            src={downloadURL || "https://via.placeholder.com/400x300"}
+            alt="Uploaded Images"
+            height="300"
+            width="400"
+          />
               </div>
             </div>
           <button type='submit' className="btn btn-primary btn-block">Add Partner</button>
@@ -125,4 +119,3 @@ export default function AddPartner () {
     </div>
   );
 }
-

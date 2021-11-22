@@ -14,7 +14,6 @@ const EditTeam = () => {
     name: "",
     designation: "",
     skills:""
-   
   });
 const [loading,isLoading]=useState(false)
   
@@ -32,7 +31,7 @@ const [loading,isLoading]=useState(false)
     var storage = firebase.storage();
     var storageRef = storage.ref();
     var uploadTask = storageRef.child('images/' + file.name).put(file);
-  
+
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) =>{
         var progress = Math.round((snapshot.bytesTransferred/snapshot.totalBytes))*100
@@ -41,22 +40,20 @@ const [loading,isLoading]=useState(false)
         throw error
       },() =>{
         // uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) =>{
-  
         uploadTask.snapshot.ref.getDownloadURL().then((url) =>{
           setDownloadURL(url)
         })
       document.getElementById("file").value = null
-  
      }
    ) 
    
   }
  
-
-
   const onSubmit = async e => {
     e.preventDefault();
-    put(`team/updatemember/${id}`, {name:portfolio.name,designation:portfolio.designation,skills:portfolio.skills,image:downloadURL});
+    put(`team/updatemember/${id}`, { name: portfolio.name, designation: portfolio.designation, skills: portfolio.skills, image: downloadURL }).then(res => {
+      history.push("/admin/team")
+    });
     loadPortfolio();
     history.push("/team");
   };
@@ -66,6 +63,7 @@ const [loading,isLoading]=useState(false)
     get(`team/detailmember/${id}`)
     .then((res) => {
       var data = res.data.data
+      console.log("data",data);
       isLoading(false)
       // alert(res.data.data)
       setPortfolio(data);
@@ -73,6 +71,7 @@ const [loading,isLoading]=useState(false)
     })
     .catch(() => {});
   };
+
   const { name, designation , skills , image} = portfolio;
   return loading ? (
     "loading..."
@@ -143,9 +142,9 @@ const [loading,isLoading]=useState(false)
             </div>
           </div>
 
-          <Link to="/admin/team" className="btn btn-warning btn-block">
+          <button className="btn btn-warning btn-block">
             Update Team
-          </Link>
+          </button>
         </form>
       </div>
     </div>

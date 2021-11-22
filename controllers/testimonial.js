@@ -2,12 +2,12 @@ const TestimonialModel = require("../models/Testimonial");
 
 const saveTestimonial = async (req, res) => {
   try {
-    const {  description , name , designition, image} = req.body;
+    const {  description , name , designation, image} = req.body;
 
     await new TestimonialModel({
       description,
       name,
-      designition,
+      designation,
       image
     }).save();
 
@@ -79,7 +79,7 @@ const deleteTestimonial = async (req, res) => {
 
 const updateTestimonial = async (req, res) => {
   try {
-    const {  description , name , designition } = req.body;
+    const {  description , name , designation, image } = req.body;
     const { id } = req.params;
 
     const updatedTestimonial = await TestimonialModel.findByIdAndUpdate(
@@ -87,7 +87,8 @@ const updateTestimonial = async (req, res) => {
       {
         description,
         name,
-        designition
+        designation,
+        image
       },
       {
         new: true,

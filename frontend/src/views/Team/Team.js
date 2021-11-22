@@ -34,7 +34,6 @@ const Team = () => {
       .catch((error) => {});
   };
 
-
   const loadPortfolio =() => {
      get("team/teams")
     .then((res) => {

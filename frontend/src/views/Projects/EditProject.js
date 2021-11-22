@@ -8,7 +8,9 @@ import firebase from '../../firebase/firebase'
 const EditProject = () => {
   let history = useHistory();
   const { id } = useParams();
-  const [imagess, setImagess] = useState([]);const [image2, setImage2] = useState([]);
+  const [imagess, setImagess] = useState([]);
+  
+  const [image2, setImage2] = useState([]);
 
   const[progress , setProgress] = useState(0);
   const[progress2 , setProgress2] = useState(0);
@@ -81,13 +83,11 @@ const EditProject = () => {
    
   }
  
- 
-
-
-
   const onSubmit = async (e) => {
     e.preventDefault();
-    put(`user/update-user/${id}`,{title:portfolio.title,description:portfolio.description,link:portfolio.link, image:downloadURL});
+    put(`user/update-user/${id}`, { title: portfolio.title, description: portfolio.description, link: portfolio.link, image: downloadURL, image2: downloadURL2 }).then(res => {
+          history.push("/admin/projects")
+    });
     loadPortfolio();
     history.push("/projects");
   };
@@ -101,6 +101,7 @@ const EditProject = () => {
         // alert(res.data.data)
         setPortfolio(data);
         setDownloadURL(data.image);
+        setDownloadURL2(data.image2);
       })
       .catch(() => {});
   };
@@ -208,9 +209,9 @@ const EditProject = () => {
               width="400"
             />
           </div>
-          <Link to="/admin/projects" className="btn btn-warning btn-block">
+          <button className="btn btn-warning btn-block">
             Update Project
-          </Link>
+          </button>
         </form>
       </div>
     </div>

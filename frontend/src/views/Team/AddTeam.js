@@ -24,7 +24,6 @@ import firebase from '../../firebase/firebase'
     setTeam({ ...team, [e.target.name]: e.target.value });
   };
    
-
   const handleUpload = (e) => {
     e.preventDefault()
     let file = imagess;
@@ -50,7 +49,6 @@ import firebase from '../../firebase/firebase'
    
   }
     
-  
   const onSubmit = async e => {
     e.preventDefault();
     post("team/addteam",{name:team.name,designation:team.designation,skills:team.skills, image:downloadURL})
@@ -99,7 +97,6 @@ import firebase from '../../firebase/firebase'
             />
           </div>
           
-          
           <div>
               <div className="card-header">
                 Multiple Image Upload Preview
@@ -130,8 +127,6 @@ import firebase from '../../firebase/firebase'
 
 </div>
   
-
-
              <img
 className="ref"
 src={downloadURL || "https://via.placeholder.com/400x300"}

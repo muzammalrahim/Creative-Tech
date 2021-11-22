@@ -80,9 +80,6 @@ export default function AddProject() {
    
   }
  
- 
-
-
   const onSubmit = async (e) => {
     e.preventDefault();
    
@@ -123,7 +120,6 @@ export default function AddProject() {
               onChange={(e) => onInputChange(e)}
             />
           </div>
-        
         
           <div className="form-group">
             <input

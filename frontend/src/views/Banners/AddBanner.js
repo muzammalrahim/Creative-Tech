@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import {post} from "../../helper/api"
 import firebase from '../../firebase/firebase'
 
-
-
 export default function AddBanner () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
@@ -21,7 +19,6 @@ export default function AddBanner () {
   const onInputChange = e => {
     setBanner({ ...banner, [e.target.name]: e.target.value });
   };
-
 
   const handleUpload = (e) => {
     e.preventDefault()
@@ -49,7 +46,6 @@ export default function AddBanner () {
    
   }
     
-  
   const onSubmit = async e => {
    
     post("banner/save-banner",{title:banner.title,description:banner.description,link:banner.link, image:downloadURL})
@@ -61,7 +57,8 @@ export default function AddBanner () {
     .catch(() => {});
     history.replace("/banners");
  
-}
+  }
+  
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
@@ -98,7 +95,6 @@ export default function AddBanner () {
             />
           </div>
           
-          
           <div>
               <div className="card-header">
                 Multiple Image Upload Preview
@@ -129,8 +125,6 @@ export default function AddBanner () {
 
               </div>
                 
-             
-              
                            <img
           className="ref"
           src={downloadURL || "https://via.placeholder.com/400x300"}

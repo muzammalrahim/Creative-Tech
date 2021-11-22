@@ -13,8 +13,6 @@ const EditPartner = () => {
   const[downloadURL , setDownloadURL] = useState(null)
   const [portfolio, setPortfolio] = useState({
     link: "",
-  
-   
   });
 const [loading,isLoading]=useState(false)
   
@@ -25,7 +23,6 @@ const [loading,isLoading]=useState(false)
   useEffect(() => {
     loadPortfolio();
   }, []);
-
 
   const handleUpload = (e) => {
     e.preventDefault()
@@ -52,13 +49,13 @@ const [loading,isLoading]=useState(false)
    ) 
    
   }
- 
-
 
   const onSubmit = async e => {
     e.preventDefault();
-    put(`partner/update-partner/${id}`, {link:portfolio.link,image:downloadURL});
-    loadPortfolio()
+    put(`partner/update-partner/${id}`, { link: portfolio.link, image: downloadURL }).then(res => {
+      history.push("/admin/partners")
+    });
+    loadPortfolio();
     history.push("/partners");
   };
 
@@ -71,16 +68,18 @@ const [loading,isLoading]=useState(false)
       isLoading(false)
       // alert(res.data.data)
       setPortfolio(data);
+      setDownloadURL(data.image);
     })
     .catch(() => {});
   };
   const { title} = portfolio;
-  return (
-   
-    loading ?"loading...": <div className="container">
+  return loading ? (
+    "loading..."
+  ) : (
+    <div className="container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Edit A Partner</h2>
-        <form onSubmit={e => onSubmit(e)}>
+        <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
@@ -88,51 +87,48 @@ const [loading,isLoading]=useState(false)
               placeholder="Enter Your Partner's website link"
               name="link"
               value={portfolio.link}
-              onChange={e => onInputChange(e)}
+              onChange={(e) => onInputChange(e)}
             />
           </div>
-         
+
           <div className="card-body">
-             
-             <div className='row'>
-                 <div className='col-9'><input type="file" id="file" onChange={(e)=>{
-                 if(e.nativeEvent.target.files[0]){
- 
-                  setImagess(e.nativeEvent.target.files[0])
-                  console.log("iameee",e)
-                   
-                 }
- 
-               }}  />
-                 {progress}
-               </div>
-                 <div className='col-3'>
-                 <button
-                         className="btn btn-success btn-sm ml-5 "
- 
-                         
-                         onClick={(e)=>handleUpload(e)}
-                       >
-                         Upload
-                       </button>
-                 </div>
- 
-               </div>
-                 
-              
-               
-                            <img
-           className="ref"
-           src={downloadURL || "https://via.placeholder.com/400x300"}
-           alt="Uploaded Images"
-           height="300"
-           width="400"
-         />
-             </div>
-                    <Link to="/admin/partners" className="btn btn-warning btn-block">Update Partner</Link>
+            <img
+              className="ref"
+              src={downloadURL || "https://via.placeholder.com/400x300"}
+              alt="Uploaded Images"
+              height="300"
+              width="400"
+            />
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="file"
+                  id="file"
+                  onChange={(e) => {
+                    if (e.nativeEvent.target.files[0]) {
+                      setImagess(e.nativeEvent.target.files[0]);
+                      console.log("iameee", e);
+                    }
+                  }}
+                />
+                {progress}
+              </div>
+              <div className="col-3">
+                <button
+                  className="btn btn-success btn-sm ml-5 "
+                  onClick={(e) => handleUpload(e)}
+                >
+                  Upload
+                </button>
+              </div>
+            </div>
+          </div>
+          <button className="btn btn-warning btn-block">
+            Update Partner
+          </button>
         </form>
       </div>
-    </div> 
+    </div>
   );
 };
 

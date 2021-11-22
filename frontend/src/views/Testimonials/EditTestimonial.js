@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import {  Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import get,{put} from "../../helper/api"
+import get, { put } from "../../helper/api"
+
+import firebase from "../../firebase/firebase";
+
 
 const EditTestimonial = () => {
   let history = useHistory();
@@ -10,10 +13,11 @@ const EditTestimonial = () => {
    
     description: "",
     name:"",
-    designition:""
+    designation:""
    
   });
   const [progress, setProgress] = useState(0);
+  const [imagess, setImagess] = useState([]);
   const [downloadURL, setDownloadURL] = useState(null);
 const [loading,isLoading]=useState(false)
   
@@ -56,9 +60,11 @@ const [loading,isLoading]=useState(false)
     e.preventDefault();
     put(`testimonial/update-testimonial/${id}`, {
       name: portfolio.name,
-      designation: portfolio.designition,
+      designation: portfolio.designation,
       description: portfolio.description,
       image: downloadURL,
+    }).then(res => {
+      history.push("/admin/testimonials");
     });
     loadPortfolio()
     history.push("/testimonials");
@@ -76,7 +82,7 @@ const [loading,isLoading]=useState(false)
     })
     .catch(() => {});
   };
-  const { description , name , designition} = portfolio;
+  const { description , name , designation} = portfolio;
   return loading ? (
     "loading..."
   ) : (
@@ -109,8 +115,8 @@ const [loading,isLoading]=useState(false)
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter designition"
-              name="designition"
-              value={designition}
+              name="designation"
+              value={designation}
               onChange={(e) => onInputChange(e)}
             />
           </div>
@@ -145,9 +151,9 @@ const [loading,isLoading]=useState(false)
               </div>
             </div>
           </div>
-          <Link to="/admin/testimonials" className="btn btn-warning btn-block">
+          <button className="btn btn-warning btn-block">
             Update Testimonial
-          </Link>
+          </button>
         </form>
       </div>
     </div>

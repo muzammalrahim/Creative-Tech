@@ -38,8 +38,6 @@ const Banners = () => {
     });   
   };
 
- 
-
   return (
     <div>
       <Navbar />

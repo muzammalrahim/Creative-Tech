@@ -4,8 +4,6 @@ import {post} from "../../helper/api"
 import UploadImages from './UploadImages'
 import firebase from '../../firebase/firebase'
 
-
-
 export default function AddService () {
   let history = useHistory();
   const[imagess,setImagess]=useState([])
@@ -21,7 +19,6 @@ export default function AddService () {
   const onInputChange = e => {
     setService({ ...service, [e.target.name]: e.target.value });
   };
-
 
   const handleUpload = (e) => {
     e.preventDefault()
@@ -49,7 +46,6 @@ export default function AddService () {
    
   }
     
-  
   const onSubmit = async e => {
    
     post("service/save-service",{title:service.title,description:service.description, image:downloadURL})
@@ -61,7 +57,8 @@ export default function AddService () {
     .catch(() => {});
     history.replace("/services");
  
-}
+  }
+  
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
@@ -87,7 +84,6 @@ export default function AddService () {
               onChange={e => onInputChange(e)}
             />
           </div>
-          
           
           <div>
               <div className="card-header">
@@ -119,8 +115,6 @@ export default function AddService () {
 
               </div>
                 
-             
-              
                            <img
           className="ref"
           src={downloadURL || "https://via.placeholder.com/400x300"}

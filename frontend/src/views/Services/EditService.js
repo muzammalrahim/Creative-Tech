@@ -14,7 +14,6 @@ const EditProject = () => {
   const [portfolio, setPortfolio] = useState({
     title: "",
     description: ""
-   
   });
 const [loading,isLoading]=useState(false)
   
@@ -25,7 +24,6 @@ const [loading,isLoading]=useState(false)
   useEffect(() => {
     loadPortfolio();
   }, []);
-
 
   const handleUpload = (e) => {
     e.preventDefault()
@@ -53,11 +51,11 @@ const [loading,isLoading]=useState(false)
    
   }
  
-
-
   const onSubmit = async e => {
     e.preventDefault();
-    put(`service/update-service/${id}`, {title:portfolio.title,description:portfolio.description,image:downloadURL});
+    put(`service/update-service/${id}`, { title: portfolio.title, description: portfolio.description, image: downloadURL }).then(res => {
+      history.push("/admin/services");
+    });
     loadPortfolio()
     history.push("/services");
   };
@@ -133,9 +131,9 @@ const [loading,isLoading]=useState(false)
               </div>
             </div>
           </div>
-          <Link to="/admin/services" className="btn btn-warning btn-block">
+          <button className="btn btn-warning btn-block">
             Update Service
-          </Link>
+          </button>
         </form>
       </div>
     </div>

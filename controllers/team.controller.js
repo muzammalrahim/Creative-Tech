@@ -93,7 +93,7 @@ const updateTeamMember = async (req, res) => {
     const { name, designation, skills , image } = req.body;
     const { id } = req.params;
 
-    const updatedTeamMember = await UserModel.findByIdAndUpdate(
+    const updatedTeamMember = await TeamModel.findByIdAndUpdate(
       id,
       {
         name,

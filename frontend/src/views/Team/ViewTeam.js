@@ -24,6 +24,7 @@ const ViewTeam = () => {
     .catch(() => {});
 
   };
+      const { name, designation, skills } = team;
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/admin/team">
@@ -32,10 +33,10 @@ const ViewTeam = () => {
       <h1 className="display-4">Team Id: {id}</h1>
       <hr />
       <ul className="list-group w-50">
-        <li className="list-group-item">Name: {team.name}</li>
-        <li className="list-group-item">Designation: {team.designation}</li>
+        <li className="list-group-item">Name: {name}</li>
+        <li className="list-group-item">Designation: {designation}</li>
 
-        <li className="list-group-item">LinkedIn: {team.skills}</li>
+        <li className="list-group-item">LinkedIn: {skills}</li>
       </ul>
     </div>
   );
