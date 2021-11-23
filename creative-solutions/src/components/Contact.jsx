@@ -4,7 +4,7 @@ import Icofont from 'react-icofont';
 import axios from "axios";
 import { ValidationForm, TextInput } from "react-bootstrap4-form-validation";
 import ScrollAnimation from 'react-animate-on-scroll';
-import validator from "validator";
+// import validator from "validator";
 import { api_url } from "../helper/Api";
 
 class Contact extends Component {
