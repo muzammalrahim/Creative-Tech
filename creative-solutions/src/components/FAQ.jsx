@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import PropTypes from "prop-types";
 import { Accordion, AccordionItem } from "react-sanfona";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { api_url } from '../helper/Api';
 import axios from 'axios'
+import Contact from "./Contact";
 
 class FAQ extends Component {
  
       state={
             faq:[],
         }
-    
+            
     componentDidMount() {
         axios.get(api_url + 'faq/faq').then(res => {
             this.setState({faq:res.data.data})

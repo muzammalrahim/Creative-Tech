@@ -17,6 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
+import Login from "components/Login";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 // core components
@@ -25,13 +26,16 @@ import RTL from "layouts/RTL.js";
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <>
+    <BrowserRouter>
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
+      {/* <Route path="" component={Login}/> */}
       {/* <Redirect from="/" to="/admin/dashboard" /> */}
       <Redirect from="/" to="/admin" />
     </Switch>
-  </BrowserRouter>,
+    </BrowserRouter>
+    </>,
   document.getElementById("root")
 );

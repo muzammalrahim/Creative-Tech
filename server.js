@@ -14,7 +14,7 @@ const userRouter = require("./routes/user");
 
 const bannerRouter = require("./routes/banner");
 const serviceRouter = require("./routes/service");
-const partnerRouter = require("./routes/partner")
+const partnerRouter = require("./routes/partner");
 const testimonialRouter = require("./routes/testimonial");
 const teamRouter = require("./routes/team.rout");
 const faqRouter = require("./routes/faq");

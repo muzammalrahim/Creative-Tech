@@ -84,7 +84,7 @@
     .menu-shrink.navbar-light {
         padding: 15px 0;
     }
-    .owl-thumbs {
+    .owl-thumb {
         position: static;
         transform: translate3d(0px, 0, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1) !important;
         -webkit-transform: translate3d(0px, 0, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1) !important;

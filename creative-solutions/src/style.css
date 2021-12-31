@@ -920,11 +920,11 @@ Services Area CSS
     transition: all 1s ease 0s;
     -webkit-transition: all 1s ease 0s;
 }
-.team-box:hover:before{ border: 1px solid rgba(255, 255, 255, 0.18); }
+.team-box:before{ border: 1px solid rgba(226, 225, 235, 0.18); }
 .team-box:after{
     content: "";
     display: block;
-    border: 10px solid rgba(255, 255, 255, 0.7);
+    /* border: 10px solid rgba(255, 255, 255, 0.7); */
     position: absolute;
     top: 35px;
     left: 35px;
@@ -951,7 +951,7 @@ Services Area CSS
     transition: all 1s ease 0s;
     -webkit-transition: all 1s ease 0s;
 }
-.team-box:hover img{
+.team-box img{
     transform: scale(1);
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -959,7 +959,7 @@ Services Area CSS
 .team-box .box-content{
     padding: 20px;
     text-align: center;
-    color: #fff;
+    color: white;
     position: absolute;
     top: 45px;
     left: 45px;
@@ -970,33 +970,35 @@ Services Area CSS
     transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
 }
-.team-box:hover .box-content{
+.team-box .box-content{
     top: 6px;
-    left: 6px;
-    bottom: 6px;
-    right: 6px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
 }
 .team-box .box-inner-content{
     width: 100%;
-    padding-bottom: 20px;
+    padding-top: 7px;
+    padding-bottom: 0px;
     opacity: 0;
     position: absolute;
     bottom: 0;
+    background-color: #00000096;
     left: 0;
     transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
 }
-.team-box:hover .box-inner-content{ opacity: 1; }
+.team-box .box-inner-content{ opacity: 1; }
 .team-box .title{
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 500;
     margin: 0;
-    
   
 }
 .team-box .post{
     display: block;
-    font-size: 16px;
+    font-size: 14px;
+    color: white;
     font-style: italic;
     margin-bottom: 10px;
 }

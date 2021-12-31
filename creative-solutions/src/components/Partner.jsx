@@ -94,7 +94,7 @@ Partners.propTypes = {
 Partners.defaultProps = {
     SectionbgTitle: "Partners",
     sectionTitle: "Our Partners",
-    sectionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+    sectionDescription: "Partnerships increase your lease of knowledge, expertise, and resources available to make better products and reach a greater audience. All of these put together along with 360-degree feedback can skyrocket your business to great heights. The right business partnership will enhance the ethos of your firm.",
     partnersData: [
         {
             partnerLogo: require("../assets/img/partners-logo/img1.png"),

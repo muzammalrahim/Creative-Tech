@@ -122,7 +122,7 @@ Team.defaultProps = {
   SectionbgTitle: "Team",
   sectionTitle: "Our Team",
   sectionDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+    "Teamwork allows employees to take greater responsibility for decision making and also allows team members to control more of the work process. Working on a team also gives employees a greater sense of belonging and of recognition, which helps them take more pride in their work, and their company.",
   teamsData: [
     {
       Image: require("../assets/img/team-one.jpg"),

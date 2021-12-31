@@ -22,7 +22,7 @@ class Testimonials extends Component {
     //Testimonials loop start
     const testimonialsitem = this.state.testimonials.map((testimonial, index) => (
         <div className="single-testimonial-item text-center" key={index}>
-            <Icofont icon="icofont-quote-left" />
+            {/* <Icofont icon="icofont-quote-left" /> */}
             <p>{testimonial?.description}</p>
 
             <div className="client-profile">

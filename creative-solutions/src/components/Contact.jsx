@@ -6,6 +6,7 @@ import { ValidationForm, TextInput } from "react-bootstrap4-form-validation";
 import ScrollAnimation from 'react-animate-on-scroll';
 import validator from "validator";
 import { api_url } from "../helper/Api";
+import emailjs from 'emailjs-com';
 
 class Contact extends Component {
     constructor(props) {
@@ -19,23 +20,39 @@ class Contact extends Component {
             successMsg: ""
         };
     }
-    handleForm = e => {
-        let that = this;
-        axios
-          .post("http://localhost:6501/contact/save-contact", this.state, {
-            headers: { Accept: "application/json" },
-          })
-          .then(function (response) {
-            document.getElementById("contactForm").reset();
-            that.setState({
-              successMsg: "Thank you! We received your message",
-            });
-            document.getElementById("contactForm").reset();
-          })
-          .catch(function (error) {});
-    };
+    // handleForm = e => {
+    //     let that = this;
+    //     axios
+    //       .post("http://localhost:6501/contact/save-contact", this.state, {
+    //         headers: { Accept: "application/json" },
+    //       })
+    //       .then(function (response) {
+    //         document.getElementById("contactForm").reset();
+    //         that.setState({
+    //           successMsg: "Thank you! We received your message",
+    //         });
+    //         document.getElementById("contactForm").reset();
+    //       })
+    //       .catch(function (error) {});
+    // };
 
-    handleFields = e => this.setState({ [e.target.name]: e.target.value });
+    sendEmail = (e) => {
+        let that = this;
+        e.preventDefault();
+    
+        emailjs.sendForm('CreativeJoomdev', 'template_zfdfbhb', e.target, 'user_4Kz3CZE1vCo9SJpjpYdSB')
+          .then((result) => {
+            that.setState({
+                successMsg: "Thank you! We received your message",
+            });
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+          e.target.reset()
+      };
+
+    // handleFields = e => this.setState({ [e.target.name]: e.target.value });
     
     render() {
         return (
@@ -79,10 +96,11 @@ class Contact extends Component {
                                 <div className="contact-form">
                                     <ValidationForm
                                         id="contactForm"
-                                        onSubmit={(e, formData, inputs) => {
-                                            e.preventDefault();
-                                            this.handleForm(formData);
-                                        }}
+                                        onSubmit={this.sendEmail}
+                                        // onSubmit={(e, formData, inputs) => {
+                                        //     e.preventDefault();
+                                        //     this.handleForm(formData);
+                                        // }}
                                     >
                                         <div className="row">
                                             <div className="col-lg-6 col-md-12">
@@ -96,9 +114,9 @@ class Contact extends Component {
                                                         className="form-control"
                                                         placeholder="Name"
                                                         autoComplete="off"
-                                                        onChange={
-                                                            this.handleFields
-                                                        }
+                                                        // onChange={
+                                                        //     this.handleFields
+                                                        // }
                                                     />
                                                     <div className="help-block with-errors" />
                                                 </div>
@@ -115,9 +133,9 @@ class Contact extends Component {
                                                         className="form-control"
                                                         placeholder="Email"
                                                         autoComplete="off"
-                                                        onChange={
-                                                            this.handleFields
-                                                        }
+                                                        // onChange={
+                                                        //     this.handleFields
+                                                        // }
                                                     />
                                                     <div className="help-block with-errors" />
                                                 </div>
@@ -134,9 +152,9 @@ class Contact extends Component {
                                                         className="form-control"
                                                         placeholder="Subject"
                                                         autoComplete="off"
-                                                        onChange={
-                                                            this.handleFields
-                                                        }
+                                                        // onChange={
+                                                        //     this.handleFields
+                                                        // }
                                                     />
                                                 </div>
                                             </div>
@@ -152,9 +170,9 @@ class Contact extends Component {
                                                         className="form-control"
                                                         placeholder="Phone"
                                                         autoComplete="off"
-                                                        onChange={
-                                                            this.handleFields
-                                                        }
+                                                        // onChange={
+                                                        //     this.handleFields
+                                                        // }
                                                     />
                                                 </div>
                                             </div>
@@ -173,9 +191,9 @@ class Contact extends Component {
                                                         errorMessage="Please write your message"
                                                         rows="5"
                                                         autoComplete="off"
-                                                        onChange={
-                                                            this.handleFields
-                                                        }
+                                                        // onChange={
+                                                        //     this.handleFields
+                                                        // }
                                                     />
                                                 </div>
                                             </div>
@@ -227,7 +245,7 @@ Contact.defaultProps = {
   SectionbgTitle: "Contact",
   sectionTitle: "Our Contact",
   sectionDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+    "Contacts are, in essence, company property when they are acquired in the line of work for which the employee is paid. Seen in this way, contacts are more effective when shared organization-wide. In that way, they do not vanish when an employee quits or is let go. By putting a centralized contact system and understanding the value of contacts, your company can maintain its contacts.",
   AddTitle: "Address",
   Address: "Street 21 Sector G13/3 Islamabad, Pakistan",
   EmailTitle: "Email",
