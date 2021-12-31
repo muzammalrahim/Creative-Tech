@@ -250,7 +250,7 @@ class NavBar extends Component {
                         onClick={this.closeNavbar}
                       >
                         FAQ
-                      </Link>
+                      </Link> 
                     </Nav.Item>
 
                     <Nav.Item>
@@ -327,9 +327,9 @@ class NavBar extends Component {
               </Nav>
             </Navbar.Collapse>
 
-            <div className="header-search">
+            {/* <div className="header-search">
               <SearchModal />
-            </div>
+            </div> */}
           </Container>
         </Navbar>
       </React.Fragment>
