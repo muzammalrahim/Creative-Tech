@@ -10,7 +10,8 @@ class Testimonials extends Component {
         testimonials:[""]
     }
     componentDidMount(){
-        axios.get(api_url+"testimonial/testimonials").then((res)=>{
+        axios.get(api_url + "testimonial/testimonials").then((res) => {
+            console.log("res", res);
             this.setState({
                     testimonials:res.data.data
             })
@@ -31,7 +32,7 @@ class Testimonials extends Component {
             
             <div className="client-info">
                 <h3>{testimonial?.name}</h3>
-                <span>{testimonial?.designition}</span>
+                <span>{testimonial?.designation}</span>
             </div>
         </div>
     ));
@@ -43,18 +44,13 @@ class Testimonials extends Component {
                     <OwlCarousel
                         className="owl-theme testimonial-slides"
                         items={1}
-                        nav= {true}
-                        dots= {false}
-                        autoplay= {false}
+                        dots= {true}
+                        autoplay= {true}
                         loop= {true}
                         autoplayHoverPause= {true}
                         smartSpeed= {1000}
-                        navText= {[
-                            "<i class='icofont-arrow-left'></i>", 
-                            "<i class='icofont-arrow-right'></i>"
-                        ]}
                     >
-                            {testimonialsitem}
+                        {testimonialsitem}
                     </OwlCarousel>
                 </div>
             </section>

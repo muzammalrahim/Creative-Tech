@@ -189,6 +189,7 @@ const Works = () => {
               mainSrc={work[photoIndex].image2}
               nextSrc={work[(photoIndex + 1) % work.length].image2}
               prevSrc={work[(photoIndex + work.length - 1) % work.length].image2}
+              animationDisabled={true}
               imageTitle={photoIndex + 1 + "/" + work.length}
               imageCaption={
                <div className="ril__captionContent">

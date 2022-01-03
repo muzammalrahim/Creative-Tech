@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import PropTypes from "prop-types";
 import { Accordion, AccordionItem } from "react-sanfona";
-import { Link} from 'react-router-dom';
+// import { Link} from 'react-router-dom';
+import { Link } from "react-scroll";
 import ScrollAnimation from 'react-animate-on-scroll';
 import { api_url } from '../helper/Api';
 import axios from 'axios'
@@ -44,7 +45,7 @@ class FAQ extends Component {
                                             <h3>{this.props.ContentTitle}</h3>
 
                                             <div className="box-icon-wrap box-icon-effect-1 box-icon-effect-1a">
-                                                <div className="box-icon"><Icofont icon="icofont-share-alt" /></div>
+                                                <div className="box-icon"><Link to='contact'><Icofont icon="icofont-share-alt" /></Link></div>
                                             </div>
 
                                             <p>{this.props.ContentDescription}</p>
