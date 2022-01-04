@@ -86,6 +86,7 @@ class BannerOne extends Component {
                         </h1>
                         <p
                           style={{ color: "gray" }}
+                          id="beautiful"
                           className={
                             isVisible
                               ? "animated fadeInDown slow opacityOne"
@@ -149,6 +150,7 @@ class BannerOne extends Component {
                         </h1>
                         <p
                           style={{ color: "gray" }}
+                          id="unique"
                           className={
                             isVisible
                               ? "animated fadeInDown slow opacityOne"
@@ -195,7 +197,7 @@ class BannerOne extends Component {
                     <h1 style={{ color: "#FE5619" }}>
                       {this.state.banner[2].title}
                     </h1>
-                    <p style={{ color: "gray" }}>
+                    <p style={{ color: "gray" }} id="reliable">
                       {this.state.banner[2].description}
                     </p>
                     <div className="center-wrap">
@@ -309,20 +311,20 @@ class BannerOne extends Component {
           <div className="owl-thumb">
             <div className="owl-thumb-item" onClick={() => this.toggleState(0)}>
               <Icofont icon={this.props.thumbsData[0].ThumbIcon} />
-              <h3>{this.props.thumbsData[0].ThumbTitle}</h3>
-              <p>{this.props.thumbsData[0].ThumbContent}</p>
+              <h3>{this.state.banner[0]?.title}</h3>
+              <p>{this.state.banner[0]?.description}</p>
             </div>
 
             <div className="owl-thumb-item" onClick={() => this.toggleState(1)}>
               <Icofont icon={this.props.thumbsData[1].ThumbIcon} />
-              <h3>{this.props.thumbsData[1].ThumbTitle}</h3>
-              <p>{this.props.thumbsData[1].ThumbContent}</p>
+              <h3>{this.state.banner[1]?.title}</h3>
+              <p>{this.state.banner[1]?.description}</p>
             </div>
 
             <div className="owl-thumb-item" onClick={() => this.toggleState(2)}>
               <Icofont icon={this.props.thumbsData[2].ThumbIcon} />
-              <h3>{this.props.thumbsData[2].ThumbTitle}</h3>
-              <p>{this.props.thumbsData[2].ThumbContent}</p>
+              <h3>{this.state.banner[2]?.title}</h3>
+              <p>{this.state.banner[2]?.description}</p>
             </div>
           </div>
         </div>

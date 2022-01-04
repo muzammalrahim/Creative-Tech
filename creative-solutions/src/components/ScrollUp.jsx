@@ -7,11 +7,21 @@ class ScrollUpBtn extends Component {
         return (
             <React.Fragment>
                 <ScrollUpButton
+                    // style={{
+                    //     padding: 8,
+                    //     width: 40,
+                    //     backgroundColor: "transparent",
+                    //     height: 40,
+                    //     border: "2px solid black",
+                    //     outline: 0,
+                    //     zIndex: 9999,
+                    // }}
+
                     style={{
-                        padding: 8,
-                        width: 40,
+                        padding: 10,
+                        width: 50,
                         backgroundColor: "transparent",
-                        height: 40,
+                        height: 50,
                         border: "2px solid black",
                         outline: 0,
                         zIndex: 9999,
