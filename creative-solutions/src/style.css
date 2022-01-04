@@ -621,7 +621,7 @@ button {
 	height: 100%;
 	width: 130%;
 	position: absolute;
-	background-image: url(assets/img/shadow.png);
+	/* background-image: url(assets/img/shadow.png); */
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	top: 90%;
@@ -994,7 +994,7 @@ Services Area CSS
     font-size: 22px;
     font-weight: 500;
     margin: 0;
-  
+    
 }
 .team-box .post{
     display: block;

@@ -31,6 +31,7 @@
     .menu-shrink.navbar-light .navbar-toggler {
         border-color: #ffffff;
         margin-right: 15px;
+        margin-left: 15px;
     }
     .address-area div {
         padding-left: 0;
