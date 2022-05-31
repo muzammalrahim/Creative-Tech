@@ -30,7 +30,7 @@ class Team extends Component {
     //Team loop start
     const teamdata = this.state.teams.map((team, index) => (
       <div className="team-box" key={index}>
-        <img src={team.image} alt="Description" />
+        <img src={team.image} alt="Description" width="360" height="400" />
         <div className="box-content" >
           {/* onMouseOver={()=>this.setState({isShow:false})} onMouseLeave={()=>this.setState({isShow:true})} */}
           <div className="box-inner-content">

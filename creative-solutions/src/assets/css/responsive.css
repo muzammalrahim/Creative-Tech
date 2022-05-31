@@ -480,6 +480,17 @@
     .single-feature h3 {
         font-size: 17px;
     }
+    .testimonail_wrap {
+        width: 80%;
+    }
+    .testimonial-text {
+        left: 300px;
+        top: 6px;
+        height: 250px;
+    }
+    .testimonial-text p {
+        line-height: 20px;
+    }
 }
 
 @media only screen and (min-width : 992px) and (max-width : 1200px) {
@@ -530,5 +541,16 @@
     .modal-dialog {
         width: 90%;
         margin-top: -60px;
+    }
+    .testimonail_wrap {
+        width: 90%;
+    }
+    .testimonial-text {
+        left: 300px;
+        top: 26px;
+        height: 210px;
+    }
+    .testimonial-text p {
+        line-height: 22px;
     }
 }

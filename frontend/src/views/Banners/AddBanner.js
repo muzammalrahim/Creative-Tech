@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import {post} from "../../helper/api"
 import firebase from '../../firebase/firebase'
+import web from "../../assets/img/1.webp"
 
 export default function AddBanner () {
   let history = useHistory();
@@ -14,7 +15,6 @@ export default function AddBanner () {
     link:""
     
   });
-
   const { title, description,link } = banner;
   const onInputChange = e => {
     setBanner({ ...banner, [e.target.name]: e.target.value });
@@ -36,7 +36,7 @@ export default function AddBanner () {
       },() =>{
         // uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) =>{
   
-        uploadTask.snapshot.ref.getDownloadURL().then((url) =>{
+        uploadTask.snapshot.ref.getDownloadURL().then((url) => {
           setDownloadURL(url)
         })
       document.getElementById("file").value = null
@@ -65,6 +65,7 @@ export default function AddBanner () {
         <h2 className="text-center mb-4">Add A banner</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
+            {/* <img src={web} alt="nothing"/> */}
             <input
               type="text"
               className="form-control form-control-lg"

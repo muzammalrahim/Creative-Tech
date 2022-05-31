@@ -17,10 +17,12 @@ class Footer extends Component {
                                 <div className="social-icons bottom">
                                     <ul className="list-inline">
                                         <li>{this.props.socialTitle} </li>
-                                        <li><Link to={this.props.FacebookLink}><Icofont icon="icofont-facebook"/></Link></li>
-                                        <li><Link to={this.props.TwitterLink}><Icofont icon="icofont-twitter"/></Link></li>
-                                        <li><Link to={this.props.InstagramLink}><Icofont icon="icofont-instagram"/></Link></li>
-                                        <li><Link to={this.props.linkedinLink}><Icofont icon="icofont-linkedin"/></Link></li>
+                                        {/* <li><Link to={this.props.FacebookLink}><Icofont icon="icofont-facebook"/></Link></li> */}
+                                        {/* <li><Link to={this.props.TwitterLink}><Icofont icon="icofont-twitter"/></Link></li> */}
+                                        {/* <li><Link to={this.props.InstagramLink}><Icofont icon="icofont-instagram"/></Link></li> */}
+                                        <li><a href={this.props.SkypeLink} target="_blank"><Icofont icon="icofont-skype"/></a></li>
+                                        <li><a href={this.props.DribbleLink} target="_blank"><Icofont icon="icofont-dribbble"/></a></li>
+                                        <li><a href={this.props.linkedinLink} target="_blank"><Icofont icon="icofont-linkedin"/></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -44,9 +46,8 @@ Footer.propTypes = {
 Footer.defaultProps = {
     copyrightText: "2021 © All Rights Reserved.",
     socialTitle: "Follow Us On:",
-    FacebookLink: "/#0",
-    TwitterLink: "/#0",
-    InstagramLink: "/#0",
-    linkedinLink: "/#0",
+    DribbleLink: "https://dribbble.com/creativetechsolutions",
+    SkypeLink: "https://join.skype.com/invite/jy3x4RjBXyVM",
+    linkedinLink: "https://www.linkedin.com/in/muzammalrahim/",
 };
 export default Footer;

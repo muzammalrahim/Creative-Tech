@@ -111,9 +111,9 @@ h2, a:focus {
 .plan.featured .plan-price, .content-box.color-effect-1, .footer  {
 	background-color: #fe5619;
 }
-.single-testimonial-item i, .partners-slides .owl-nav div {
+/* .single-testimonial-item i, .partners-slides .owl-nav div {
     color: #fe5619 !important;
-}
+} */
 .client-info h3, .testimonial-slides .owl-nav div {
 	color: #fe5619 !important;
  }

@@ -43,8 +43,8 @@ This files contents are outlined below>>>>>
 /* =========================
     Default CSS
    ========================= */
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
 html, body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -785,9 +785,12 @@ Services Area CSS
 .work-details img{
     width: 100%;
     height: auto;
+    object-fit: cover;
+    object-position: center center;
     transition: all 0.35s ease 0s;
     -webkit-transition: all 0.35s ease 0s;
 }
+
 .work-details:hover img{ opacity: 0.5; }
 .work-details .box-content{
     padding: 30px 10px 30px 0;
@@ -910,39 +913,38 @@ Services Area CSS
 .team-box:before{
     content: "";
     display: block;
-    border: 30px solid rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    bottom: 5px;
-    right: 5px;
-    opacity: 1;
-    z-index: 2;
-    transition: all 1s ease 0s;
-    -webkit-transition: all 1s ease 0s;
-}
-.team-box:before{ border: 1px solid rgba(226, 225, 235, 0.18); }
-.team-box:after{
-    content: "";
-    display: block;
-    /* border: 10px solid rgba(255, 255, 255, 0.7); */
+    /* border: 30px solid rgba(255, 255, 255, 0.3); */
     position: absolute;
     top: 35px;
     left: 35px;
     bottom: 35px;
     right: 35px;
     opacity: 1;
+    z-index: 2;
+    transition: all 1s ease 0s;
+    -webkit-transition: all 1s ease 0s;
+}
+.team-box:after{
+    content: "";
+    display: block;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    opacity: 1;
     z-index: 1;
     transition: all 0.3s ease 0s;
     -webkit-transition: all 1s ease 0s;
 }
-.team-box:hover:after{
+/* .team-box:hover:after{
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     opacity: 0;
-}
+} */
 .team-box img{
     width: 100%;
     height: 400px !important;
@@ -978,13 +980,24 @@ Services Area CSS
     right: 0px;
 }
 .team-box .box-inner-content{
+
+    /* width: 100%;
+    padding-top: 7px;
+    padding-bottom: 0;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    background: #f4433659;
+    padding: 21px 0 10px; */
     width: 100%;
     padding-top: 7px;
     padding-bottom: 0px;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     bottom: 0;
-    background-color: #00000096;
+    background: #f4433659;
+    padding: 21px 0 10px;
     left: 0;
     transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
@@ -1655,6 +1668,45 @@ a.button.border {
 /* =========================
     Testimonials Area CSS
    ========================= */
+
+.testimonail_wrap {
+    position: relative;
+    width: 100%
+}
+
+.client_profiles {
+    width: 388px;
+    height: 261px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+}
+
+.client_profiles img {
+    width: 100%;
+    display: block;
+}
+
+.testimonial-text {
+    position: absolute;
+    top: 0;
+    width: 73%;
+    left: 300px;
+    top: 30px;
+    /* background: #e6e6e6; */
+    background: #ffffff;
+    padding: 15px 20px 10px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+}
+
+.testimonial-text i {
+    float: right;
+    font-size: 30px;
+}
+
 .single-testimonial-item p {
     max-width: 750px;
     margin: 50px auto;
@@ -1683,6 +1735,10 @@ a.button.border {
 .client-info span {
    font-size: 16px;
     font-style: italic;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 50px !important;
 }
 .testimonial-slides .owl-nav div {
   top: 50%;
@@ -1885,6 +1941,7 @@ a.button.border {
 .panel a {
     background-color: #fff;
 }
+
 /* =========================
     End FAQ Area CSS
    ========================= */
@@ -2224,6 +2281,7 @@ h3,h2{
   .ril__captionContent {
     padding: 10px 20px;
     color: #fff;
+    background: #000;
   }
 
   .ril__toolbar {

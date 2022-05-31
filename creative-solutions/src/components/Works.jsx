@@ -68,10 +68,10 @@ const Works = () => {
                   }}
                   className="popup-btn"
                 >
-                  <Icofont icon="icofont-search-2" />
+                 <Icofont icon="icofont-search-2" />
                 </span>
               </li>
-              <a href={w.link}>
+              <a href={w.link} target="_blank">
                 <li>
                   <span href="ll" className="popup-btn">
                     <Icofont icon="icofont-link" />
@@ -105,7 +105,7 @@ const Works = () => {
                   <Icofont icon="icofont-search-2" />
                 </span>
               </li>
-              <a href={w.link}>
+              <a href={w.link} target="_blank">
                 <li>
                   <span href="ll" className="popup-btn">
                     <Icofont icon="icofont-link" />
@@ -185,6 +185,7 @@ const Works = () => {
             </MDBRow>
           </div>
           {isOpen && (
+            <>
             <Lightbox
               mainSrc={work[photoIndex].image2}
               nextSrc={work[(photoIndex + 1) % work.length].image2}
@@ -193,9 +194,10 @@ const Works = () => {
               imageTitle={photoIndex + 1 + "/" + work.length}
               imageCaption={
                <div className="ril__captionContent">
-                  <a style={{ color: "#FE5619",fontSize:"25px" }} href={work[photoIndex].link}>
-                  {work[photoIndex].link}
-                </a>
+                  <a style={{ color: "#fff",fontSize:"30px", fontWeight: "600" }} href={work[photoIndex].link} target="_blank">
+                    {/* {work[photoIndex].link} */}
+                    {work[photoIndex].title}
+                  </a>
                </div>
               }
               onCloseRequest={() => setIsOpen(false)}
@@ -205,7 +207,8 @@ const Works = () => {
               onMoveNextRequest={() =>
                 setPhotoIndex((photoIndex + 1) % work.length)
               }
-            />
+              />
+              </>
           )}
         </MDBContainer>
       </section>

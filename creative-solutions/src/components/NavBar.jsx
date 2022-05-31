@@ -18,7 +18,7 @@ class NavBar extends Component {
                 elem.classList.remove("menu-shrink");
                 elem.classList.remove("fixed-top");
             }
-        });
+        }, {passive: true});
         window.scrollTo(0, 0);
         
     
@@ -58,29 +58,29 @@ class NavBar extends Component {
                   <ul className="list-inline">
                     <li>
                       <a
-                        href={this.props.facebookLink}
+                        href={this.props.SkypeLink}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Icofont icon="icofont-facebook" />
+                        <Icofont icon="icofont-skype" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href={this.props.twitterLink}
+                        href={this.props.DribbleLink}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Icofont icon="icofont-twitter" />
+                        <Icofont icon="icofont-dribbble" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href={this.props.instagramLink}
+                        href={this.props.linkedinLink}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        <Icofont icon="icofont-instagram" />
+                        <Icofont icon="icofont-linkedin" />
                       </a>
                     </li>
                   </ul>
@@ -357,9 +357,9 @@ NavBar.defaultProps = {
   mailLink: "mailto:support@creativetech-solutions.com",
   mail: "support@creativetech-solutions.com",
   numberLink: "callto:0512300537",
-  Number: "0512300537",
-  facebookLink: "//facebook.com/envato",
-  twitterLink: "//twitter.com/envato",
-  instagramLink: "//instagram.com/envato/",
+  Number: "+92512300537",
+  DribbleLink: "https://dribbble.com/creativetechsolutions",
+  SkypeLink: "https://join.skype.com/invite/jy3x4RjBXyVM",
+  linkedinLink: "https://www.linkedin.com/in/muzammalrahim/",
 };
 export default NavBar;

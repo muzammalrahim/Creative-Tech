@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import OwlCarousel from "react-owl-carousel3";
 import Icofont from "react-icofont";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import VisibilitySensor from "react-visibility-sensor";
 import { api_url } from "../../helper/Api";
 import axios from "axios";
+import { Link } from "react-scroll";
 
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Carousel } from 'react-responsive-carousel';
@@ -64,15 +65,15 @@ class BannerOne extends Component {
                   <div className="container">
                     <div className="row">
                       <div className="col-lg-6">
-                        <span
+                        {/* <span
                           className={
                             isVisible
                               ? "hero-text animated fadeInDown slow opacityOne"
                               : "opacityZero"
                           }
                         >
-                          {/* {thumb.TopTitle} */}
-                        </span>
+                          // {thumb.TopTitle}
+                        </span> */}
 
                         <h1
                           style={{ color: "#FE5619" }}
@@ -97,11 +98,13 @@ class BannerOne extends Component {
                         </p>
                         <div className="center-wrap">
                           <a href={this.state.banner[0].link} className="btn-a">
-                            <div className="button">
-                              get started
-                              <Icofont icon="icofont-long-arrow-right" />
-                              <div className="mask" />
-                            </div>
+                            <Link to="contact" className="text-white">
+                              <div className="button">
+                                get started
+                                <Icofont icon="icofont-long-arrow-right" />
+                                <div className="mask" />
+                              </div>
+                            </Link>
                           </a>
                         </div>
                       </div>
@@ -161,11 +164,13 @@ class BannerOne extends Component {
                         </p>
                         <div className="center-wrap">
                           <a href={this.state.banner[1].link} className="btn-a">
-                            <div className="button">
-                              get started
-                              <Icofont icon="icofont-long-arrow-right" />
-                              <div className="mask" />
-                            </div>
+                            <Link to="contact" className="text-white">
+                              <div className="button">
+                                get started
+                                <Icofont icon="icofont-long-arrow-right" />
+                                <div className="mask" />
+                                </div>
+                            </Link>
                           </a>
                         </div>
                       </div>
@@ -202,11 +207,13 @@ class BannerOne extends Component {
                     </p>
                     <div className="center-wrap">
                       <a href={this.state.banner[2].link} className="btn-a">
-                        <div className="button">
-                          get started
-                          <Icofont icon="icofont-long-arrow-right" />
-                          <div className="mask" />
-                        </div>
+                        <Link to="contact" className="text-white">
+                          <div className="button">
+                            get started
+                            <Icofont icon="icofont-long-arrow-right" />
+                            <div className="mask" />
+                          </div>
+                        </Link>
                       </a>
                     </div>
                   </div>

@@ -1,5 +1,4 @@
 import React,{useState, useEffect} from "react";
-import Icofont from "react-icofont";
 import PropTypes from "prop-types";
 import ScrollAnimation from "react-animate-on-scroll";
 import { MDBContainer, MDBRow } from "mdbreact";
@@ -71,7 +70,7 @@ const Services = () =>{
                 <ScrollAnimation animateIn="fadeInUp">
                   <div className="section-title">
                     <h2>Services</h2>
-                    <p>our services include but not limited to React , Angular , Django , Nodejs , Laravel , Codeigniter , Wordpress, Joomla and Magento</p>
+                    <p>our services include but not limited to React , Angular , Nodejs , Laravel , Codeigniter , Wordpress and Joomla</p>
                     <span className="section-title-bg">
                       Services
                     </span>

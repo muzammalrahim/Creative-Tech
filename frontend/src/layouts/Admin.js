@@ -288,7 +288,7 @@ export default function Admin({ ...rest }) {
       });
       document.body.style.overflow = "hidden";
     }
-    window.addEventListener("resize", resizeFunction);
+    window.addEventListener("resize", resizeFunction, {passive: true});
     // Specify how to clean up after this effect:
     return function cleanup() {
       if (navigator.platform.indexOf("Win") > -1) {

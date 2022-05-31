@@ -7,7 +7,6 @@ import { Link } from "react-scroll";
 import ScrollAnimation from 'react-animate-on-scroll';
 import { api_url } from '../helper/Api';
 import axios from 'axios'
-import Contact from "./Contact";
 
 class FAQ extends Component {
  
@@ -103,7 +102,7 @@ FAQ.propTypes = {
 //Default Props
 FAQ.defaultProps = {
     SectionbgTitle: "FAQ",
-    sectionTitle: "Frequntly Ask & Questions",
+    sectionTitle: "Frequently Asked Questions",
     sectionDescription:
         "Based on over ten years of experience and questions we receive from our clients, we wrote down a list of Frequently Asked Questions (FAQ). We hope that it will help you better understand the issues related to software development. For your convenience, we have divided the questions into three categories: process, costs and experience.",
     

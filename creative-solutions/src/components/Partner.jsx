@@ -27,7 +27,7 @@ class Partners extends Component {
         //Partner loop start
         const partnerData = this.state.partners.map((partner, index) => (
             <div className="single-partner-logo" key={index}>
-                <a href={partner.link} className="logo-preview">
+                <a href={partner.link} className="logo-preview" target="_blank">
                     <img src={partner.image} alt="partnerLogo" />
                 </a>
             </div>
@@ -52,10 +52,10 @@ class Partners extends Component {
                         <div className="row">
                             <OwlCarousel
                                 className="owl-theme partners-slides"
-                                dots= {false}
+                                dots= {true}
                                 loop={true}
                                 margin={100}
-                                // autoplay={true}
+                                autoplay={true}
                                 smartSpeed={1000}
                                 nav={true}
                                 navText={[
