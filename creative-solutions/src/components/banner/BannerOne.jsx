@@ -169,7 +169,7 @@ class BannerOne extends Component {
                                 get started
                                 <Icofont icon="icofont-long-arrow-right" />
                                 <div className="mask" />
-                                </div>
+                              </div>
                             </Link>
                           </a>
                         </div>
